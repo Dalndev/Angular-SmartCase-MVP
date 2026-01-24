@@ -8,7 +8,7 @@
     "test/client": "",
     "lint/client": "",
     "e2e/client": "",
-    "storybook": "nx storybook angular-smartcase"
+    "storybook": "nx storybook ui"
   },
   "private": true,
   "devDependencies": {
@@ -18,6 +18,7 @@
     "@angular/cli": "~21.0.0",
     "@angular/compiler-cli": "~21.0.0",
     "@angular/language-service": "~21.0.0",
+    "@compodoc/compodoc": "^1.2.1",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
     "@nx/angular": "^22.3.3",
@@ -31,6 +32,7 @@
     "@nx/web": "22.3.3",
     "@schematics/angular": "~21.0.0",
     "@storybook/angular": "10.1.11",
+    "@storybook/builder-vite": "^10.1.11",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
@@ -38,6 +40,7 @@
     "@types/node": "20.19.9",
     "@typescript-eslint/utils": "^8.40.0",
     "angular-eslint": "^21.0.1",
+    "autoprefixer": "^10.4.0",
     "cypress": "^15.8.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
@@ -46,8 +49,11 @@
     "jest-environment-jsdom": "^30.0.2",
     "jest-preset-angular": "~16.0.0",
     "jest-util": "^30.0.2",
+    "jsonc-eslint-parser": "^2.1.0",
+    "ng-packagr": "~21.0.0",
     "ng-primitives": "^0.100.1",
     "nx": "22.3.3",
+    "postcss-url": "~10.1.3",
     "prettier": "~3.6.2",
     "storybook": "10.1.11",
     "ts-jest": "^29.4.0",
@@ -73,6 +79,7 @@
     "clsx": "^2.1.1",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
+    "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
     "tailwindcss": "^4.1.18"
   }
