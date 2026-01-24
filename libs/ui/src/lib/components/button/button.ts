@@ -5,8 +5,13 @@ import { tv } from "tailwind-variants";
 import type { VariantProps } from "tailwind-variants";
 
 const button = tv({
-  base: "inline-flex items-center",
+  base: "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 transition-colors",
   variants: {
+    colors: {
+      primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow",
+      secondary: "",
+      danger: ""
+    },
     variants: {
       elevated: "",
       filled: "",
@@ -17,12 +22,14 @@ const button = tv({
     sizes: {
       xs: "",
       sm: "",
-      md: "",
+      md: "h-9 px-4 py-2",
       lg: "",
       xl: ""
     }
   },
   defaultVariants: {
+    colors: "primary",
+    variants: "elevated",
     sizes: "md",
   }
 });
@@ -31,9 +38,7 @@ const button = tv({
   imports: [CommonModule],
   selector: 'smc-button',
   hostDirectives: [
-    {
-      directive: NgpButton
-    }
+    //{ directive: NgpButton }
   ],
   host: {
     'role': 'button',
