@@ -25,12 +25,12 @@ export const sizes: Story = {
   args: { },
   render: () => ({
     template: `
-      <div class="flex flex-col gap-2 justify-center items-center">
-        <ui-button size="xs">Extra Small</ui-button>
-        <ui-button size="sm">Small</ui-button>
-        <ui-button size="md">Medium</ui-button>
-        <ui-button size="lg">Large</ui-button>
-        <ui-button size="xl">Extra Large</ui-button>
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-button size="xs">Extra small button</ui-button>
+        <ui-button size="sm">Small button</ui-button>
+        <ui-button size="md">Medium button</ui-button>
+        <ui-button size="lg">Large button</ui-button>
+        <ui-button size="xl">Extra large button</ui-button>
       </div>
     `,
   }),
@@ -41,11 +41,12 @@ export const variants: Story = {
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-button variant="elevated">Elevated</ui-button>
-        <ui-button variant="filled">Filled</ui-button>
-        <ui-button variant="tonal">Tonal</ui-button>
-        <ui-button variant="outlined">Outlined</ui-button>
-        <ui-button variant="text">Text</ui-button>
+        <ui-button variant="elevated">Elevated button</ui-button>
+        <ui-button variant="filled">Filled button</ui-button>
+        <ui-button variant="tonal">Tonal button</ui-button>
+        <ui-button variant="outlined">Outlined button</ui-button>
+        <ui-button variant="text">Text button</ui-button>
+        <ui-button variant="danger">Danger button</ui-button>
       </div>
     `,
   }),

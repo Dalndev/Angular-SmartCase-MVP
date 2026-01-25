@@ -8,6 +8,7 @@ import { optimizeDeps, type UserConfig } from 'vite';
 const config: StorybookConfig & StorybookConfigVite = {
   stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [],
+  staticDirs: ['../public'],
   framework: {
     name: '@storybook/angular',
     options: {}

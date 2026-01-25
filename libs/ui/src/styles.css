@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
   --color-primary: var(--primary);
@@ -40,6 +40,12 @@
   --radius-xl: calc(var(--radius));
 
   --font-roboto: var(--roboto);
+
+  --shadow-elevation-light-lowest: var(--elevation-light-lowest);
+  --shadow-elevation-light-low: var(--elevation-light-low);
+  --shadow-elevation-light-medium: var(--elevation-light-medium);
+  --shadow-elevation-light-high: var(--elevation-light-high);
+  --shadow-elevation-light-highest: var(--elevation-light-highest);
 }
 
 :root {
@@ -76,7 +82,11 @@
   --outline: #79737e;
   --outline-variant: #cac4d0;
 
-  --shadow: #000000;
-
   --font-roboto: 'Roboto', sans-serif;
+
+  --elevation-light-lowest: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),  0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --elevation-light-low: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --elevation-light-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+  --elevation-light-high: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
+  --elevation-light-highest: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
 }

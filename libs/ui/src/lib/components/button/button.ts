@@ -4,27 +4,23 @@ import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
-const button = tv({
-  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0',
+const classes = tv({
+  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto',
   variants: {
-    colors: {
-      primary: '',
-      secondary: '',
-      danger: '',
-    },
     variants: {
       elevated: 'bg-surface-container-low text-primary',
       filled: 'bg-primary text-on-primary',
       tonal: 'bg-secondary-container text-on-secondary-container',
       outlined: 'border-outline-variant',
       text: 'text-primary',
+      danger: 'bg-error-container text-on-error-container',
     },
     sizes: {
-      xs: 'h-[32px] px-[12px] text-[11px]',
-      sm: 'h-[40px] px-[16px] text-[11px]',
-      md: 'h-[56px] px-[24px] text-[12px]',
-      lg: 'h-[96px] px-[48px] text-[20px]',
-      xl: 'h-[136px] px-[64px] text-[20px]',
+      xs: 'h-[32px] px-[12px] text-[14px]',
+      sm: 'h-[40px] px-[16px] text-[14px]',
+      md: 'h-[56px] px-[24px] text-[16px]',
+      lg: 'h-[96px] px-[48px] text-[24px]',
+      xl: 'h-[136px] px-[64px] text-[32px]',
     },
     shapes: {
       rounded: 'rounded-full',
@@ -38,19 +34,15 @@ const button = tv({
     shapes: 'rounded',
   },
   compoundVariants: [
-    {
-      sizes: 'md', shapes: 'squared',
-      class: 'rounded-[16px]'
-    },
-    {
-      sizes: "lg", shapes: "squared",
-      class: "rounded-[28px]"
-    },
-    {
-      sizes: "xl", shapes: "squared",
-      class: "rounded-[28px]"
-    }
-  ]
+    { sizes: 'md', shapes: 'squared', class: 'rounded-[16px]' },
+    { sizes: 'lg', shapes: 'squared', class: 'rounded-[28px]' },
+    { sizes: 'xl', shapes: 'squared', class: 'rounded-[28px]' },
+    { variants: 'elevated', sizes: 'xs', class:'shadow-elevation-light-lowest'},
+    { variants: 'elevated', sizes: 'sm', class:'shadow-elevation-light-lowest'},
+    { variants: 'elevated', sizes: 'md', class:'shadow-elevation-light-low'},
+    { variants: 'elevated', sizes: 'lg', class:'shadow-elevation-light-medium'},
+    { variants: 'elevated', sizes: 'xl', class:'shadow-elevation-light-medium'},
+  ],
 });
 
 @Component({
@@ -60,6 +52,8 @@ const button = tv({
   host: {
     role: 'button',
     '[attr.data-size]': 'size',
+    '[attr.data-variant]': 'variant',
+    '[attr.data-shape]': 'shapes',
   },
   template: `<ng-content />`,
 })
@@ -70,11 +64,8 @@ export class Button {
 
   @Input() shapes: ButtonVariants['shapes'];
 
-  @Input() colors: ButtonVariants['colors'];
-
-
   public klass = computed(() =>
-    button({ sizes: this.size, variants: this.variant, shapes: this.shapes, colors: this.colors }),
+    classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
   );
 
   @HostBinding('class')
@@ -83,4 +74,4 @@ export class Button {
   }
 }
 
-export type ButtonVariants = VariantProps<typeof button>;
+export type ButtonVariants = VariantProps<typeof classes>;

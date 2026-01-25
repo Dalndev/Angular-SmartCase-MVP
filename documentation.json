@@ -14,41 +14,51 @@
                 "name": "config",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "angular-client/.storybook/main.ts",
+                "file": "libs/ui/.storybook/main.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "StorybookConfig",
-                "defaultValue": "{\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
-            },
-            {
-                "name": "Heading",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "angular-client/src/app/app.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  play: async ({ canvas }) => {\n    await expect(canvas.getByText(/app/gi)).toBeTruthy();\n  },\n}"
+                "type": "unknown",
+                "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "angular-client/src/app/app.stories.ts",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<App>",
-                "defaultValue": "{\n  component: App,\n  title: 'App',\n}"
+                "type": "Meta<Button>",
+                "defaultValue": "{\r\n  title: 'Material Design/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton],\r\n      declarations: [],\r\n      providers: [],\r\n    })\r\n  ]\r\n}"
             },
             {
-                "name": "Primary",
+                "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "angular-client/src/app/app.stories.ts",
+                "file": "libs/ui/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "sizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-col gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "variants",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             }
         ],
         "functions": [],
@@ -57,8 +67,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<App>",
-                "file": "angular-client/src/app/app.stories.ts",
+                "rawtype": "StoryObj<Button>",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -67,61 +77,73 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "angular-client/.storybook/main.ts": [
+            "libs/ui/.storybook/main.ts": [
                 {
                     "name": "config",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "angular-client/.storybook/main.ts",
+                    "file": "libs/ui/.storybook/main.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StorybookConfig",
-                    "defaultValue": "{\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+                    "type": "unknown",
+                    "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
                 }
             ],
-            "angular-client/src/app/app.stories.ts": [
-                {
-                    "name": "Heading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "angular-client/src/app/app.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {},\n  play: async ({ canvas }) => {\n    await expect(canvas.getByText(/app/gi)).toBeTruthy();\n  },\n}"
-                },
+            "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "angular-client/src/app/app.stories.ts",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<App>",
-                    "defaultValue": "{\n  component: App,\n  title: 'App',\n}"
+                    "type": "Meta<Button>",
+                    "defaultValue": "{\r\n  title: 'Material Design/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton],\r\n      declarations: [],\r\n      providers: [],\r\n    })\r\n  ]\r\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "sizes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "angular-client/src/app/app.stories.ts",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-col gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "variants",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
+            "libs/ui/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "angular-client/src/app/app.stories.ts": [
+            "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<App>",
-                    "file": "angular-client/src/app/app.stories.ts",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -140,7 +162,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "angular-client/.storybook/main.ts",
+                "filePath": "libs/ui/.storybook/main.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -150,17 +172,17 @@
                 "status": "low"
             },
             {
-                "filePath": "angular-client/src/app/app.stories.ts",
+                "filePath": "libs/ui/.storybook/preview.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Heading",
+                "name": "preview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "angular-client/src/app/app.stories.ts",
+                "filePath": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -170,17 +192,27 @@
                 "status": "low"
             },
             {
-                "filePath": "angular-client/src/app/app.stories.ts",
+                "filePath": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "sizes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "angular-client/src/app/app.stories.ts",
+                "filePath": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "variants",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
