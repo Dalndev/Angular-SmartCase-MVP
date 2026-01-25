@@ -22,7 +22,7 @@ type ButtonStory = StoryObj<Button>;
 export const button: ButtonStory = {
   render: () => ({
     template: `
-      <smc-button/>
+      <smc-button>Hello World</smc-button>
     `
   })
 }

@@ -5,10 +5,10 @@ import { tv } from "tailwind-variants";
 import type { VariantProps } from "tailwind-variants";
 
 const button = tv({
-  base: "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 transition-colors",
+  base: "inline-flex items-center justify-center whitespace-nowrap radius-md text-sm font-medium",
   variants: {
     colors: {
-      primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow",
+      primary: "bg-primary text-on-primary",
       secondary: "",
       danger: ""
     },
@@ -20,9 +20,9 @@ const button = tv({
       text: ""
     },
     sizes: {
-      xs: "",
-      sm: "",
-      md: "h-9 px-4 py-2",
+      xs: "h-8 px-3 rounded-full",
+      sm: "h-10 px-4",
+      md: "h-14 px-6 rounded-full",
       lg: "",
       xl: ""
     }
@@ -38,7 +38,7 @@ const button = tv({
   imports: [CommonModule],
   selector: 'smc-button',
   hostDirectives: [
-    //{ directive: NgpButton }
+    { directive: NgpButton }
   ],
   host: {
     'role': 'button',
@@ -53,6 +53,8 @@ export class Button {
   readonly size = input<ButtonVariants['sizes']>();
 
   readonly variant = input<ButtonVariants['variants']>();
+
+  readonly label = input<string>();
 
   @HostBinding('class')
   get buildClasses() {
