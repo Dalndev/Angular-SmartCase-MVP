@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
 const classes = tv({
-  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto',
+  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto ',
   variants: {
     variants: {
       elevated: 'bg-surface-container-low text-primary',
@@ -37,11 +37,27 @@ const classes = tv({
     { sizes: 'md', shapes: 'squared', class: 'rounded-[16px]' },
     { sizes: 'lg', shapes: 'squared', class: 'rounded-[28px]' },
     { sizes: 'xl', shapes: 'squared', class: 'rounded-[28px]' },
-    { variants: 'elevated', sizes: 'xs', class:'shadow-elevation-light-lowest'},
-    { variants: 'elevated', sizes: 'sm', class:'shadow-elevation-light-lowest'},
-    { variants: 'elevated', sizes: 'md', class:'shadow-elevation-light-low'},
-    { variants: 'elevated', sizes: 'lg', class:'shadow-elevation-light-medium'},
-    { variants: 'elevated', sizes: 'xl', class:'shadow-elevation-light-medium'},
+    {
+      variants: 'elevated',
+      sizes: 'xs',
+      class: 'shadow-elevation-light-lowest',
+    },
+    {
+      variants: 'elevated',
+      sizes: 'sm',
+      class: 'shadow-elevation-light-lowest',
+    },
+    { variants: 'elevated', sizes: 'md', class: 'shadow-elevation-light-low' },
+    {
+      variants: 'elevated',
+      sizes: 'lg',
+      class: 'shadow-elevation-light-medium',
+    },
+    {
+      variants: 'elevated',
+      sizes: 'xl',
+      class: 'shadow-elevation-light-medium',
+    },
   ],
 });
 

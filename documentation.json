@@ -48,7 +48,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-col gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "variants",
@@ -108,7 +108,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-col gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "variants",
