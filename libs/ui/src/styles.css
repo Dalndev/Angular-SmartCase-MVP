@@ -46,49 +46,51 @@
   --shadow-elevation-light-medium: var(--elevation-light-medium);
   --shadow-elevation-light-high: var(--elevation-light-high);
   --shadow-elevation-light-highest: var(--elevation-light-highest);
+
+  --color-primary-state-layer-light-lowest: var(--primary-state-layer-light-lowest);
 }
 
 :root {
-  --primary: #65558f;
-  --on-primary: #ffffff;
-  --primary-container: #eaddff;
-  --on-primary-container: #4f378b;
+  --primary: rgb(101, 85, 143);
+  --on-primary: rgb(255, 255, 255);
+  --primary-container: rgb(234, 221, 255);
+  --on-primary-container: rgb(79, 55, 139);
 
-  --secondary: #625b71;
-  --on-secondary: #ffffff;
-  --secondary-container: #e8def8;
-  --on-secondary-container: #1e192b;
+  --secondary: rgb(98, 91, 113);
+  --on-secondary: rgb(255, 255, 255);
+  --secondary-container: rgb(232, 222, 248);
+  --on-secondary-container: rgb(30, 25, 43);
 
-  --error: #b3261e;
-  --on-error: #ffffff;
-  --error-container: #f9dedc;
-  --on-error-container: #8c1d18;
+  --error: rgb(179, 38, 30);
+  --on-error: rgb(255, 255, 255);
+  --error-container: rgb(249, 222, 220);
+  --on-error-container: rgb(140, 29, 24);
 
-  --background: #fef7ff;
-  --on-background: #1d1b20;
+  --background: rgb(254, 247, 255);
+  --on-background: rgb(29, 27, 32);
 
-  --surface: #fef7ff;
-  --on-surface: #1d1b20;
-  --on-surface-variant: #49454f;
+  --surface: rgb(254, 247, 255);
+  --on-surface: rgb(29, 27, 32);
+  --on-surface-variant: rgb(73, 69, 79);
 
-  --surface-container-lowest: #ffffff;
-  --surface-container-low: #f7f2fa;
-  --surface-container: #f3edf7;
-  --surface-container-high: #ece6f0;
-  --surface-container-highest: #e6e0e9;
+  --surface-container-lowest: rgb(255, 255, 255);
+  --surface-container-low: rgb(247, 242, 250);
+  --surface-container: rgb(243, 237, 247);
+  --surface-container-high: rgb(236, 230, 240);
+  --surface-container-highest: rgb(230, 224, 233);
 
   --radius: 0.625rem;
 
-  --outline: #79737e;
-  --outline-variant: #cac4d0;
+  --outline: rgb(121, 115, 126);
+  --outline-variant: rgb(202, 196, 208);
 
   --font-roboto: 'Roboto', sans-serif;
 
-  --elevation-light-lowest: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),  0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --elevation-light-lowest: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   --elevation-light-low: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
   --elevation-light-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-high: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-highest: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
 
-  
+  --primary-state-layer-light-lowest: rgba(101, 85, 143, 0.08);
 }

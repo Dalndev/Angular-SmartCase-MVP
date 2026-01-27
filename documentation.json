@@ -18,7 +18,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
-                "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
+                "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
             },
             {
                 "name": "meta",
@@ -28,7 +28,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\r\n  title: 'Material Design/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton],\r\n      declarations: [],\r\n      providers: [],\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton],\n      declarations: [],\n      providers: [],\n    })\n  ]\n}"
             },
             {
                 "name": "preview",
@@ -38,7 +38,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n  },\n  decorators: [\n    applicationConfig({\n      providers: []\n    })\n  ]\n}"
             },
             {
                 "name": "sizes",
@@ -48,7 +48,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                "defaultValue": "{\n  name: \"Sizes\",\n  args: { },\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"xs\">Extra small button</ui-button>\n        <ui-button size=\"sm\">Small button</ui-button>\n        <ui-button size=\"md\">Medium button</ui-button>\n        <ui-button size=\"lg\">Large button</ui-button>\n        <ui-button size=\"xl\">Extra large button</ui-button>\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "variants",
@@ -58,7 +58,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n      </div>\n    `,\n  }),\n}"
             }
         ],
         "functions": [],
@@ -86,7 +86,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
-                    "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
+                    "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
                 }
             ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
@@ -98,7 +98,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\r\n  title: 'Material Design/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton],\r\n      declarations: [],\r\n      providers: [],\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton],\n      declarations: [],\n      providers: [],\n    })\n  ]\n}"
                 },
                 {
                     "name": "sizes",
@@ -108,7 +108,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: { },\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                    "defaultValue": "{\n  name: \"Sizes\",\n  args: { },\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"xs\">Extra small button</ui-button>\n        <ui-button size=\"sm\">Small button</ui-button>\n        <ui-button size=\"md\">Medium button</ui-button>\n        <ui-button size=\"lg\">Large button</ui-button>\n        <ui-button size=\"xl\">Extra large button</ui-button>\n      </div>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "variants",
@@ -118,7 +118,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                    "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n      </div>\n    `,\n  }),\n}"
                 }
             ],
             "libs/ui/.storybook/preview.ts": [
@@ -130,7 +130,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n  },\n  decorators: [\n    applicationConfig({\n      providers: []\n    })\n  ]\n}"
                 }
             ]
         },

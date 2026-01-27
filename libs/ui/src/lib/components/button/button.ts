@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, HostBinding, Input } from '@angular/core';
+import { Component, computed, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
 const classes = tv({
-  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto font-medium',
+  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto font-medium disabled:pointer-events-none disabled:opacity-50 transition-colors',
   variants: {
     variants: {
-      elevated: 'bg-surface-container-low text-primary',
-      filled: 'bg-primary text-on-primary',
-      tonal: 'bg-secondary-container text-on-secondary-container',
+      elevated: 'bg-surface-container-low text-primary hover:bg-primary-state-layer-light-lowest',
+      filled: 'bg-primary text-on-primary hover:opacity-[.80] focus:outline-2 focus:outline-offset-2 focus:outline-secondary',
+      tonal: 'bg-secondary-container text-on-secondary-container hover:opacity-[.80]',
       outlined: 'border border-outline text-on-surface-variant',
       text: 'text-primary',
       danger: 'bg-error-container text-on-error-container',
@@ -53,18 +53,29 @@ const classes = tv({
   hostDirectives: [{ directive: NgpButton }],
   host: {
     role: 'button',
-    '[attr.data-size]': 'size',
-    '[attr.data-variant]': 'variant',
-    '[attr.data-shape]': 'shapes',
+    'disabled': 'disabled'
   },
-  template: `<ng-content />`,
+  template: `
+    <div class="">
+      <ng-content />
+    </div>
+  `,
 })
 export class Button {
+
   @Input() size: ButtonVariants['sizes'];
 
   @Input() variant: ButtonVariants['variants'];
 
-  @Input() shapes: ButtonVariants['shapes']; 
+  @Input() shapes: ButtonVariants['shapes'];
+
+  @Input() disabled = false;
+
+  @Output() onClick = new EventEmitter<Event>();
+
+  @Output() onFocus = new EventEmitter<FocusEvent>();
+
+  @Output() onBlur = new EventEmitter<Event>();
 
   public klass = computed(() =>
     classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
@@ -74,6 +85,19 @@ export class Button {
   get buildClasses() {
     return this.klass();
   }
+
+  public _onClick(event: Event) {
+    this.onClick.emit(event);
+  }
+
+  public _onFocus(event: FocusEvent) {
+    this.onFocus.emit(event);
+  }
+
+  public _onBlur(event: Event) {
+    this.onBlur.emit(event);
+  }
+
 }
 
 export type ButtonVariants = VariantProps<typeof classes>;
