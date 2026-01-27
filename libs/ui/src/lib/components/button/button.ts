@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, HostBinding, Input, input } from '@angular/core';
+import { Component, computed, HostBinding, Input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
 const classes = tv({
-  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto ',
+  base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto font-medium',
   variants: {
     variants: {
       elevated: 'bg-surface-container-low text-primary',
       filled: 'bg-primary text-on-primary',
       tonal: 'bg-secondary-container text-on-secondary-container',
-      outlined: 'border-outline-variant',
+      outlined: 'border border-outline text-on-surface-variant',
       text: 'text-primary',
       danger: 'bg-error-container text-on-error-container',
     },
@@ -37,27 +37,13 @@ const classes = tv({
     { sizes: 'md', shapes: 'squared', class: 'rounded-[16px]' },
     { sizes: 'lg', shapes: 'squared', class: 'rounded-[28px]' },
     { sizes: 'xl', shapes: 'squared', class: 'rounded-[28px]' },
-    {
-      variants: 'elevated',
-      sizes: 'xs',
-      class: 'shadow-elevation-light-lowest',
-    },
-    {
-      variants: 'elevated',
-      sizes: 'sm',
-      class: 'shadow-elevation-light-lowest',
-    },
+    { variants: 'elevated', sizes: 'xs', class: 'shadow-elevation-light-lowest' },
+    { variants: 'elevated', sizes: 'sm', class: 'shadow-elevation-light-lowest' },
     { variants: 'elevated', sizes: 'md', class: 'shadow-elevation-light-low' },
-    {
-      variants: 'elevated',
-      sizes: 'lg',
-      class: 'shadow-elevation-light-medium',
-    },
-    {
-      variants: 'elevated',
-      sizes: 'xl',
-      class: 'shadow-elevation-light-medium',
-    },
+    { variants: 'elevated', sizes: 'lg', class: 'shadow-elevation-light-medium' },
+    { variants: 'elevated', sizes: 'xl', class: 'shadow-elevation-light-medium' },
+    { variants: 'outlined', sizes: 'lg', class: 'border-2' },
+    { variants: 'outlined', sizes: 'xl', class: 'border-2' },
   ],
 });
 
@@ -78,7 +64,7 @@ export class Button {
 
   @Input() variant: ButtonVariants['variants'];
 
-  @Input() shapes: ButtonVariants['shapes'];
+  @Input() shapes: ButtonVariants['shapes']; 
 
   public klass = computed(() =>
     classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
