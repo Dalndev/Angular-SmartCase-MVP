@@ -8,7 +8,7 @@ const classes = tv({
   base: 'inline-flex items-center justify-center whitespace-nowrap text-base py-0 font-roboto font-medium disabled:pointer-events-none disabled:opacity-50 transition-colors',
   variants: {
     variants: {
-      elevated: 'bg-surface-container-low text-primary hover:bg-primary-state-layer-light-lowest',
+      elevated: 'bg-surface-container-low text-primary',
       filled: 'bg-primary text-on-primary hover:opacity-[.80] focus:outline-2 focus:outline-offset-2 focus:outline-secondary',
       tonal: 'bg-secondary-container text-on-secondary-container hover:opacity-[.80]',
       outlined: 'border border-outline text-on-surface-variant',
@@ -49,16 +49,16 @@ const classes = tv({
 
 @Component({
   selector: 'ui-button',
-  imports: [CommonModule],
-  hostDirectives: [{ directive: NgpButton }],
+  imports: [CommonModule, NgpButton],
   host: {
-    role: 'button',
-    'disabled': 'disabled'
+    role: 'container'
   },
   template: `
-    <div class="">
-      <ng-content />
-    </div>
+    <button role="button" ngpButton [class]="klass()">
+      <span>
+        <ng-content />
+      </span>
+    </button>
   `,
 })
 export class Button {
@@ -80,11 +80,6 @@ export class Button {
   public klass = computed(() =>
     classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
   );
-
-  @HostBinding('class')
-  get buildClasses() {
-    return this.klass();
-  }
 
   public _onClick(event: Event) {
     this.onClick.emit(event);
