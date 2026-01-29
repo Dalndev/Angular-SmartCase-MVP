@@ -47,7 +47,9 @@
   --shadow-elevation-light-high: var(--elevation-light-high);
   --shadow-elevation-light-highest: var(--elevation-light-highest);
 
-  --color-primary-state-layer-light-lowest: var(--primary-state-layer-light-lowest);
+  --color-primary-state-layer-light-low: var(--primary-state-layer-light-low);
+  --color-primary-state-layer-light: var(--primary-state-layer-light);
+  --color-primary-state-layer-light-high: var(--primary-state-layer-light-high);
 }
 
 :root {
@@ -92,5 +94,7 @@
   --elevation-light-high: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-highest: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
 
-  --primary-state-layer-light-lowest: rgba(101, 85, 143, 0.08);
+  --primary-state-layer-light-low: rgba(101, 85, 143, 0.08);
+  --primary-state-layer-light: rgba(101, 85, 143, 0.10);
+  --primary-state-layer-light-high: rgba(101, 85, 143, 0.16);
 }
