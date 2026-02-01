@@ -47,6 +47,7 @@ export const variants: Story = {
         <ui-button variant="outlined">Outlined button</ui-button>
         <ui-button variant="text">Text button</ui-button>
         <ui-button variant="danger">Danger button</ui-button>
+        <ui-button [disabled]="true">Disabled button</ui-button>
       </div>
     `,
   }),
