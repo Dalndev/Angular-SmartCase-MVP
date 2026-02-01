@@ -8,13 +8,12 @@ const classes = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden',
   variants: {
     variants: {
-      elevated:
-        'bg-surface-container-low text-primary data-[hover]:[&>span]:bg-primary-state-layer-light-low data-[press]:[&>span]:bg-primary-state-layer-light',
-      filled: 'bg-primary text-on-primary',
-      tonal: 'bg-secondary-container text-on-secondary-container',
-      outlined: 'border border-outline text-on-surface-variant',
-      text: 'text-primary',
-      danger: 'bg-error-container text-on-error-container',
+      elevated: 'bg-surface-container-low text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light',
+      filled: 'bg-primary text-on-primary data-hover:[&>span]:bg-on-primary-state-layer-light-low',
+      tonal: 'bg-secondary-container text-on-secondary-container data-hover:[&>span]:bg-on-secondary-container-state-layer-light-low',
+      outlined: 'border border-outline text-on-surface-variant border-outline-variant data-hover:[&>span]:bg-on-surface-variant-state-layer-light-low data-press:[&>span]:bg-on-surface-variant-state-layer-light',
+      text: 'text-primary data-hover:[&>span]:bg-primary-state-layer-light-low',
+      danger: 'bg-error-container text-on-error-container data-hover:[&>span]:bg-on-error-container-state-layer-light-low',
     },
     sizes: {
       xs: 'h-[32px] px-[12px] text-[14px]',
@@ -38,27 +37,11 @@ const classes = tv({
     { sizes: 'md', shapes: 'squared', class: 'rounded-[16px]' },
     { sizes: 'lg', shapes: 'squared', class: 'rounded-[28px]' },
     { sizes: 'xl', shapes: 'squared', class: 'rounded-[28px]' },
-    {
-      variants: 'elevated',
-      sizes: 'xs',
-      class: 'shadow-elevation-light-lowest',
-    },
-    {
-      variants: 'elevated',
-      sizes: 'sm',
-      class: 'shadow-elevation-light-lowest',
-    },
+    { variants: 'elevated', sizes: 'xs', class: 'shadow-elevation-light-lowest' },
+    { variants: 'elevated', sizes: 'sm', class: 'shadow-elevation-light-lowest' },
     { variants: 'elevated', sizes: 'md', class: 'shadow-elevation-light-low' },
-    {
-      variants: 'elevated',
-      sizes: 'lg',
-      class: 'shadow-elevation-light-medium',
-    },
-    {
-      variants: 'elevated',
-      sizes: 'xl',
-      class: 'shadow-elevation-light-medium',
-    },
+    { variants: 'elevated', sizes: 'lg', class: 'shadow-elevation-light-medium' },
+    { variants: 'elevated', sizes: 'xl', class: 'shadow-elevation-light-medium' },
     { variants: 'outlined', sizes: 'lg', class: 'border-2' },
     { variants: 'outlined', sizes: 'xl', class: 'border-2' },
   ],

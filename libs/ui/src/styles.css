@@ -50,9 +50,28 @@
   --color-primary-state-layer-light-low: var(--primary-state-layer-light-low);
   --color-primary-state-layer-light: var(--primary-state-layer-light);
   --color-primary-state-layer-light-high: var(--primary-state-layer-light-high);
+
+  --color-on-primary-state-layer-light-low: var(--on-primary-state-layer-light-low);
+  --color-on-primary-state-layer-light: var(--on-primary-state-layer-light);
+  --color-on-primary-state-layer-light-high: var(--on-primary-state-layer-light-high);
+
+  --color-on-secondary-container-state-layer-light-low: var(--on-secondary-container-state-layer-light-low);
+  --color-on-secondary-container-state-layer-light: var(--on-secondary-container-state-layer-light);
+  --color-on-secondary-container-state-layer-light-high: var(--on-secondary-container-state-layer-light-high);
+
+  --color-on-surface-variant-state-layer-light-low: var(--on-surface-variant-state-layer-light-low);
+  --color-on-surface-variant-state-layer-light: var(--on-surface-variant-state-layer-light);
+  --color-on-surface-variant-state-layer-light-high: var(--on-surface-variant-state-layer-light-high);
+
+  --color-on-error-container-state-layer-light-low: var(--on-error-container-state-layer-light-low);
+  --color-on-error-container-state-layer-light: var(--on-error-container-state-layer-light);
+  --color-on-error-container-state-layer-light-high: var(--on-error-container-state-layer-light-high);
 }
 
 :root {
+  --font-roboto: 'Roboto', sans-serif;
+  --radius: 0.625rem;
+
   --primary: rgb(101, 85, 143);
   --on-primary: rgb(255, 255, 255);
   --primary-container: rgb(234, 221, 255);
@@ -81,12 +100,8 @@
   --surface-container-high: rgb(236, 230, 240);
   --surface-container-highest: rgb(230, 224, 233);
 
-  --radius: 0.625rem;
-
   --outline: rgb(121, 115, 126);
   --outline-variant: rgb(202, 196, 208);
-
-  --font-roboto: 'Roboto', sans-serif;
 
   --elevation-light-lowest: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   --elevation-light-low: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
@@ -97,4 +112,22 @@
   --primary-state-layer-light-low: rgba(101, 85, 143, 0.08);
   --primary-state-layer-light: rgba(101, 85, 143, 0.10);
   --primary-state-layer-light-high: rgba(101, 85, 143, 0.16);
+
+  --on-primary-state-layer-light-low: rgba(255, 255, 255, 0.08);
+  --on-primary-state-layer-light: rgba(255, 255, 255, 0.10);
+  --on-primary-state-layer-light-high: rgba(255, 255, 255, 0.16);
+
+  --on-secondary-container-state-layer-light-low: rgba(30, 25, 43, 0.08);
+  --on-secondary-container-state-layer-light: rgba(30, 25, 43, 0.10);
+  --on-secondary-container-state-layer-light-high: rgba(30, 25, 43, 0.16);
+
+  --on-surface-variant-state-layer-light-low: rgba(73, 69, 79, 0.08);
+  --on-surface-variant-state-layer-light: rgba(73, 69, 79, 0.10);
+  --on-surface-variant-state-layer-light-high: rgba(73, 69, 79, 0.16);
+
+  --on-error-container-state-layer-light-low: rgba(140, 29, 24, 0.08);
+  --on-error-container-state-layer-light: rgba(140, 29, 24, 0.10);
+  --on-error-container-state-layer-light-high: rgba(140, 29, 24, 0.16);
+
+
 }
