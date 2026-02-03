@@ -3,15 +3,17 @@ import { moduleMetadata } from "@storybook/angular";
 import { Button } from "../button"
 import { NgpButton } from "ng-primitives/button";
 import type { Meta, StoryObj } from "@storybook/angular";
+import { NgIcon, provideIcons } from "@ng-icons/core";
+import { matPersonOutline } from "@ng-icons/material-icons/outline";
 
 const meta: Meta<Button> = {
   title: 'Material Design/Button',
   component: Button,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, NgpButton],
+      imports: [CommonModule, NgpButton, NgIcon],
       declarations: [],
-      providers: [],
+      providers: [provideIcons({ matPersonOutline })],
     })
   ]
 }
@@ -64,3 +66,21 @@ export const shapes: Story = {
     `
   })
 }
+
+export const icons: Story = {
+  name: 'Icons',
+  render: () => ({
+    template: `
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-button shapes="squared">
+          <ng-icon slot="leading" name="matPersonOutline"/>
+          Left Icon
+        </ui-button>
+        <ui-button shapes="squared">
+          Left Icon
+          <ng-icon slot="trailing" name="matPersonOutline"/>
+        </ui-button>
+      </div>
+    `,
+  }),
+};
