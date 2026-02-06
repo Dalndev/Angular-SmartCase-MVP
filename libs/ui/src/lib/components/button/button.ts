@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
+import { Component, computed, ContentChild, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
@@ -7,6 +7,9 @@ import type { VariantProps } from 'tailwind-variants';
 const classes = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden disabled:bg-on-surface-variant-state-layer-light disabled:text-on-surface disabled:pointer-events-none',
   variants: {
+    icon: {
+
+    },
     variants: {
       elevated:
         'bg-surface-container-low text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light disabled:shadow-none',
@@ -22,7 +25,7 @@ const classes = tv({
     },
     sizes: {
       xs: 'h-[32px] px-[12px] text-[14px] [--ng-icon__size:20px]',
-      sm: 'h-[40px] px-[16px] text-[14px] [--ng-icon__size:20px]',
+      sm: 'h-[40px] px-[16px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-2',
       md: 'h-[56px] px-[24px] text-[16px] [--ng-icon__size:24px]',
       lg: 'h-[96px] px-[48px] text-[24px] [--ng-icon__size:32px]',
       xl: 'h-[136px] px-[64px] text-[32px] [--ng-icon__size:40px]',
@@ -56,7 +59,7 @@ const classes = tv({
   selector: 'ui-button',
   imports: [CommonModule, NgpButton],
   template: `
-    <button ngpButton role="button" [class]="klass()" [disabled]="disabled" (click)="_onClick($event)" (focus)="_onFocus($event)" (blur)="_onBlur($event)">
+    <button ngpButton [attr.data-slot]=[null] role="button" [class]="klass()" [disabled]="disabled" (click)="_onClick($event)" (focus)="_onFocus($event)" (blur)="_onBlur($event)">
       <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
       <ng-content select="[slot=leading]"/>
       <ng-content />
@@ -65,6 +68,7 @@ const classes = tv({
   `,
 })
 export class Button {
+
   @Input() size: ButtonVariants['sizes'];
 
   @Input() variant: ButtonVariants['variants'];
@@ -94,6 +98,7 @@ export class Button {
   public _onBlur(event: Event) {
     this.onBlur.emit(event);
   }
+
 }
 
 export type ButtonVariants = VariantProps<typeof classes>;
