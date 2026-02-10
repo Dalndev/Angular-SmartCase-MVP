@@ -4,6 +4,10 @@ import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
+/**
+ * 
+ * {@link https://m3.material.io/components/buttons/specs}
+ */
 const classes = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden disabled:bg-on-surface-variant-state-layer-light disabled:text-on-surface disabled:pointer-events-none',
   variants: {
@@ -19,16 +23,32 @@ const classes = tv({
         'bg-secondary-container text-on-secondary-container data-hover:[&>span]:bg-on-secondary-container-state-layer-light-low data-press:[&>span]:bg-on-secondary-container-state-layer-light ',
       outlined:
         'border border-outline text-on-surface-variant border-outline-variant data-hover:[&>span]:bg-on-surface-variant-state-layer-light-low data-press:[&>span]:bg-on-surface-variant-state-layer-light',
-      text: 'text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light',
+      text: 
+        'text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light',
       danger:
         'bg-error-container text-on-error-container data-hover:[&>span]:bg-on-error-container-state-layer-light-low data-press:[&>span]:bg-on-error-container-state-layer-light',
     },
     sizes: {
-      xs: 'h-[32px] px-[12px] text-[14px] [--ng-icon__size:20px]',
-      sm: 'h-[40px] px-[16px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-2',
-      md: 'h-[56px] px-[24px] text-[16px] [--ng-icon__size:24px]',
-      lg: 'h-[96px] px-[48px] text-[24px] [--ng-icon__size:32px]',
-      xl: 'h-[136px] px-[64px] text-[32px] [--ng-icon__size:40px]',
+      xs: 
+        'h-[32px] px-[12px] py-[6px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-[4px] [&>[slot="trailing"]]:ml-[4px]',
+      sm: 
+        'h-[40px] px-[16px] py-[10px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-[8px] [&>[slot="trailing"]]:ml-[8px]',
+      md: 
+        'h-[56px] px-[24px] py-[16px] text-[16px] [--ng-icon__size:24px] [&>[slot="leading"]]:mr-[8px] [&>[slot="trailing"]]:ml-[8px]',
+      lg: 
+        'h-[96px] px-[48px] py-[32px] text-[24px] [--ng-icon__size:32px] [&>[slot="leading"]]:mr-[12px] [&>[slot="trailing"]]:ml-[12px]',
+      xl: 
+        'h-[136px] px-[64px] py-[48px] text-[32px] [--ng-icon__size:40px] [&>[slot="leading"]]:mr-[16px] [&>[slot="trailing"]]:ml-[16px]',
+      'icon-xs': 
+        'size-[32px] [--ng-icon__size:20px]',
+      'icon-sm': 
+        'size-[40px] [--ng-icon__size:24px]',
+      'icon': 
+        'size-[56px] [--ng-icon__size:24px]',
+      'icon-lg': 
+        'size-[96px] [--ng-icon__size:32px]',
+      'icon-xl': 
+        'size-[136px] [--ng-icon__size:40px]'
     },
     shapes: {
       rounded: 'rounded-full',
@@ -59,11 +79,23 @@ const classes = tv({
   selector: 'ui-button',
   imports: [CommonModule, NgpButton],
   template: `
-    <button ngpButton [attr.data-slot]=[null] role="button" [class]="klass()" [disabled]="disabled" (click)="_onClick($event)" (focus)="_onFocus($event)" (blur)="_onBlur($event)">
-      <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
-      <ng-content select="[slot=leading]"/>
-      <ng-content />
-      <ng-content select="[slot=trailing]"/>
+    <button 
+        ngpButton 
+        role="button"
+        [attr.data-only-icon]=[isOnlyIcon]
+        [attr.data-size]=[_size]
+        [attr.data-variant]=[_variant]
+        [attr.data-shape]=[_shape]
+        [class]="klass()" 
+        [disabled]="disabled" 
+        (click)="_onClick($event)" 
+        (focus)="_onFocus($event)" 
+        (blur)="_onBlur($event)"
+      >
+        <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
+        <ng-content select="[slot=leading]"/>
+        <ng-content />
+        <ng-content select="[slot=trailing]"/>
     </button>
   `,
 })
@@ -77,26 +109,42 @@ export class Button {
 
   @Input() disabled = false;
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Output() btnClick = new EventEmitter<Event>();
 
-  @Output() onFocus = new EventEmitter<FocusEvent>();
+  @Output() btnFocus = new EventEmitter<FocusEvent>();
 
-  @Output() onBlur = new EventEmitter<Event>();
+  @Output() btnBlur = new EventEmitter<Event>();
 
   public klass = computed(() =>
     classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
   );
 
   public _onClick(event: Event) {
-    this.onClick.emit(event);
+    this.btnClick.emit(event);
   }
 
   public _onFocus(event: FocusEvent) {
-    this.onFocus.emit(event);
+    this.btnFocus.emit(event);
   }
 
   public _onBlur(event: Event) {
-    this.onBlur.emit(event);
+    this.btnBlur.emit(event);
+  }
+
+  get _variant() {
+    return this.variant;
+  }
+
+  get _shape() {
+    return this.shapes;
+  }
+
+  get _size() {
+    return this.size;
+  }
+
+  get isOnlyIcon() {
+    return this.size?.includes('icon');
   }
 
 }
