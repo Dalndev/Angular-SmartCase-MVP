@@ -21,16 +21,6 @@
                 "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
             },
             {
-                "name": "icons",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -39,6 +29,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
                 "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline })],\n    })\n  ]\n}"
+            },
+            {
+                "name": "onlyIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'only Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"icon-xs\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-lg\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-xl\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
             },
             {
                 "name": "preview",
@@ -79,6 +79,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "withIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'with Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
             }
         ],
         "functions": [],
@@ -111,16 +121,6 @@
             ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
-                    "name": "icons",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
-                },
-                {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -129,6 +129,16 @@
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
                     "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline })],\n    })\n  ]\n}"
+                },
+                {
+                    "name": "onlyIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'only Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"icon-xs\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-lg\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-xl\">\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
                 },
                 {
                     "name": "shapes",
@@ -159,6 +169,16 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "withIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'with Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
                 }
             ],
             "libs/ui/.storybook/preview.ts": [
@@ -226,7 +246,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "icons",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -236,7 +256,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "onlyIcons",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -267,6 +287,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "variants",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/button/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "withIcons",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

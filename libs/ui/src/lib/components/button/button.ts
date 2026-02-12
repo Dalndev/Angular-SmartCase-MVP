@@ -23,31 +23,31 @@ const classes = tv({
         'bg-secondary-container text-on-secondary-container data-hover:[&>span]:bg-on-secondary-container-state-layer-light-low data-press:[&>span]:bg-on-secondary-container-state-layer-light ',
       outlined:
         'border border-outline text-on-surface-variant border-outline-variant data-hover:[&>span]:bg-on-surface-variant-state-layer-light-low data-press:[&>span]:bg-on-surface-variant-state-layer-light',
-      text: 
+      text:
         'text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light',
       danger:
         'bg-error-container text-on-error-container data-hover:[&>span]:bg-on-error-container-state-layer-light-low data-press:[&>span]:bg-on-error-container-state-layer-light',
     },
     sizes: {
-      xs: 
+      xs:
         'h-[32px] px-[12px] py-[6px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-[4px] [&>[slot="trailing"]]:ml-[4px]',
-      sm: 
+      sm:
         'h-[40px] px-[16px] py-[10px] text-[14px] [--ng-icon__size:20px] [&>[slot="leading"]]:mr-[8px] [&>[slot="trailing"]]:ml-[8px]',
-      md: 
+      md:
         'h-[56px] px-[24px] py-[16px] text-[16px] [--ng-icon__size:24px] [&>[slot="leading"]]:mr-[8px] [&>[slot="trailing"]]:ml-[8px]',
-      lg: 
+      lg:
         'h-[96px] px-[48px] py-[32px] text-[24px] [--ng-icon__size:32px] [&>[slot="leading"]]:mr-[12px] [&>[slot="trailing"]]:ml-[12px]',
-      xl: 
+      xl:
         'h-[136px] px-[64px] py-[48px] text-[32px] [--ng-icon__size:40px] [&>[slot="leading"]]:mr-[16px] [&>[slot="trailing"]]:ml-[16px]',
-      'icon-xs': 
+      'icon-xs':
         'size-[32px] [--ng-icon__size:20px]',
-      'icon-sm': 
+      'icon-sm':
         'size-[40px] [--ng-icon__size:24px]',
-      'icon': 
+      'icon-md':
         'size-[56px] [--ng-icon__size:24px]',
-      'icon-lg': 
+      'icon-lg':
         'size-[96px] [--ng-icon__size:32px]',
-      'icon-xl': 
+      'icon-xl':
         'size-[136px] [--ng-icon__size:40px]'
     },
     shapes: {
@@ -65,6 +65,9 @@ const classes = tv({
     { sizes: 'md', shapes: 'squared', class: 'rounded-[16px]' },
     { sizes: 'lg', shapes: 'squared', class: 'rounded-[28px]' },
     { sizes: 'xl', shapes: 'squared', class: 'rounded-[28px]' },
+    { sizes: 'icon-md', shapes: 'squared', class: 'rounded-[16px]' },
+    { sizes: 'icon-lg', shapes: 'squared', class: 'rounded-[28px]' },
+    { sizes: 'icon-xl', shapes: 'squared', class: 'rounded-[28px]' },
     { variants: 'elevated', sizes: 'xs', class: 'shadow-elevation-light-lowest' },
     { variants: 'elevated', sizes: 'sm', class: 'shadow-elevation-light-lowest' },
     { variants: 'elevated', sizes: 'md', class: 'shadow-elevation-light-low' },

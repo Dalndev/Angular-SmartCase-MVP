@@ -4,7 +4,7 @@ import { Button } from "../button"
 import { NgpButton } from "ng-primitives/button";
 import type { Meta, StoryObj } from "@storybook/angular";
 import { NgIcon, provideIcons } from "@ng-icons/core";
-import { matPersonOutline } from "@ng-icons/material-icons/outline";
+import { matPersonOutline, matSettingsOutline } from "@ng-icons/material-icons/outline";
 
 const meta: Meta<Button> = {
   title: 'Material Design/Button',
@@ -13,7 +13,7 @@ const meta: Meta<Button> = {
     moduleMetadata({
       imports: [CommonModule, NgpButton, NgIcon],
       declarations: [],
-      providers: [provideIcons({ matPersonOutline })],
+      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],
     })
   ]
 }
@@ -24,7 +24,7 @@ type Story = StoryObj<Button>;
 
 export const sizes: Story = {
   name: "Sizes",
-  args: { },
+  args: {},
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
@@ -90,20 +90,20 @@ export const onlyIcons: Story = {
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-button size="icon-xs">
-          <ng-icon slot="trailing" name="matPersonOutline"/>
+        <ui-button variant="elevated" size="icon-xs">
+          <ng-icon slot="trailing" name="matSettingsOutline"/>
         </ui-button>
-        <ui-button size="icon-sm">
-          <ng-icon slot="trailing" name="matPersonOutline"/>
+        <ui-button variant="filled" size="icon-sm">
+          <ng-icon slot="trailing" name="matSettingsOutline"/>
         </ui-button>
-        <ui-button size="icon">
-          <ng-icon slot="trailing" name="matPersonOutline"/>
+        <ui-button variant="tonal" size="icon-md">
+          <ng-icon slot="trailing" name="matSettingsOutline"/>
         </ui-button>
-        <ui-button size="icon-lg">
-          <ng-icon slot="trailing" name="matPersonOutline"/>
+        <ui-button variant="outlined" size="icon-lg">
+          <ng-icon slot="trailing" name="matSettingsOutline"/>
         </ui-button>
-        <ui-button size="icon-xl">
-          <ng-icon slot="trailing" name="matPersonOutline"/>
+        <ui-button variant="text" size="icon-xl">
+          <ng-icon slot="trailing" name="matSettingsOutline"/>
         </ui-button>
       </div>
     `
