@@ -5,15 +5,14 @@ import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';
 
 /**
+ * Buttons allow users to take actions, and make choices, with a single tap. They are typically used for actions in dialogs, forms, cards, and toolbars.
  * 
  * {@link https://m3.material.io/components/buttons/specs}
  */
 const classes = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden disabled:bg-on-surface-variant-state-layer-light disabled:text-on-surface disabled:pointer-events-none',
   variants: {
-    icon: {
-
-    },
+    icon: { },
     variants: {
       elevated:
         'bg-surface-container-low text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light disabled:shadow-none',
@@ -77,6 +76,8 @@ const classes = tv({
     { variants: 'outlined', sizes: 'xl', class: 'border-2' },
   ],
 });
+
+export type ButtonVariants = VariantProps<typeof classes>;
 
 @Component({
   selector: 'ui-button',
@@ -151,5 +152,3 @@ export class Button {
   }
 
 }
-
-export type ButtonVariants = VariantProps<typeof classes>;
