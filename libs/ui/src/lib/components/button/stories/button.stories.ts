@@ -68,7 +68,7 @@ export const shapes: Story = {
 }
 
 export const withIcons: Story = {
-  name: 'with Icons',
+  name: 'Icons',
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
@@ -84,28 +84,3 @@ export const withIcons: Story = {
     `,
   }),
 };
-
-export const onlyIcons: Story = {
-  name: 'only Icons',
-  render: () => ({
-    template: `
-      <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-button variant="elevated" size="icon-xs">
-          <ng-icon slot="trailing" name="matSettingsOutline"/>
-        </ui-button>
-        <ui-button variant="filled" size="icon-sm">
-          <ng-icon slot="trailing" name="matSettingsOutline"/>
-        </ui-button>
-        <ui-button variant="tonal" size="icon-md">
-          <ng-icon slot="trailing" name="matSettingsOutline"/>
-        </ui-button>
-        <ui-button variant="outlined" size="icon-lg">
-          <ng-icon slot="trailing" name="matSettingsOutline"/>
-        </ui-button>
-        <ui-button variant="text" size="icon-xl">
-          <ng-icon slot="trailing" name="matSettingsOutline"/>
-        </ui-button>
-      </div>
-    `
-  })
-}
