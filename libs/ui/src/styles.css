@@ -4,28 +4,66 @@
 @theme {
   --color-primary: var(--primary);
   --color-on-primary: var(--on-primary);
+
+  --color-primary-state-layer-light-low: var(--primary-state-layer-light-low);
+  --color-primary-state-layer-light: var(--primary-state-layer-light);
+  --color-primary-state-layer-light-high: var(--primary-state-layer-light-high);
+
+  --color-on-primary-state-layer-light-low: var(--on-primary-state-layer-light-low);
+  --color-on-primary-state-layer-light: var(--on-primary-state-layer-light);
+  --color-on-primary-state-layer-light-high: var(--on-primary-state-layer-light-high);
+
   --color-primary-container: var(--primary-container);
   --color-on-primary-container: var(--on-primary-container);
 
   --color-secondary: var(--secondary);
   --color-on-secondary: var(--on-secondary);
+
+  --color-on-secondary-state-layer-light-low: var(--on-secondary-state-layer-light-low);
+  --color-on-secondary-state-layer-light: var(--on-secondary-state-layer-light);
+  --color-on-secondary-state-layer-light-high: var(--on-secondary-state-layer-light-high);
+
   --color-secondary-container: var(--secondary-container);
   --color-on-secondary-container: var(--on-secondary-container);
+
+  --color-on-secondary-container-state-layer-light-low: var(--on-secondary-container-state-layer-light-low);
+  --color-on-secondary-container-state-layer-light: var(--on-secondary-container-state-layer-light);
+  --color-on-secondary-container-state-layer-light-high: var(--on-secondary-container-state-layer-light-high);
+
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+
+  --color-on-tertiary-state-layer-light-low: var(--on-tertiary-state-layer-light-low);
+  --color-on-tertiary-state-layer-light: var(--on-tertiary-state-layer-light);
+  --color-on-tertiary-state-layer-light-high: var(--on-tertiary-state-layer-light-high);
+
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
 
   --color-error: var(--error);
   --color-on-error: var(--on-error);
   --color-error-container: var(--error-container);
   --color-on-error-container: var(--on-error-container);
 
+  --color-on-error-container-state-layer-light-low: var(--on-error-container-state-layer-light-low);
+  --color-on-error-container-state-layer-light: var(--on-error-container-state-layer-light);
+  --color-on-error-container-state-layer-light-high: var(--on-error-container-state-layer-light-high);
+
   --color-background: var(--background);
   --color-on-background: var(--on-background);
 
   --color-surface: var(--surface);
   --color-on-surface: var(--on-surface);
+
+  --color-surface-variant: var(--surface-variant);
   --color-on-surface-variant: var(--on-surface-variant);
 
   --color-outline: var(--outline);
   --color-outline-variant: var(--outline-variant);
+
+  --color-on-surface-variant-state-layer-light-low: var(--on-surface-variant-state-layer-light-low);
+  --color-on-surface-variant-state-layer-light: var(--on-surface-variant-state-layer-light);
+  --color-on-surface-variant-state-layer-light-high: var(--on-surface-variant-state-layer-light-high);
 
   --color-surface-container-lowest: var(--surface-container-lowest);
   --color-surface-container-low: var(--surface-container-low);
@@ -47,25 +85,6 @@
   --shadow-elevation-light-high: var(--elevation-light-high);
   --shadow-elevation-light-highest: var(--elevation-light-highest);
 
-  --color-primary-state-layer-light-low: var(--primary-state-layer-light-low);
-  --color-primary-state-layer-light: var(--primary-state-layer-light);
-  --color-primary-state-layer-light-high: var(--primary-state-layer-light-high);
-
-  --color-on-primary-state-layer-light-low: var(--on-primary-state-layer-light-low);
-  --color-on-primary-state-layer-light: var(--on-primary-state-layer-light);
-  --color-on-primary-state-layer-light-high: var(--on-primary-state-layer-light-high);
-
-  --color-on-secondary-container-state-layer-light-low: var(--on-secondary-container-state-layer-light-low);
-  --color-on-secondary-container-state-layer-light: var(--on-secondary-container-state-layer-light);
-  --color-on-secondary-container-state-layer-light-high: var(--on-secondary-container-state-layer-light-high);
-
-  --color-on-surface-variant-state-layer-light-low: var(--on-surface-variant-state-layer-light-low);
-  --color-on-surface-variant-state-layer-light: var(--on-surface-variant-state-layer-light);
-  --color-on-surface-variant-state-layer-light-high: var(--on-surface-variant-state-layer-light-high);
-
-  --color-on-error-container-state-layer-light-low: var(--on-error-container-state-layer-light-low);
-  --color-on-error-container-state-layer-light: var(--on-error-container-state-layer-light);
-  --color-on-error-container-state-layer-light-high: var(--on-error-container-state-layer-light-high);
 }
 
 :root {
@@ -74,25 +93,63 @@
 
   --primary: rgb(101, 85, 143);
   --on-primary: rgb(255, 255, 255);
+
+  --primary-state-layer-light-low: rgba(101, 85, 143, 0.08);
+  --primary-state-layer-light: rgba(101, 85, 143, 0.10);
+  --primary-state-layer-light-high: rgba(101, 85, 143, 0.16);
+
+  --on-primary-state-layer-light-low: rgba(255, 255, 255, 0.08);
+  --on-primary-state-layer-light: rgba(255, 255, 255, 0.10);
+  --on-primary-state-layer-light-high: rgba(255, 255, 255, 0.16);
+
   --primary-container: rgb(234, 221, 255);
   --on-primary-container: rgb(79, 55, 139);
 
   --secondary: rgb(98, 91, 113);
   --on-secondary: rgb(255, 255, 255);
+
+  --on-secondary-state-layer-light-low: rgba(255, 255, 255, 0.08);
+  --on-secondary-state-layer-light: rgba(255, 255, 255, 0.10);
+  --on-secondary-state-layer-light-high: rgba(255, 255, 255, 0.16);
+
   --secondary-container: rgb(232, 222, 248);
   --on-secondary-container: rgb(30, 25, 43);
+
+  --on-secondary-container-state-layer-light-low: rgba(30, 25, 43, 0.08);
+  --on-secondary-container-state-layer-light: rgba(30, 25, 43, 0.10);
+  --on-secondary-container-state-layer-light-high: rgba(30, 25, 43, 0.16);
+
+  --tertiary: rgb(117, 84, 111);
+  --on-tertiary: rgb(255, 255, 255);
+
+  --on-tertiary-state-layer-light-low: rgba(255, 255, 255, 0.08);
+  --on-tertiary-state-layer-light: rgba(255, 255, 255, 0.10);
+  --on-tertiary-state-layer-light-high: rgba(255, 255, 255, 0.16);
+
+  --tertiary-container: rgb(255, 215, 244);
+  --on-tertiary-container: rgb(92, 61, 86);
 
   --error: rgb(179, 38, 30);
   --on-error: rgb(255, 255, 255);
   --error-container: rgb(249, 222, 220);
   --on-error-container: rgb(140, 29, 24);
 
+  --on-error-container-state-layer-light-low: rgba(140, 29, 24, 0.08);
+  --on-error-container-state-layer-light: rgba(140, 29, 24, 0.10);
+  --on-error-container-state-layer-light-high: rgba(140, 29, 24, 0.16);
+
   --background: rgb(254, 247, 255);
   --on-background: rgb(29, 27, 32);
 
   --surface: rgb(254, 247, 255);
   --on-surface: rgb(29, 27, 32);
+
+  --surface-variant: rgb(226, 225, 236);
   --on-surface-variant: rgb(73, 69, 79);
+
+  --on-surface-variant-state-layer-light-low: rgba(73, 69, 79, 0.08);
+  --on-surface-variant-state-layer-light: rgba(73, 69, 79, 0.10);
+  --on-surface-variant-state-layer-light-high: rgba(73, 69, 79, 0.16);
 
   --surface-container-lowest: rgb(255, 255, 255);
   --surface-container-low: rgb(247, 242, 250);
@@ -109,23 +166,4 @@
   --elevation-light-high: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-highest: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
 
-  --primary-state-layer-light-low: rgba(101, 85, 143, 0.08);
-  --primary-state-layer-light: rgba(101, 85, 143, 0.10);
-  --primary-state-layer-light-high: rgba(101, 85, 143, 0.16);
-
-  --on-primary-state-layer-light-low: rgba(255, 255, 255, 0.08);
-  --on-primary-state-layer-light: rgba(255, 255, 255, 0.10);
-  --on-primary-state-layer-light-high: rgba(255, 255, 255, 0.16);
-
-  --on-secondary-container-state-layer-light-low: rgba(30, 25, 43, 0.08);
-  --on-secondary-container-state-layer-light: rgba(30, 25, 43, 0.10);
-  --on-secondary-container-state-layer-light-high: rgba(30, 25, 43, 0.16);
-
-  --on-surface-variant-state-layer-light-low: rgba(73, 69, 79, 0.08);
-  --on-surface-variant-state-layer-light: rgba(73, 69, 79, 0.10);
-  --on-surface-variant-state-layer-light-high: rgba(73, 69, 79, 0.16);
-
-  --on-error-container-state-layer-light-low: rgba(140, 29, 24, 0.08);
-  --on-error-container-state-layer-light: rgba(140, 29, 24, 0.10);
-  --on-error-container-state-layer-light-high: rgba(140, 29, 24, 0.16);
 }

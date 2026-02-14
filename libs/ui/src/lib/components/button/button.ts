@@ -12,20 +12,20 @@ import type { VariantProps } from 'tailwind-variants';
 const classes = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden disabled:bg-on-surface-variant-state-layer-light disabled:text-on-surface disabled:pointer-events-none',
   variants: {
-    icon: { },
+    icon: {},
     variants: {
       elevated:
-        'bg-surface-container-low text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light disabled:shadow-none',
+        'bg-surface-container-low text-primary outline-0 outline-transparent data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light disabled:shadow-none focus:outline-3 focus:outline-offset-2 focus:outline-outline',
       filled:
-        'bg-primary text-on-primary data-hover:[&>span]:bg-on-primary-state-layer-light-low data-press:[&>span]:bg-on-primary-state-layer-light',
+        'bg-primary text-on-primary outline-0 outline-transparent data-hover:[&>span]:bg-on-primary-state-layer-light-low data-press:[&>span]:bg-on-primary-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline',
       tonal:
-        'bg-secondary-container text-on-secondary-container data-hover:[&>span]:bg-on-secondary-container-state-layer-light-low data-press:[&>span]:bg-on-secondary-container-state-layer-light ',
+        'bg-secondary-container text-on-secondary-container outline-0 outline-transparent data-hover:[&>span]:bg-on-secondary-container-state-layer-light-low data-press:[&>span]:bg-on-secondary-container-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline ',
       outlined:
-        'border border-outline text-on-surface-variant border-outline-variant data-hover:[&>span]:bg-on-surface-variant-state-layer-light-low data-press:[&>span]:bg-on-surface-variant-state-layer-light',
+        'border border-outline text-on-surface-variant outline-0 outline-transparent border-outline-variant data-hover:[&>span]:bg-on-surface-variant-state-layer-light-low data-press:[&>span]:bg-on-surface-variant-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline',
       text:
-        'text-primary data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light',
+        'text-primary outline-0 outline-transparent data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline',
       danger:
-        'bg-error-container text-on-error-container data-hover:[&>span]:bg-on-error-container-state-layer-light-low data-press:[&>span]:bg-on-error-container-state-layer-light',
+        'bg-error-container text-on-error-container outline-0 outline-transparent data-hover:[&>span]:bg-on-error-container-state-layer-light-low data-press:[&>span]:bg-on-error-container-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline',
     },
     sizes: {
       xs:

@@ -30,6 +30,29 @@ export const variants: Story = {
             <ui-fab>
                 <ng-icon name="matStarsOutline"/>
             </ui-fab>
+            <ui-fab variant="secondary">
+                <ng-icon name="matStarsOutline"/>
+            </ui-fab>
+            <ui-fab variant="tertiary">
+                <ng-icon name="matStarsOutline"/>
+            </ui-fab>
+        `
+    })
+}
+
+export const sizes: Story = {
+    name: "Sizes",
+    render: () => ({
+        template: `
+            <ui-fab>
+                <ng-icon name="matStarsOutline"/>
+            </ui-fab>
+            <ui-fab size="md">
+                <ng-icon name="matStarsOutline"/>
+            </ui-fab>
+            <ui-fab size="lg">
+                <ng-icon name="matStarsOutline"/>
+            </ui-fab>
         `
     })
 }
