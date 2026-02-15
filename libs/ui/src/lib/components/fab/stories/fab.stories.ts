@@ -6,7 +6,7 @@ import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matStarsOutline } from "@ng-icons/material-icons/outline";
 
 const meta: Meta<FAB> = {
-    title: "Material Design/FAB",
+    title: "Material Design/Buttons/FAB",
     component: FAB,
     decorators: [
         moduleMetadata({

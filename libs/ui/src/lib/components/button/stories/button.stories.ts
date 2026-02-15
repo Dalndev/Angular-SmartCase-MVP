@@ -7,7 +7,7 @@ import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matPersonOutline, matSettingsOutline } from "@ng-icons/material-icons/outline";
 
 const meta: Meta<Button> = {
-  title: 'Material Design/Button',
+  title: 'Material Design/Buttons/Button',
   component: Button,
   decorators: [
     moduleMetadata({
