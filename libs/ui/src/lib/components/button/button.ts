@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, ContentChild, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { tv } from 'tailwind-variants';
 import type { VariantProps } from 'tailwind-variants';

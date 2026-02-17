@@ -24,11 +24,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FAB>",
+                "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
+                "defaultValue": "{\n  title: 'Material Design/Buttons/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -38,17 +48,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Material Design/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
+                "defaultValue": "{\n  title: 'Material Design/Buttons/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<FAB>",
-                "defaultValue": "{\n    title: \"Material Design/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+                "type": "Meta<Tag>",
+                "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n\n    })\n  ]\n}"
             },
             {
                 "name": "preview",
@@ -74,6 +84,16 @@
                 "name": "sizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+            },
+            {
+                "name": "sizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -91,14 +111,14 @@
                 "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"icon-xs\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-md\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-lg\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-xl\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
             },
             {
-                "name": "sizes",
+                "name": "variants",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
             },
             {
                 "name": "variants",
@@ -124,11 +144,11 @@
                 "name": "variants",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-tag>\n      \n      </ui-tag>\n    `\n  })\n}"
             },
             {
                 "name": "withIcons",
@@ -143,6 +163,17 @@
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FAB>",
+                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -169,8 +200,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<FAB>",
-                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "rawtype": "StoryObj<Tag>",
+                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -191,6 +222,38 @@
                     "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
                 }
             ],
+            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FAB>",
+                    "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                },
+                {
+                    "name": "variants",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                }
+            ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
                     "name": "meta",
@@ -200,7 +263,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Material Design/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
+                    "defaultValue": "{\n  title: 'Material Design/Buttons/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
                 },
                 {
                     "name": "shapes",
@@ -252,7 +315,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Material Design/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
+                    "defaultValue": "{\n  title: 'Material Design/Buttons/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
                 },
                 {
                     "name": "sizes",
@@ -275,36 +338,26 @@
                     "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"filled\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"text\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
                 }
             ],
-            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
+            "libs/ui/src/lib/components/tag/stories/tag.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<FAB>",
-                    "defaultValue": "{\n    title: \"Material Design/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
-                },
-                {
-                    "name": "sizes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                    "type": "Meta<Tag>",
+                    "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n\n    })\n  ]\n}"
                 },
                 {
                     "name": "variants",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-tag>\n      \n      </ui-tag>\n    `\n  })\n}"
                 }
             ],
             "libs/ui/.storybook/preview.ts": [
@@ -323,6 +376,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FAB>",
+                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
                     "name": "Story",
@@ -349,13 +415,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
+            "libs/ui/src/lib/components/tag/stories/tag.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<FAB>",
-                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "rawtype": "StoryObj<Tag>",
+                    "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -525,6 +591,36 @@
             },
             {
                 "filePath": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "variants",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
