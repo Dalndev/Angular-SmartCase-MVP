@@ -46,7 +46,7 @@ export const icons: Story = {
         </ui-tag>
         <ui-tag>
           Trailing
-          <ng-icon name="matCloseOutline" slot="trailing"/>
+          <ng-icon name="matLabelImportantOutline" slot="trailing"/>
         </ui-tag>
       </div>
     `
