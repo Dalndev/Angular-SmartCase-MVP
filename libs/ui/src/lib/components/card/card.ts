@@ -3,22 +3,29 @@ import { Component, HostBinding, Input } from "@angular/core";
 import { tv, VariantProps } from "tailwind-variants";
 
 const card = tv({
-  base: "text-start w-max min-h-[80px] rounded-[12px] p-[16px] bg-surface border border-outline-variant",
+  base: 
+    'bg-surface text-start p-[16px] w-max min-h-[80px] flex flex-col rounded-[12px] border border-outline-variant',
   slots: {
-    header: "",
-    action: "",
-    title: "",
-    description: "",
-    content: "",
-    footer: "",
+    action: 
+      'left-0 top-0 absolute',
+    header: 
+      'relative inline-flex flex-col',
+    title: 
+      'text-[16px] font-semibold text-on-surface',
+    description: 
+      'text-[14px] font-normal text-on-surface-variant',
+    content: 
+      'text-[14px] font-normal text-on-surface-variant',
+    footer: 
+      '',
   },
   variants: {
     variant: {
-      elevated: "",
-      filled: "",
-      outlined: ""
-    }
-  }
+      elevated: '',
+      filled: '',
+      outlined: '',
+    },
+  },
 });
 
 const { base, header, title, description, action, content, footer } = card();

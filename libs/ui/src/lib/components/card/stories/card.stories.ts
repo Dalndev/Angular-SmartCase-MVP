@@ -27,12 +27,10 @@ export const variants: Story = {
   render: () => ({
     template: `
       <ui-card>
-        <div class="w-full h-full flex flex-col justify-center">
-          <div></div>
-        </div>
+        Card Component
       </ui-card>
-    `
-  })
+    `,
+  }),
 };
 
 export const simpleCard: Story = {
@@ -50,13 +48,14 @@ export const advancedCard: Story = {
     template: `
       <ui-card>
         <ui-card-header>
-          <ui-card-title>Title</ui-card-title>
-          <ui-card-description>Description</ui-card-description>
           <ui-card-action>Action</ui-card-action>
         </ui-card-header>
-        <ui-card-content>Content</ui-card-content>
+        <ui-card-content>
+          <ui-card-title>Title</ui-card-title>
+          <ui-card-description>Description</ui-card-description>
+        </ui-card-content>
         <ui-card-footer>Footer</ui-card-footer>
       </ui-card>
-    `
-  })
-}
+    `,
+  }),
+};
