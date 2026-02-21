@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start/client": "nx serve angular-smartcase",
+    "start/client": "nx serve smartcase",
     "build/client": "",
     "test/client": "",
     "lint/client": "",
