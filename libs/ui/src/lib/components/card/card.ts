@@ -4,7 +4,8 @@ import { NgpButton } from 'ng-primitives/button';
 import { cn, tv, VariantProps } from 'tailwind-variants';
 
 const card = tv({
-  base: 'relative text-start w-full mx-auto h-max py-[16px] flex flex-col rounded-[12px] border border-outline-variant has-[ui-card-footer]:pb-0 has-[ui-card-header]:pt-0',
+  base: 
+  'relative text-start w-full mx-auto h-max py-[16px] flex flex-col rounded-[12px] border border-outline-variant has-[ui-card-footer]:pb-0 has-[ui-card-header]:pt-0 [&>img+ui-card-content]:py-[16px] [&>img~ui-card-footer]:pt-[0px] has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-[12px] *:[img:first-child]:rounded-t-[12px]',
   slots: {
     action:
       'relative self-end rounded-full inline-flex items-center justify-center whitespace-nowrap size-[40px] [--ng-icon__size:24px] text-on-surface-variant outline-0 outline-transparent data-hover:[&>span]:bg-primary-state-layer-light-low data-press:[&>span]:bg-primary-state-layer-light data-focus-visible:outline-3 data-focus-visible:outline-offset-2 data-focus-visible:outline-outline overflow-hidden',

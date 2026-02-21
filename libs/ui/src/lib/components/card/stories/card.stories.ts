@@ -33,7 +33,7 @@ export type Story = StoryObj<Card>;
 export const variants: Story = {
   render: () => ({
     template: `
-      <div class="flex flex-row gap-[8px]">
+      <div class="flex flex-row gap-[24px]">
         <ui-card class="w-[300px]" variant="outlined">
           <ui-card-header>
             <div class="inline-flex flex-col gap-[4px] text-[14px]">
@@ -71,6 +71,11 @@ export const variants: Story = {
             <ng-icon name="matMoreVertOutline"/>
           </ui-card-action>
           </ui-card-header>
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              class="relative z-20 aspect-video w-full object-cover brightness-200 grayscale"
+            />
           <ui-card-content>
             <ui-card-headline>
               <ui-card-title>Filled</ui-card-title>
@@ -93,6 +98,11 @@ export const variants: Story = {
             <ng-icon name="matMoreVertOutline"/>
           </ui-card-action>
           </ui-card-header>
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              class="relative z-20 aspect-video w-full object-cover brightness-200 grayscale"
+            />
           <ui-card-content>
             <ui-card-headline>
               <ui-card-title>Elevated</ui-card-title>
@@ -110,30 +120,35 @@ export const variants: Story = {
   }),
 };
 
-export const simpleCard: Story = {
-  render: () => ({
-    template: `
-      <ui-card>
-        <ui-card-content>Content</ui-card-content>
-      </ui-card>
-    `
-  })
-};
-
 export const advancedCard: Story = {
   render: () => ({
     template: `
-      <ui-card>
+      <ui-card class="w-[300px]">
         <ui-card-header>
+          <div class="inline-flex flex-col gap-[4px] text-[14px]">
+            <p class="font-medium text-on-surface">Header</p>
+            <p class="text-on-surface">SubHead</p>
+          </div>
           <ui-card-action>
-            <ng-icon name="matMoreVertOutline"/>
-          </ui-card-action>
+          <ng-icon name="matMoreVertOutline"/>
+        </ui-card-action>
         </ui-card-header>
+          <img
+            src="https://avatar.vercel.sh/shadcn1"
+            alt="Event cover"
+            class="relative z-20 aspect-video w-full object-cover brightness-200 grayscale"
+          />
         <ui-card-content>
-          <ui-card-title>Title</ui-card-title>
-          <ui-card-description>Description</ui-card-description>
+          <ui-card-headline>
+            <ui-card-title>Outlined</ui-card-title>
+            <ui-card-description>Description for elevated card</ui-card-description>
+          </ui-card-headline>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         </ui-card-content>
-        <ui-card-footer>Footer</ui-card-footer>
+        <ui-card-footer>
+          <ui-button variant="outlined">Secondary</ui-button>
+          <ui-button>Primary</ui-button>
+        </ui-card-footer>
       </ui-card>
     `,
   }),
