@@ -1,10 +1,8 @@
-import { Button } from "~ui";
-
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  imports: [RouterModule, Button],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
