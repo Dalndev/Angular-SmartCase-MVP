@@ -20,7 +20,8 @@
     "customConditions": ["@org/source"],
     "baseUrl": "./",
     "paths": {
-      "~ui": ["libs/ui/src/index.ts"]
+      "~ui": ["libs/ui/src/index.ts"],
+      "~cases/*": ["apps/smartcase/src/app/packages/cases/*"]
     }
   }
 }
