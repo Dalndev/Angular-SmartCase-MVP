@@ -85,6 +85,12 @@
   --shadow-elevation-light-high: var(--elevation-light-high);
   --shadow-elevation-light-highest: var(--elevation-light-highest);
 
+  --text-display-large: var(--display-large-size);
+  --text-display-large--line-height: var(--display-large-line-height);
+  --text-display-large--letter-spacing: var(--display-large-tracking);
+  --text-display-large--font-weight: var(--display-large-weight);
+
+
 }
 
 :root {
@@ -131,6 +137,7 @@
 
   --error: rgb(179, 38, 30);
   --on-error: rgb(255, 255, 255);
+
   --error-container: rgb(249, 222, 220);
   --on-error-container: rgb(140, 29, 24);
 
@@ -165,5 +172,11 @@
   --elevation-light-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-high: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30);
   --elevation-light-highest: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+
+  --display-large-size: 57px;
+  --display-large-weight: 400;
+  --display-large-weight-emphasized: 500;
+  --display-large-line-height: 64px;
+  --display-large-tracking: -0.25px;
 
 }
