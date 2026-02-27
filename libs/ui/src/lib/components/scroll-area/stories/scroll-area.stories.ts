@@ -2,7 +2,7 @@ import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { ScrollArea } from "../scroll-area";
 
 const meta: Meta<ScrollArea> = {
-  title: "Material Desing/Scroll Area",
+  title: "Drafts/Scroll Area",
   component: ScrollArea,
   decorators: [
     moduleMetadata({

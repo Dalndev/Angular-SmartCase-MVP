@@ -18,7 +18,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-card class=\"w-[300px]\">\n        <ui-card-header>\n          <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n            <p class=\"font-medium text-on-surface\">Header</p>\n            <p class=\"text-on-surface\">SubHead</p>\n          </div>\n          <ui-card-action>\n          <ng-icon name=\"matMoreVertOutline\"/>\n        </ui-card-action>\n        </ui-card-header>\n          <img\n            src=\"https://avatar.vercel.sh/shadcn1\"\n            alt=\"Event cover\"\n            class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n          />\n        <ui-card-content>\n          <ui-card-headline>\n            <ui-card-title>Outlined</ui-card-title>\n            <ui-card-description>Description for elevated card</ui-card-description>\n          </ui-card-headline>\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n        </ui-card-content>\n        <ui-card-footer>\n          <ui-button variant=\"outlined\">Secondary</ui-button>\n          <ui-button>Primary</ui-button>\n        </ui-card-footer>\n      </ui-card>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <ui-card class=\"w-[300px]\">\r\n        <ui-card-header>\r\n          <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n            <p class=\"font-medium text-on-surface\">Header</p>\r\n            <p class=\"text-on-surface\">SubHead</p>\r\n          </div>\r\n          <ui-card-action>\r\n          <ng-icon name=\"matMoreVertOutline\"/>\r\n        </ui-card-action>\r\n        </ui-card-header>\r\n          <img\r\n            src=\"https://avatar.vercel.sh/shadcn1\"\r\n            alt=\"Event cover\"\r\n            class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n          />\r\n        <ui-card-content>\r\n          <ui-card-headline>\r\n            <ui-card-title>Outlined</ui-card-title>\r\n            <ui-card-description>Description for elevated card</ui-card-description>\r\n          </ui-card-headline>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n        </ui-card-content>\r\n        <ui-card-footer>\r\n          <ui-button variant=\"outlined\">Secondary</ui-button>\r\n          <ui-button>Primary</ui-button>\r\n        </ui-card-footer>\r\n      </ui-card>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "config",
@@ -28,7 +28,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
-                "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
+                "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <ui-scroll-area>\r\n        \r\n      </ui-scroll-area>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "icons",
@@ -38,7 +48,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex gap-4 justify-center items-center\">\n        <ui-tag>\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"leading\"/>  \n          Leading\n        </ui-tag>\n        <ui-tag>\n          Trailing\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"trailing\"/>\n        </ui-tag>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex gap-4 justify-center items-center\">\r\n        <ui-tag>\r\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"leading\"/>  \r\n          Leading\r\n        </ui-tag>\r\n        <ui-tag>\r\n          Trailing\r\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"trailing\"/>\r\n        </ui-tag>\r\n      </div>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "meta",
@@ -48,7 +58,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Material Design/Buttons/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
+                "defaultValue": "{\r\n  title: 'Material Design/Buttons/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton, NgIcon],\r\n      declarations: [],\r\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -58,7 +68,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Material Design/Buttons/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
+                "defaultValue": "{\r\n  title: 'Material Design/Buttons/Icon Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule, NgpButton, NgIcon\r\n      ],\r\n      providers: [\r\n        provideIcons({ matPersonOutline, matSettingsOutline })\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -68,7 +78,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Card>",
-                "defaultValue": "{\n  title: 'Material Design/Card',\n  component: Card,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Card,\n        CardHeader,\n        CardHeadline,\n        CardTitle,\n        CardAction,\n        CardDescription,\n        CardContent,\n        CardFooter,\n        Button,\n        NgIcon\n      ],\n      providers: [provideIcons({ matMoreVertOutline })],\n    }),\n  ],\n}"
+                "defaultValue": "{\r\n  title: 'Material Design/Card',\r\n  component: Card,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        Card,\r\n        CardHeader,\r\n        CardHeadline,\r\n        CardTitle,\r\n        CardAction,\r\n        CardDescription,\r\n        CardContent,\r\n        CardFooter,\r\n        Button,\r\n        NgIcon\r\n      ],\r\n      providers: [provideIcons({ matMoreVertOutline })],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ScrollArea>",
+                "defaultValue": "{\r\n  title: \"Material Desing/Scroll Area\",\r\n  component: ScrollArea,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ScrollArea]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -78,7 +98,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FAB>",
-                "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+                "defaultValue": "{\r\n    title: \"Material Design/Buttons/FAB\",\r\n    component: FAB,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [CommonModule, NgpButton, NgIcon],\r\n            declarations: [],\r\n            providers: [\r\n                provideIcons({ matStarsOutline })\r\n            ]\r\n        })\r\n    ]\r\n}"
             },
             {
                 "name": "meta",
@@ -88,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Tag>",
-                "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        NgIcon,\n        CommonModule\n      ],\n      providers: [\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\n      ]\n    })\n  ]\n}"
+                "defaultValue": "{\r\n  title: 'Material Design/Tag',\r\n  component: Tag,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        NgIcon,\r\n        CommonModule\r\n      ],\r\n      providers: [\r\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "preview",
@@ -98,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n  },\n  decorators: [\n    applicationConfig({\n      providers: []\n    })\n  ]\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "shapes",
@@ -108,7 +128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\n        <ui-button shapes=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\r\n  name: 'Shapes',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\r\n        <ui-button shapes=\"squared\">Squared button</ui-button>\r\n      </div>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "sizes",
@@ -118,7 +138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"xs\">Extra small button</ui-button>\n        <ui-button size=\"sm\">Small button</ui-button>\n        <ui-button size=\"md\">Medium button</ui-button>\n        <ui-button size=\"lg\">Large button</ui-button>\n        <ui-button size=\"xl\">Extra large button</ui-button>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: {},\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "sizes",
@@ -128,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"icon-xs\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-md\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-lg\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-xl\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: {},\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"icon-xs\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-md\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-lg\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-xl\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "sizes",
@@ -138,7 +158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                "defaultValue": "{\r\n    name: \"Sizes\",\r\n    render: () => ({\r\n        template: `\r\n            <ui-fab>\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab size=\"md\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab size=\"lg\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n        `\r\n    })\r\n}"
             },
             {
                 "name": "variants",
@@ -148,7 +168,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "variants",
@@ -158,7 +178,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"filled\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"text\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"filled\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"text\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "variants",
@@ -168,7 +188,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-[24px]\">\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Outlined</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Filled</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>   \n        <ui-card class=\"w-[300px]\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Elevated</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-[24px]\">\r\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Outlined</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>\r\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Filled</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>   \r\n        <ui-card class=\"w-[300px]\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Elevated</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "variants",
@@ -178,7 +198,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                "defaultValue": "{\r\n    name: \"Variants\",\r\n    render: () => ({\r\n        template: `\r\n            <ui-fab>\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab variant=\"secondary\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab variant=\"tertiary\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n        `\r\n    })\r\n}"
             },
             {
                 "name": "variants",
@@ -188,7 +208,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex gap-4 justify-center items-center\">\n        <ui-tag>Primary</ui-tag>\n        <ui-tag variant=\"secondary\">Secondary</ui-tag>\n        <ui-tag variant=\"outline\">Outline</ui-tag>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex gap-4 justify-center items-center\">\r\n        <ui-tag>Primary</ui-tag>\r\n        <ui-tag variant=\"secondary\">Secondary</ui-tag>\r\n        <ui-tag variant=\"outline\">Outline</ui-tag>\r\n      </div>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "withIcons",
@@ -198,7 +218,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  name: 'Icons',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button shapes=\"squared\">\r\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\r\n          Left Icon\r\n        </ui-button>\r\n        <ui-button shapes=\"squared\">\r\n          Left Icon\r\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             }
         ],
         "functions": [],
@@ -240,6 +260,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ScrollArea>",
+                "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<FAB>",
                 "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
@@ -270,7 +301,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-card class=\"w-[300px]\">\n        <ui-card-header>\n          <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n            <p class=\"font-medium text-on-surface\">Header</p>\n            <p class=\"text-on-surface\">SubHead</p>\n          </div>\n          <ui-card-action>\n          <ng-icon name=\"matMoreVertOutline\"/>\n        </ui-card-action>\n        </ui-card-header>\n          <img\n            src=\"https://avatar.vercel.sh/shadcn1\"\n            alt=\"Event cover\"\n            class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n          />\n        <ui-card-content>\n          <ui-card-headline>\n            <ui-card-title>Outlined</ui-card-title>\n            <ui-card-description>Description for elevated card</ui-card-description>\n          </ui-card-headline>\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n        </ui-card-content>\n        <ui-card-footer>\n          <ui-button variant=\"outlined\">Secondary</ui-button>\n          <ui-button>Primary</ui-button>\n        </ui-card-footer>\n      </ui-card>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <ui-card class=\"w-[300px]\">\r\n        <ui-card-header>\r\n          <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n            <p class=\"font-medium text-on-surface\">Header</p>\r\n            <p class=\"text-on-surface\">SubHead</p>\r\n          </div>\r\n          <ui-card-action>\r\n          <ng-icon name=\"matMoreVertOutline\"/>\r\n        </ui-card-action>\r\n        </ui-card-header>\r\n          <img\r\n            src=\"https://avatar.vercel.sh/shadcn1\"\r\n            alt=\"Event cover\"\r\n            class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n          />\r\n        <ui-card-content>\r\n          <ui-card-headline>\r\n            <ui-card-title>Outlined</ui-card-title>\r\n            <ui-card-description>Description for elevated card</ui-card-description>\r\n          </ui-card-headline>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n        </ui-card-content>\r\n        <ui-card-footer>\r\n          <ui-button variant=\"outlined\">Secondary</ui-button>\r\n          <ui-button>Primary</ui-button>\r\n        </ui-card-footer>\r\n      </ui-card>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -280,7 +311,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Card>",
-                    "defaultValue": "{\n  title: 'Material Design/Card',\n  component: Card,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Card,\n        CardHeader,\n        CardHeadline,\n        CardTitle,\n        CardAction,\n        CardDescription,\n        CardContent,\n        CardFooter,\n        Button,\n        NgIcon\n      ],\n      providers: [provideIcons({ matMoreVertOutline })],\n    }),\n  ],\n}"
+                    "defaultValue": "{\r\n  title: 'Material Design/Card',\r\n  component: Card,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        Card,\r\n        CardHeader,\r\n        CardHeadline,\r\n        CardTitle,\r\n        CardAction,\r\n        CardDescription,\r\n        CardContent,\r\n        CardFooter,\r\n        Button,\r\n        NgIcon\r\n      ],\r\n      providers: [provideIcons({ matMoreVertOutline })],\r\n    }),\r\n  ],\r\n}"
                 },
                 {
                     "name": "variants",
@@ -290,7 +321,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-[24px]\">\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Outlined</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Filled</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>   \n        <ui-card class=\"w-[300px]\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Elevated</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-[24px]\">\r\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Outlined</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>\r\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Filled</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>   \r\n        <ui-card class=\"w-[300px]\">\r\n          <ui-card-header>\r\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\r\n              <p class=\"font-medium text-on-surface\">Header</p>\r\n              <p class=\"text-on-surface\">SubHead</p>\r\n            </div>\r\n            <ui-card-action>\r\n            <ng-icon name=\"matMoreVertOutline\"/>\r\n          </ui-card-action>\r\n          </ui-card-header>\r\n            <img\r\n              src=\"https://avatar.vercel.sh/shadcn1\"\r\n              alt=\"Event cover\"\r\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\r\n            />\r\n          <ui-card-content>\r\n            <ui-card-headline>\r\n              <ui-card-title>Elevated</ui-card-title>\r\n              <ui-card-description>Description for elevated card</ui-card-description>\r\n            </ui-card-headline>\r\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n          </ui-card-content>\r\n          <ui-card-footer>\r\n            <ui-button variant=\"outlined\">Secondary</ui-button>\r\n            <ui-button>Primary</ui-button>\r\n          </ui-card-footer>\r\n        </ui-card>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
             "libs/ui/.storybook/main.ts": [
@@ -302,7 +333,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
-                    "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: [],\n  staticDirs: ['../public'],\n  framework: {\n    name: '@storybook/angular',\n    options: {}\n  },\n  core: {\n    builder: '@storybook/builder-vite'\n  },\n  //* Vite Builder Config References.\n  //* - https://github.com/storybookjs/storybook/issues/30734\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\n  async viteFinal(config: UserConfig) {\n    return mergeConfig(config, {\n      optimizeDeps: {\n        include: [\n          '@storybook/angular'\n        ]\n      },\n      define: {\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\n          enableIvy: true,\n          strictInjectionParameters: true,\n          strictTemplates: true,\n          enableNgcc: true,\n        }),\n      },\n    })\n  }\n}"
+                    "defaultValue": "{\r\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: [],\r\n  staticDirs: ['../public'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {}\r\n  },\r\n  core: {\r\n    builder: '@storybook/builder-vite'\r\n  },\r\n  //* Vite Builder Config References.\r\n  //* - https://github.com/storybookjs/storybook/issues/30734\r\n  //* - https://norato-felipe.medium.com/configuring-storybook-with-angular-vite-esbuild-68c627ff9d71\r\n  async viteFinal(config: UserConfig) {\r\n    return mergeConfig(config, {\r\n      optimizeDeps: {\r\n        include: [\r\n          '@storybook/angular'\r\n        ]\r\n      },\r\n      define: {\r\n        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({\r\n          enableIvy: true,\r\n          strictInjectionParameters: true,\r\n          strictTemplates: true,\r\n          enableNgcc: true,\r\n        }),\r\n      },\r\n    })\r\n  }\r\n}"
+                }
+            ],
+            "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <ui-scroll-area>\r\n        \r\n      </ui-scroll-area>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ScrollArea>",
+                    "defaultValue": "{\r\n  title: \"Material Desing/Scroll Area\",\r\n  component: ScrollArea,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ScrollArea]\r\n    })\r\n  ]\r\n}"
                 }
             ],
             "libs/ui/src/lib/components/tag/stories/tag.stories.ts": [
@@ -314,7 +367,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex gap-4 justify-center items-center\">\n        <ui-tag>\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"leading\"/>  \n          Leading\n        </ui-tag>\n        <ui-tag>\n          Trailing\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"trailing\"/>\n        </ui-tag>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex gap-4 justify-center items-center\">\r\n        <ui-tag>\r\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"leading\"/>  \r\n          Leading\r\n        </ui-tag>\r\n        <ui-tag>\r\n          Trailing\r\n          <ng-icon name=\"matLabelImportantOutline\" slot=\"trailing\"/>\r\n        </ui-tag>\r\n      </div>\r\n    `\r\n  })\r\n}"
                 },
                 {
                     "name": "meta",
@@ -324,7 +377,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Tag>",
-                    "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        NgIcon,\n        CommonModule\n      ],\n      providers: [\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\n      ]\n    })\n  ]\n}"
+                    "defaultValue": "{\r\n  title: 'Material Design/Tag',\r\n  component: Tag,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        NgIcon,\r\n        CommonModule\r\n      ],\r\n      providers: [\r\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\r\n      ]\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "variants",
@@ -334,7 +387,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex gap-4 justify-center items-center\">\n        <ui-tag>Primary</ui-tag>\n        <ui-tag variant=\"secondary\">Secondary</ui-tag>\n        <ui-tag variant=\"outline\">Outline</ui-tag>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex gap-4 justify-center items-center\">\r\n        <ui-tag>Primary</ui-tag>\r\n        <ui-tag variant=\"secondary\">Secondary</ui-tag>\r\n        <ui-tag variant=\"outline\">Outline</ui-tag>\r\n      </div>\r\n    `\r\n  })\r\n}"
                 }
             ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
@@ -346,7 +399,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Material Design/Buttons/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, NgpButton, NgIcon],\n      declarations: [],\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\n    })\n  ]\n}"
+                    "defaultValue": "{\r\n  title: 'Material Design/Buttons/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, NgpButton, NgIcon],\r\n      declarations: [],\r\n      providers: [provideIcons({ matPersonOutline, matSettingsOutline })],\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "shapes",
@@ -356,7 +409,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\n        <ui-button shapes=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\r\n  name: 'Shapes',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\r\n        <ui-button shapes=\"squared\">Squared button</ui-button>\r\n      </div>\r\n    `\r\n  })\r\n}"
                 },
                 {
                     "name": "sizes",
@@ -366,7 +419,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"xs\">Extra small button</ui-button>\n        <ui-button size=\"sm\">Small button</ui-button>\n        <ui-button size=\"md\">Medium button</ui-button>\n        <ui-button size=\"lg\">Large button</ui-button>\n        <ui-button size=\"xl\">Extra large button</ui-button>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: {},\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"xs\">Extra small button</ui-button>\r\n        <ui-button size=\"sm\">Small button</ui-button>\r\n        <ui-button size=\"md\">Medium button</ui-button>\r\n        <ui-button size=\"lg\">Large button</ui-button>\r\n        <ui-button size=\"xl\">Extra large button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "variants",
@@ -376,7 +429,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\n        <ui-button variant=\"filled\">Filled button</ui-button>\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\n        <ui-button variant=\"text\">Text button</ui-button>\n        <ui-button variant=\"danger\">Danger button</ui-button>\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\">Elevated button</ui-button>\r\n        <ui-button variant=\"filled\">Filled button</ui-button>\r\n        <ui-button variant=\"tonal\">Tonal button</ui-button>\r\n        <ui-button variant=\"outlined\">Outlined button</ui-button>\r\n        <ui-button variant=\"text\">Text button</ui-button>\r\n        <ui-button variant=\"danger\">Danger button</ui-button>\r\n        <ui-button [disabled]=\"true\">Disabled button</ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "withIcons",
@@ -386,7 +439,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  name: 'Icons',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button shapes=\"squared\">\r\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\r\n          Left Icon\r\n        </ui-button>\r\n        <ui-button shapes=\"squared\">\r\n          Left Icon\r\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
             "libs/ui/src/lib/components/button/stories/icon-button.stories.ts": [
@@ -398,7 +451,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Material Design/Buttons/Icon Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule, NgpButton, NgIcon\n      ],\n      providers: [\n        provideIcons({ matPersonOutline, matSettingsOutline })\n      ]\n    })\n  ]\n}"
+                    "defaultValue": "{\r\n  title: 'Material Design/Buttons/Icon Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        CommonModule, NgpButton, NgIcon\r\n      ],\r\n      providers: [\r\n        provideIcons({ matPersonOutline, matSettingsOutline })\r\n      ]\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "sizes",
@@ -408,7 +461,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button size=\"icon-xs\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-md\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-lg\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button size=\"icon-xl\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  name: \"Sizes\",\r\n  args: {},\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button size=\"icon-xs\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-md\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-lg\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button size=\"icon-xl\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "variants",
@@ -418,7 +471,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"filled\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"text\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\r\n  name: 'Variants',\r\n  render: () => ({\r\n    template: `\r\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\r\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"filled\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n        <ui-button variant=\"text\" size=\"icon-sm\">\r\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\r\n        </ui-button>\r\n      </div>\r\n    `\r\n  })\r\n}"
                 }
             ],
             "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
@@ -430,7 +483,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FAB>",
-                    "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+                    "defaultValue": "{\r\n    title: \"Material Design/Buttons/FAB\",\r\n    component: FAB,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [CommonModule, NgpButton, NgIcon],\r\n            declarations: [],\r\n            providers: [\r\n                provideIcons({ matStarsOutline })\r\n            ]\r\n        })\r\n    ]\r\n}"
                 },
                 {
                     "name": "sizes",
@@ -440,7 +493,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                    "defaultValue": "{\r\n    name: \"Sizes\",\r\n    render: () => ({\r\n        template: `\r\n            <ui-fab>\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab size=\"md\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab size=\"lg\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n        `\r\n    })\r\n}"
                 },
                 {
                     "name": "variants",
@@ -450,7 +503,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
+                    "defaultValue": "{\r\n    name: \"Variants\",\r\n    render: () => ({\r\n        template: `\r\n            <ui-fab>\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab variant=\"secondary\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n            <ui-fab variant=\"tertiary\">\r\n                <ng-icon name=\"matStarsOutline\"/>\r\n            </ui-fab>\r\n        `\r\n    })\r\n}"
                 }
             ],
             "libs/ui/.storybook/preview.ts": [
@@ -462,7 +515,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n  },\n  decorators: [\n    applicationConfig({\n      providers: []\n    })\n  ]\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    layout: 'centered',\r\n  },\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: []\r\n    })\r\n  ]\r\n}"
                 }
             ]
         },
@@ -502,6 +555,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Card>",
                     "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ScrollArea>",
+                    "file": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -737,6 +803,36 @@
             },
             {
                 "filePath": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/scroll-area/stories/scroll-area.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
