@@ -1,3 +1,11 @@
-<app-case-layout class="absolute top-0 left-0 w-full h-full max-w-screen max-h-screen flex flex-row px-[20px] pt-[30px] pb-[50px]">
-  <app-case-card/>
-</app-case-layout>
+<div class="max-h-full flex flex-col justify-center space-y-[8px] overflow-hidden">
+  @for (case of cases | async; track case.id) {
+    <app-case-card
+      [title]="case.title"
+      [status]="case.status"
+      [description]="case.description"
+      [caseNumber]="case.caseNumber"
+    />
+  }
+</div>
+<router-outlet/>

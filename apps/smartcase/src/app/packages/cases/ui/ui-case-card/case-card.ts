@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
 import { Tag } from "~ui";
 
 export interface CaseProps {
@@ -19,6 +19,12 @@ export interface CaseProps {
 })
 export class CaseCard { 
 
+    public title = input<string | null>();
 
+    public description = input<string | null>();
+
+    public caseNumber = input<number | null>();
+
+    public status = input<string | null>();
 
 }

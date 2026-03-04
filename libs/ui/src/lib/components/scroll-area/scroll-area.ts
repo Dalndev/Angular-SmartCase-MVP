@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostBinding, Input } from '@angular/core';
 import { cn, tv } from 'tailwind-variants';
 
+//TODO. Realizar la implementación basica del componente "ScrollArea"
 const classes = tv({
   slots: {
     container: 'relative',
