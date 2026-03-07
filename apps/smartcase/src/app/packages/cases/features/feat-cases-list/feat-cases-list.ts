@@ -2,7 +2,6 @@ import { CommonModule } from "@angular/common";
 import { Component, HostBinding, inject } from "@angular/core";
 import { tv } from "tailwind-variants";
 import { ICase } from "~cases/models/case.model";
-import { CaseLayout } from "~cases/layouts/cases-layout";
 import { CaseService } from "~cases/services/case.service";
 import { CaseCard } from "~cases/ui/ui-case-card/case-card";
 import { CaseContext } from "~cases/context/cases.context";
@@ -18,7 +17,6 @@ const classes = tv({
     imports: [
         CommonModule,
         CaseCard,
-        CaseLayout,
         RouterModule
     ]
 })

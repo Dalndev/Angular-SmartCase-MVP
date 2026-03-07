@@ -81,4 +81,40 @@ export const CasesList: ICase[] = [
     createdAt: new Date('2023-04-05'),
     updatedAt: new Date('2023-09-01'),
   },
+  {
+    id: 8,
+    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    alias: 'case-007',
+    title: 'Commercial Lease - Downtown Plaza',
+    description:
+      'Drafting and negotiation of a 10-year commercial lease agreement.',
+    caseNumber: 23501,
+    status: 'Closed',
+    createdAt: new Date('2023-04-05'),
+    updatedAt: new Date('2023-09-01'),
+  },
+  {
+    id: 9,
+    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    alias: 'case-007',
+    title: 'Commercial Lease - Downtown Plaza',
+    description:
+      'Drafting and negotiation of a 10-year commercial lease agreement.',
+    caseNumber: 23501,
+    status: 'Closed',
+    createdAt: new Date('2023-04-05'),
+    updatedAt: new Date('2023-09-01'),
+  },
+  {
+    id: 10,
+    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    alias: 'case-007',
+    title: 'Commercial Lease - Downtown Plaza',
+    description:
+      'Drafting and negotiation of a 10-year commercial lease agreement.',
+    caseNumber: 23501,
+    status: 'Closed',
+    createdAt: new Date('2023-04-05'),
+    updatedAt: new Date('2023-09-01'),
+  },
 ];

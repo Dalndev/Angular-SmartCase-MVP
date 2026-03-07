@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
 
 @Component({
     selector: 'app-case-details',
@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
     imports: [CommonModule]
 })
 export class CaseDetails {
-
+    public readonly id = input.required<string>();
 }

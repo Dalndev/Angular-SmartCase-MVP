@@ -1,22 +1,15 @@
 import { Route } from "@angular/router";
 import { CaseDetails } from "~cases/features/feat-case-details/feat-case-details";
-import { CaseList } from "~cases/features/feat-cases-list/feat-cases-list";
-import { CaseLayout } from "~cases/layouts/cases-layout";
+import { CasePage } from "~cases/pages/cases-page";
 
 export const caseRoutes: Route[] = [
     {
         path: "cases",
-        component: CaseLayout,
+        component: CasePage,
         children: [
             {
-                path: "",
-                component: CaseList,
-                children: [
-                    {
-                        path: ":id",
-                        component: CaseDetails
-                    }
-                ]
+                path: ":id",
+                component: CaseDetails
             }
         ]
     }
