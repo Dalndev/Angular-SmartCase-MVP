@@ -78,6 +78,7 @@
     "@floating-ui/dom": "^1.6.0",
     "@ng-icons/core": "^33.0.0",
     "@ng-icons/material-icons": "^33.0.0",
+    "@ngrx/signals": "^21.0.1",
     "@tailwindcss/postcss": "^4.1.18",
     "clsx": "^2.1.1",
     "ngx-dev-toolbar": "^4.0.0",
@@ -85,8 +86,7 @@
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
-    "tailwindcss": "^4.1.18",
-    "@ngrx/signals": "^21.0.1"
+    "tailwindcss": "^4.1.18"
   },
-  "packageManager": "pnpm@10.30.1+sha512.3590e550d5384caa39bd5c7c739f72270234b2f6059e13018f975c313b1eb9fefcc09714048765d4d9efe961382c312e624572c0420762bdc5d5940cdf9be73a"
+  "packageManager": "pnpm@10.32.0"
 }

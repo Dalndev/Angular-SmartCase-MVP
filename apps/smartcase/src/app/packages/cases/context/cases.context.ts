@@ -1,12 +1,22 @@
-import { ICase } from "~cases/models/case.model"
-import { signalStore, withState } from "@ngrx/signals";
+import { signalStore, type } from "@ngrx/signals";
+import { entityConfig, withEntities } from "@ngrx/signals/entities";
 
-type CaseState = {
-    cases: ICase[];
+type Case = {
+    id: number;
+    caseId: string;
+    alias: string | undefined;
+    title: string | undefined;
+    description: string | undefined;
+    caseNumber: number | undefined;
+    status: string | undefined;
+    createdAt: Date | undefined;
+    updatedAt: Date | undefined;
 };
 
-const initialState: CaseState = {
-    cases: []
-};
+const caseConfig = entityConfig({
+    entity: type<Case>(),
+    collection: 'case',
+    selectId: (todo) => todo["id"],
+});
 
-export const CaseContext = signalStore(withState(initialState));
+export const CaseContext = signalStore(withEntities<Case>(caseConfig));

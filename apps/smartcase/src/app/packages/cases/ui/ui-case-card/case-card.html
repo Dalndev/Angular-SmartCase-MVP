@@ -1,12 +1,19 @@
-<div class="bg-surface-container-high rounded-[12px] min-w-[250px] max-w-[510px] p-[16px] flex flex-col gap-2.5">
-    <div class="flex flex-row justify-between items-center">
-        <div class="inline-flex flex-col items-start justify-center">
-            <span class="text-title-medium-emphasized font-medium text-on-surface">{{title()}}</span>
-            <span class="text-label-medium font-medium text-on-surface-variant">#{{caseNumber()}}</span>
-        </div>
-        <ui-tag variant="primary">
-            {{status()}}
-        </ui-tag>
+<div
+  class="group-aria-selected/item:bg-primary-container bg-surface-container-high rounded-[12px] min-w-[250px] max-w-[510px] p-[16px] flex flex-col gap-2.5"
+>
+  <div class="flex flex-row justify-between items-center">
+    <div class="inline-flex flex-col items-start justify-center">
+      <span class="text-title-medium-emphasized font-medium text-on-surface"
+        >{{title()}}</span
+      >
+      <span class="text-label-medium font-medium text-on-surface-variant"
+        >#{{caseNumber()}}</span
+      >
     </div>
-    <span class="text-on-surface-variant text-body-medium font-medium line-clamp-2">{{description()}}</span>
+    <ui-tag variant="primary"> {{status()}} </ui-tag>
+  </div>
+  <span
+    class="text-on-surface-variant text-body-medium font-medium line-clamp-2"
+    >{{description()}}</span
+  >
 </div>

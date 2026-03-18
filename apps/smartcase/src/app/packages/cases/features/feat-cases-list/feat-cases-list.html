@@ -1,10 +1,12 @@
-<div class="max-h-full flex flex-col justify-center space-y-[8px] overflow-hidden">
+<div
+  class="max-h-full flex flex-col justify-center space-y-[8px] overflow-hidden"
+>
   @for (case of cases | async; track case.id) {
-    <app-case-card
-      [title]="case.title"
-      [status]="case.status"
-      [description]="case.description"
-      [caseNumber]="case.caseNumber"
-    />
+  <app-case-card
+    [title]="case.title"
+    [status]="case.status"
+    [description]="case.description"
+    [caseNumber]="case.caseNumber"
+  />
   }
 </div>

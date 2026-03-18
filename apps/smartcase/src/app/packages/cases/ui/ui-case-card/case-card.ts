@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, input, model, output } from "@angular/core";
 import { Tag } from "~ui";
+import { NgpButton } from "ng-primitives/button";
 
 export interface CaseProps {
     title: string;
@@ -15,9 +16,18 @@ export interface CaseProps {
     imports: [
         CommonModule,
         Tag
-    ]
+    ],
+    host: {
+        role: "button",
+        "[attr.aria-selected]": "isSelected()",
+        "(click)": "handleClick()",
+        "class": "group/item"
+    },
+    hostDirectives: [{ directive: NgpButton }]
 })
-export class CaseCard { 
+export class CaseCard {
+
+    public id = input<string | null>();
 
     public title = input<string | null>();
 
@@ -27,4 +37,22 @@ export class CaseCard {
 
     public status = input<string | null>();
 
+    public selected = output<string | undefined>();
+
+    public isSelected = model<boolean>(false);
+
+    public handleClick() {
+
+        console.log("[Case] [UI] [Card] [Selected] > ", this.isSelected())
+
+        this.onSelect(); this.selected.emit(this.id() || undefined);
+    }
+
+    private onSelect() {
+        this.toggleSelect()
+    }
+
+    private toggleSelect(status?: boolean) {
+        this.isSelected.set(status || !this.isSelected());
+    }
 }

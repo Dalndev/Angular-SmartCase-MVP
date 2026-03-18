@@ -1,15 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostBinding, inject } from "@angular/core";
-import { tv } from "tailwind-variants";
-import { ICase } from "~cases/models/case.model";
+import { Component, inject, output } from "@angular/core";
+import { Case } from "~cases/models/case.model";
 import { CaseService } from "~cases/services/case.service";
 import { CaseCard } from "~cases/ui/ui-case-card/case-card";
 import { CaseContext } from "~cases/context/cases.context";
 import { RouterModule } from "@angular/router";
 
-const classes = tv({
-    base: 'w-max h-full flex-initial'
-})
 
 @Component({
     selector: "app-case-list",
@@ -17,7 +13,7 @@ const classes = tv({
     imports: [
         CommonModule,
         CaseCard,
-        RouterModule
+        RouterModule,
     ]
 })
 export class CaseList {
@@ -25,10 +21,9 @@ export class CaseList {
     public readonly caseService = inject(CaseService);
     public readonly caseContext = inject(CaseContext);
 
-    public cases = (this.caseService.getCases() as Promise<ICase[]>);
+    public readonly chooseCase = output<string | null>();
 
-    @HostBinding('class')
-    get klass() {
-        return classes();
-    }
+    public cases = (this.caseService.getCases() as Promise<Case[]>);
+
+
 }
