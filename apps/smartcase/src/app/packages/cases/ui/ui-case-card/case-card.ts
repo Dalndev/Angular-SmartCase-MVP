@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, input, model, output } from "@angular/core";
 import { Tag } from "~ui";
 
 export interface CaseProps {
@@ -19,6 +19,8 @@ export interface CaseProps {
 })
 export class CaseCard { 
 
+    public id = input<string>();
+
     public title = input<string | null>();
 
     public description = input<string | null>();
@@ -27,4 +29,11 @@ export class CaseCard {
 
     public status = input<string | null>();
 
+    public selected = model<boolean>(false);
+
+    public selection = output<{ selected?: boolean, id: string }>();
+
+    public onSelectCard(_: Event) {
+        this.selection.emit({ id: this.id()! })
+    }
 }

@@ -3,7 +3,7 @@ import { ICase } from '~cases/models/case.model';
 export const CasesList: ICase[] = [
   {
     id: 1,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '9ed92039-bfe0-44e8-b642-5094f1f773f7',
     alias: 'case-001',
     title: 'Estate Dispute - Smith vs. Smith',
     description:
@@ -15,7 +15,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 2,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '52469b40-1469-45b5-ac18-22d3501064b1',
     alias: 'case-002',
     title: 'Corporate Merger - TechCorp & Innovate',
     description: 'Legal advisory for the acquisition of Innovate Ltd by TechCorp.',
@@ -26,7 +26,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 3,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: 'e51f0d6a-230a-4d60-b61f-8464dd7af2ca',
     alias: 'case-003',
     title: 'Labor Dispute - Union Alpha',
     description: 'Mediation between Union Alpha and Manufacturing Co.',
@@ -37,7 +37,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 4,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '8e139977-9352-42e3-9777-57f23f85e19d',
     alias: 'case-004',
     title: 'Property Transfer - Green Valley',
     description:
@@ -49,7 +49,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 5,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: 'e3d876d5-7336-4051-ad8f-e027c6e3b8be',
     alias: 'case-005',
     title: 'Intellectual Property - Brand Protection',
     description: 'Trademark infringement case against local competitors.',
@@ -60,7 +60,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 6,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '13927620-a6b3-4745-802e-90b32aa0bce0',
     alias: 'case-006',
     title: 'Divorce Settlement - Doe vs. Doe',
     description: 'Matrimonial property division and custody agreement.',
@@ -71,7 +71,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 7,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '8df0d7de-aece-4b33-bd00-5610ff5b441d',
     alias: 'case-007',
     title: 'Commercial Lease - Downtown Plaza',
     description:
@@ -83,7 +83,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 8,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '7af89f9b-9e05-427d-a006-3e87aa790f78',
     alias: 'case-007',
     title: 'Commercial Lease - Downtown Plaza',
     description:
@@ -95,7 +95,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 9,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '4f8dc76f-cf99-4978-b021-de8926688c5b',
     alias: 'case-007',
     title: 'Commercial Lease - Downtown Plaza',
     description:
@@ -107,7 +107,7 @@ export const CasesList: ICase[] = [
   },
   {
     id: 10,
-    caseId: '0ACB79EB0D3E4867906D04A631FAE5E2',
+    caseId: '9ec744c0-c626-4e70-9093-553ca719349e',
     alias: 'case-007',
     title: 'Commercial Lease - Downtown Plaza',
     description:

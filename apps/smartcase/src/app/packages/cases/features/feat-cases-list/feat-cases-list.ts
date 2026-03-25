@@ -5,11 +5,11 @@ import { ICase } from "~cases/models/case.model";
 import { CaseService } from "~cases/services/case.service";
 import { CaseCard } from "~cases/ui/ui-case-card/case-card";
 import { CaseContext } from "~cases/context/cases.context";
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 
-const classes = tv({
-    base: 'w-max h-full flex-initial'
-})
+const classes = tv({ base: 'w-max h-full flex-initial' });
+
+export type CaseWithState = ICase & { selected:boolean };
 
 @Component({
     selector: "app-case-list",
@@ -24,11 +24,16 @@ export class CaseList {
 
     public readonly caseService = inject(CaseService);
     public readonly caseContext = inject(CaseContext);
+    public readonly router = inject(Router);
 
-    public cases = (this.caseService.getCases() as Promise<ICase[]>);
+    public cases = (this.caseService.getCases() as Promise<CaseWithState[]>);
 
     @HostBinding('class')
     get klass() {
         return classes();
+    }
+
+    public selection({ id }: { id: string }) {
+        this.router.navigate(['/cases', id]);
     }
 }

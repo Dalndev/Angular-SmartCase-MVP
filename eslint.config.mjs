@@ -14,6 +14,7 @@ export default [
         'error',
         {
           enforceBuildableLibDependency: true,
+          allowCircularSelfDependency: false,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
@@ -37,6 +38,7 @@ export default [
       '**/*.mjs',
     ],
     // Override or add rules here
-    rules: {},
+    rules: {
+    },
   },
 ];

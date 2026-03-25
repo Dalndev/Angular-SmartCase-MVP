@@ -1,4 +1,12 @@
-<div class="bg-surface-container-high rounded-[12px] min-w-[250px] max-w-[510px] p-[16px] flex flex-col gap-2.5">
+<div
+    role="button"
+    tabindex="0"
+    (click)="onSelectCard($event)"
+    [ngClass]="{
+        'border-l-4 border-primary': selected(),
+        'bg-surface-container-high rounded-[12px] min-w-[250px] max-w-[510px] p-[16px] flex flex-col gap-2.5': true 
+    }"
+>
     <div class="flex flex-row justify-between items-center">
         <div class="inline-flex flex-col items-start justify-center">
             <span class="text-title-medium-emphasized font-medium text-on-surface">{{title()}}</span>
