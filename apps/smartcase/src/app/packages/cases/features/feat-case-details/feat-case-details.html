@@ -1,3 +1,8 @@
-<app-details-header/>
-<app-details-content/>
-<app-details-footer/>
+@if (case() | async; as case) {
+    <app-details-header
+        [title]="case.title"
+        [caseNumber]="case.caseNumber"
+    />
+    <app-details-content/>
+    <app-details-footer/>
+}

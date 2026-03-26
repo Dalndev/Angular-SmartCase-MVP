@@ -1,8 +1,8 @@
 export type CaseStatus = "Active" | "Pending" | "Closed";
 
 export interface ICase {
-    id              : number | undefined;
-    caseId          : string | undefined;
+    id              : number | null;
+    caseId          : string | null;
     caseNumber      : number | undefined;
     alias           : string | undefined;
     title           : string | undefined;
@@ -13,8 +13,8 @@ export interface ICase {
 };
 
 export class Case implements ICase {
-    id          : number | undefined;
-    caseId      : string | undefined;
+    id          : number | null = null;
+    caseId      : string | null = null;
     caseNumber  : number | undefined;
     alias       : string | undefined;
     title       : string | undefined;
