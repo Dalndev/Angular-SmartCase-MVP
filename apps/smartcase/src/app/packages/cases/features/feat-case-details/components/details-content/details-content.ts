@@ -1,5 +1,5 @@
 import { Component, input } from "@angular/core";
-import { Card, CardContent, CardHeader, CardTitle } from "~ui";
+import { Card } from "~ui";
 import { NgIcon, provideIcons } from "@ng-icons/core"
 import { matInfoOutline } from "@ng-icons/material-icons/outline";
 
@@ -8,10 +8,7 @@ import { matInfoOutline } from "@ng-icons/material-icons/outline";
     templateUrl: './details-content.html',
     imports: [
         NgIcon,
-        Card,
-        CardContent,
-        CardHeader,
-        CardTitle
+        Card
     ],
     providers: [
         provideIcons({ matInfoOutline })

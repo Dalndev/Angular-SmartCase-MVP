@@ -12,5 +12,5 @@ export const caseRoutes: Route[] = [
                 component: CaseDetails
             }
         ]
-    }
+    },
 ]
