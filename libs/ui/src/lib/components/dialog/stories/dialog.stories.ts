@@ -1,0 +1,59 @@
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
+import { 
+  Dialog, 
+  DialogOverlay, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogContent, 
+  DialogDescription, 
+  DialogFooter 
+} from "../dialog";
+import { Button } from "../../button/public_api";
+import { CommonModule } from "@angular/common";
+import { NgpDialogTrigger } from "ng-primitives/dialog";
+
+const meta: Meta<Dialog> = {
+  title: 'Drafts/Dialog',
+  decorators: [
+    moduleMetadata({
+      imports: [
+        Button,
+        DialogOverlay,
+        Dialog,
+        DialogHeader,
+        DialogTitle,
+        DialogDescription,
+        DialogContent,
+        DialogFooter,
+        CommonModule,
+        NgpDialogTrigger
+      ]
+    })
+  ]
+};
+
+export default meta;
+
+export type Story = StoryObj<Dialog>;
+
+export const dialog: Story = {
+  render: () => ({
+    template: `
+      <ui-button [ngpDialogTrigger]="dialog">
+        Dialog
+      </ui-button>
+      <ng-template #dialog let-close="close">
+        <ui-dialog-overlay>
+          <ui-dialog>
+            <ui-dialog-title>
+              Publish this article?
+            </ui-dialog-title>
+            <ui-dialog-description>
+              Are you sure you want to publish this article? This action is irreversible.
+            </ui-dialog-description>
+          </ui-dialog>
+        </ui-dialog-overlay>
+      </ng-template>
+    `
+  })
+}
