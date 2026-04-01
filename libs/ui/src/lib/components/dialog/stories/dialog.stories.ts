@@ -4,7 +4,6 @@ import {
   DialogOverlay, 
   DialogHeader, 
   DialogTitle, 
-  DialogContent, 
   DialogDescription, 
   DialogFooter 
 } from "../dialog";
@@ -13,7 +12,8 @@ import { CommonModule } from "@angular/common";
 import { NgpDialogTrigger } from "ng-primitives/dialog";
 
 const meta: Meta<Dialog> = {
-  title: 'Drafts/Dialog',
+  title: 'Material Design/Dialog',
+  component: Dialog,
   decorators: [
     moduleMetadata({
       imports: [
@@ -23,7 +23,6 @@ const meta: Meta<Dialog> = {
         DialogHeader,
         DialogTitle,
         DialogDescription,
-        DialogContent,
         DialogFooter,
         CommonModule,
         NgpDialogTrigger
@@ -45,12 +44,18 @@ export const dialog: Story = {
       <ng-template #dialog let-close="close">
         <ui-dialog-overlay>
           <ui-dialog>
-            <ui-dialog-title>
-              Publish this article?
-            </ui-dialog-title>
-            <ui-dialog-description>
-              Are you sure you want to publish this article? This action is irreversible.
-            </ui-dialog-description>
+            <ui-dialog-header>
+              <ui-dialog-title>
+                Publish this article?
+              </ui-dialog-title>
+              <ui-dialog-description>
+                Are you sure you want to publish this article? This action is irreversible.
+              </ui-dialog-description>
+            </ui-dialog-header>
+            <ui-dialog-footer>
+              <ui-button variant="text" (click)="close()">Cancel</ui-button>
+              <ui-button variant="text" (click)="close()">Accept</ui-button>
+            </ui-dialog-footer>
           </ui-dialog>
         </ui-dialog-overlay>
       </ng-template>

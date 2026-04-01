@@ -5,24 +5,28 @@ import { NgpDialog, NgpDialogDescription, NgpDialogOverlay, NgpDialogTitle, prov
 
 const classes = tv({
     slots: {
-        "dialogOverlay": "fixed bg-scrim-high backdrop-blur flex justify-center items-center inset-0",
-        "dialog": "bg-surface",
-        "dialogContent": "",
-        "dialogHeader": "",
-        "dialogTitle": "",
-        "dialogDescription": "",
-        "dialogFooter": ""
+        "dialogOverlay": 
+            "fixed bg-scrim-high backdrop-blur flex justify-center items-center inset-0 isolate z-50",
+        "dialog": 
+            "h-max min-w-[280px] max-w-[560px] bg-surface-container-high rounded-[28px] shadow-elevation-light-medium",
+        "dialogHeader": 
+            "flex flex-col justify-center items-center gap-[16px] px-[24px] pt-[24px]",
+        "dialogTitle": 
+            "text-on-surface text-headline-small-emphasized leading-none",
+        "dialogDescription": 
+            "text-on-surface-variant text-body-medium",
+        "dialogFooter": 
+            "flex justify-end items-center px-[24px] py-[24px] gap-[8px]"
     }
 });
 
 const { 
     dialogOverlay, 
-    dialog, 
-    dialogHeader, 
+    dialog,
+    dialogHeader,
     dialogTitle, 
-    dialogDescription, 
-    dialogContent, 
-    dialogFooter 
+    dialogDescription,
+    dialogFooter
 } = classes();
 
 @Component({
@@ -71,22 +75,24 @@ export class Dialog {
 }
 
 @Component({
-    selector: 'ui-dialog-content',
-    template: ``,
-    imports: [
-        CommonModule
-    ]
-})
-export class DialogContent { }
-
-@Component({
     selector: 'ui-dialog-header',
-    template: ``,
+    template: `
+        <ng-content/>
+    `,
     imports: [
         CommonModule
     ]
 })
-export class DialogHeader { }
+export class DialogHeader { 
+
+    @Input()
+    public clazz: string | undefined;
+
+    @HostBinding("class")
+    get klass() {
+        return cn(dialogHeader(), this.clazz)
+    }    
+}
 
 @Component({
     selector: 'ui-dialog-title',
@@ -132,9 +138,20 @@ export class DialogDescription {
 
 @Component({
     selector: 'ui-dialog-footer',
-    template: ``,
+    template: `
+        <ng-content/>
+    `,
     imports: [
         CommonModule
     ]
 })
-export class DialogFooter { }
+export class DialogFooter { 
+
+    @Input()
+    public clazz: string | undefined;
+
+    @HostBinding("class")
+    get klass() {
+        return cn(dialogFooter(), this.clazz)
+    }    
+}
