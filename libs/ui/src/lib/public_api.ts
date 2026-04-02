@@ -7,7 +7,6 @@ export * from "./components/combobox";
 export * from "./components/dialog";
 export * from "./components/field";
 export * from "./components/input";
-export * from "./components/label";
 export * from "./components/menu";
 export * from "./components/popover";
 export * from "./components/search";

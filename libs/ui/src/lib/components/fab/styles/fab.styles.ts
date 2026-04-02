@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-const classes = tv({
+const styles = tv({
   base: 'relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto overflow-hidden ease-in-out transition-all',
   variants: {
     variants: {
@@ -12,9 +12,12 @@ const classes = tv({
         'bg-tertiary text-on-tertiary outline-0 outline-transparent shadow-elevation-light-medium hover:[&>span]:bg-on-tertiary-state-layer-light-low data-press:[&>span]:bg-on-secondary-state-layer-light focus:[&>span]:bg-on-secondary-state-layer-light focus:outline-3 focus:outline-offset-2 focus:outline-outline',
     },
     sizes: {
-      default: 'size-[56px] m-[16px] rounded-[16px] [--ng-icon__size:24px]',
-      md: 'size-[80px] m-[16px] rounded-[20px] [--ng-icon__size:28px]',
-      lg: 'size-[96px] m-[16px] rounded-[28px] [--ng-icon__size:36px]',
+      default: 
+        'size-[56px] m-[16px] rounded-[16px] [--ng-icon__size:24px]',
+      md: 
+        'size-[80px] m-[16px] rounded-[20px] [--ng-icon__size:28px]',
+      lg: 
+        'size-[96px] m-[16px] rounded-[28px] [--ng-icon__size:36px]',
     },
   },
   defaultVariants: {
@@ -24,4 +27,4 @@ const classes = tv({
   compoundVariants: [],
 });
 
-export default classes;
+export default styles;
