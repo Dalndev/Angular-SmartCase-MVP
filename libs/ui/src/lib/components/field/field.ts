@@ -1,8 +1,9 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 import { CommonModule } from "@angular/common";
-import { Component, HostBinding, Input } from "@angular/core";
+import { Component, computed, HostBinding, Input } from "@angular/core";
 import { cn, tv, VariantProps } from "tailwind-variants";
-import { NgpFormField, NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
+import { NgpFormField, NgpLabel, NgpDescription, NgpError, provideFormFieldState } from "ng-primitives/form-field";
+import { NgpInput } from "ng-primitives/input";
 
 const styles = tv({
   base: "",
@@ -12,17 +13,22 @@ const styles = tv({
         "",
       "outlined": 
         ""
+    },
+    input: {
+      email: "",
+      tel: "",
+      input: ""
     }
   },
   slots: {
     "field": 
-      "",
+      "group/field flex flex-col *:w-full relative h-[56px]",
     "fieldLabel": 
-      "",
+      "text-body-small left-auto right-auto absolute origin-top-left -translate-y-1/2",
     "fieldDescription": 
-      "",
-    "fieldContent": 
-      "",
+      "border-none bg-none p-0",
+    "fieldInput":
+      "h-auto",
     "fieldError": 
       ""
   }
@@ -31,8 +37,8 @@ const styles = tv({
 const { 
   field, 
   fieldLabel, 
-  fieldDescription, 
-  fieldContent, 
+  fieldDescription,
+  fieldInput,
   fieldError 
 } = styles();
 
@@ -40,9 +46,13 @@ type Variants = VariantProps<typeof styles>;
 
 @Component({
   selector: 'ui-field',
-  template: `<ng-content/>`,
+  template: `
+    <ng-content/>`,
   imports: [CommonModule],
-  hostDirectives: [{ directive: NgpFormField }]
+  hostDirectives: [{ directive: NgpFormField }],
+  host: {
+    "role": "group"
+  }
 })
 export class Field { 
 
@@ -58,18 +68,25 @@ export class Field {
 
 @Component({
   selector: 'ui-field-label',
-  template: `<ng-content/>`,
-  imports: [CommonModule],
-  hostDirectives: [{ directive: NgpLabel }]
+  template: `
+    <label 
+      ngpLabel
+      [htmlFor]="htmlFor"
+      [class]="klass()" 
+    >
+      <ng-content/>
+    </label>
+  `,
+  imports: [CommonModule, NgpLabel],
+  providers: [provideFormFieldState()]
 })
 export class FieldLabel { 
 
   @Input() variant: Variants["variant"] | undefined;
 
-  @HostBinding('class')
-  get klass() {
-    return cn(fieldLabel({ variant: this.variant}));
-  }
+  @Input() htmlFor!: string;
+
+  public klass = computed(() => cn(fieldLabel({ variant: this.variant }))) 
 
 }
 
@@ -93,19 +110,34 @@ export class FieldDescription {
 
 @Component({
   selector: 'ui-field-content',
-  template: `<ng-content/>`,
+  template: `
+    <div class="inline-flex align-baseline w-full">
+      <div class="pb-[8px] pt-[24px] relative flex-auto min-w-0 w-[180px]">
+        <ng-content/>       
+      </div>
+    </div>
+  `,
   imports: [CommonModule]
 })
-export class FieldContent { 
+export class FieldContent { }
 
-  @Input({ alias: 'class' }) clazz: string | undefined;
+@Component({
+  selector: 'input[ui-field-input]',
+  template: '',
+  imports: [CommonModule],
+  hostDirectives: [{ directive: NgpInput }],
+})
+export class FieldInput { 
 
-  @Input() variant: Variants["variant"] | undefined; 
+  @Input() variant: Variants["variant"] = "filled";
+
+  @Input() input: Variants["input"];
 
   @HostBinding('class')
   get klass() {
-    return cn(fieldContent({ variant: this.variant }), this.clazz);
+    return cn(fieldInput({ variant: this.variant, input: this.input }))
   }
+
 }
 
 @Component({

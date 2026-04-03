@@ -1,6 +1,7 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Field, FieldDescription, FieldError, FieldLabel } from "../field";
+import { Field, FieldContent, FieldDescription, FieldInput, FieldError, FieldLabel } from "../field";
 import { CommonModule } from "@angular/common";
+import { NgpFormControl } from "ng-primitives/form-field";
 
 const meta: Meta<Field> = {
   title: 'Drafts/Field',
@@ -12,7 +13,10 @@ const meta: Meta<Field> = {
         Field,
         FieldLabel,
         FieldDescription,
-        FieldError
+        FieldContent,
+        FieldError, 
+        FieldInput, 
+        NgpFormControl
       ]
     })
   ]
@@ -26,10 +30,10 @@ export const variants: Story = {
   render: () => ({
     template: `
       <ui-field variant="filled">
-        <ui-field-label>Full Name</ui-field-label>
         <ui-field-description>Please include any middle names, no matter how ridiculous.</ui-field-description>
         <ui-field-content>
-          
+          <ui-field-label>Full Name</ui-field-label>
+          <input ui-field-input />
         </ui-field-content>
         <ui-field-error>This field is required.</ui-field-error>
       </ui-field>
