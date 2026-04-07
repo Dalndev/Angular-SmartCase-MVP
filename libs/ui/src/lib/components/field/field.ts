@@ -1,8 +1,8 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 import { CommonModule } from "@angular/common";
-import { Component, computed, ElementRef, HostBinding, HostListener, inject, Input, signal } from "@angular/core";
+import { Component, HostBinding, HostListener, Input, signal } from "@angular/core";
 import { cn, tv, VariantProps } from "tailwind-variants";
-import { NgpFormField, NgpLabel, NgpDescription, NgpError, provideFormFieldState } from "ng-primitives/form-field";
+import { NgpFormField, NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
 import { NgpInput } from "ng-primitives/input";
 
 const styles = tv({
@@ -13,19 +13,14 @@ const styles = tv({
         "",
       "outlined":
         ""
-    },
-    type: {
-      email: "",
-      tel: "",
-      input: ""
     }
   },
   slots: {
     field:
-      "relative flex flex-col group/field *:w-full",
+      "relative flex flex-col group/field *:w-full text-body-large",
     fieldLabel: 
       "absolute top-1/2 left-0 origin-top-left -translate-y-1/2 pointer-events-auto transition-all"
-     +" text-start font-medium text-body-large text-on-surface-variant text-ellipsis whitespace-nowrap overflow-hidden"
+     +" text-start font-medium text-on-surface-variant text-ellipsis whitespace-nowrap overflow-hidden"
      +" peer-focus:-translate-y-full peer-focus:scale-75 peer-focus:text-primary"
      +" peer-data-[filled=true]:-translate-y-full peer-data-[filled=true]:scale-75 peer-data-[filled=true]:text-primary"
     ,
@@ -36,7 +31,7 @@ const styles = tv({
     fieldDescription:
       "border-none bg-none p-0",
     fieldError:
-      ""
+      "before:inline-block"
   }
 });
 
@@ -53,25 +48,28 @@ type Variants = VariantProps<typeof styles>;
 @Component({
   selector: 'ui-field',
   template: `
-      <div class="bg-surface-variant h-auto w-full px-[16px] flex-auto w-full h-auto rounded-t-[4px] rounded-b-none">
-        <div class="inline-flex align-baseline w-full">
+      <div class="box-border relative bg-surface-variant h-auto w-full px-[16px] flex-auto w-full h-auto rounded-t-[4px] rounded-b-none">
+        <div class="box-border inline-flex align-baseline w-full">
           <div class="box-border relative pb-[8px] pt-[24px] flex-auto min-w-0 w-[180px] min-h-[56px]">
             <ng-content select="[slot=leading]"/>
             <ng-content/>       
             <ng-content select="[slot=trailing]"/>
           </div>
         </div>
-        <span class="
+        <div class="
           before:absolute before:left-0 before:bottom-0 before:w-full before:border-b before:border-on-surface-variant before:z-1
           after:absolute after:left-0 after:bottom-0 after:w-full after:border-b-2 after:border-primary after:z-2 after:opacity-0 after:scale-x-0 
           [ui-field:has(input[data-filled='true'])_&]:after:opacity-100 [ui-field:has(input[data-filled='true'])_&]:after:scale-x-100
           [ui-field:has(input:focus)_&]:after:opacity-100 [ui-field:has(input:focus)_&]:after:scale-x-100
           transition-all
-        "></span>
+        "></div>
       </div>
-      <div>
-        <ng-content select="[ui-field-error]"/>
-        <ng-content select="[ui-field-description]"/>
+      <div class="box-border relative w-full text-body-small before:inline-block before:h-[16px]">
+        <div class="absolute top-0 left-0 right-0 px-[16px] flex opacity-[1] translate-y-0 *:before:inline-block *:before:h-[16px]">
+          <ng-content select="ui-field-error"/>
+          <ng-content select="ui-field-description"/>
+          <div class="grow shrink-0 basis-[1em]"></div>
+        </div>
       </div>
   `,
   imports: [CommonModule],
@@ -148,15 +146,13 @@ export class FieldInput {
 
   @Input() variant: Variants["variant"] = "filled";
 
-  @Input() type: Variants["type"];
-
   @Input() id: string | undefined;
 
   public filled = signal(false);
 
   @HostBinding('class')
   get klass() {
-    return cn(fieldInput({ variant: this.variant, type: this.type }))
+    return cn(fieldInput({ variant: this.variant }))
   }
 
   @HostListener('keyup', ['$event'])
