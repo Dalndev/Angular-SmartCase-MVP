@@ -1,7 +1,135 @@
-import { Component } from "@angular/core";
+/* eslint-disable @angular-eslint/no-input-rename */
+
+import { CommonModule } from "@angular/common";
+import { Component, Directive, HostBinding, inject, Input } from "@angular/core";
+import {
+  NgpSelect,
+  NgpSelectDropdown,
+  NgpSelectOption,
+  injectSelectState
+} from "ng-primitives/select";
+import { provideIcons, NgIcon } from "@ng-icons/core"
+import { matArrowDropDownOutline } from "@ng-icons/material-icons/outline";
+import { cn, tv } from "tailwind-variants";
+
+const styles = tv({
+  slots: {
+    select:
+      "outline-none border-none rounded-none bg-none inline-block p-0 h-auto w-full min-w-0"
+      +" peer",
+    selectValue:
+      "w-full overflow-hidden whitespace-nowrap text-ellipsis",
+    selectContent:
+      "absolute min-w-[112px] w-[212px] max-w-[280px] max-h-[275px] z-[1000] rounded-b-[4px] rounded-t-none py-[8px] bg-surface-container shadow-elevation-light-low"
+      +" flex flex-col items-start justify-center"
+      +" origin-(--ngp-select-transform-origin)",
+    selectItem:
+      "relative min-h-[48px] px-[16px] py-0 w-full border-none overflow-hidden cursor-pointer text-on-surface text-label-large"
+      +" flex justify-start items-center",
+  }
+});
+
+export const {
+  select,
+  selectContent,
+  selectItem,
+  selectValue
+} = styles()
 
 @Component({
   selector: 'ui-select',
-  template: ``
+  template: `
+    <div class="box-border w-full inline-flex items-center cursor-pointer">
+      <ng-content/>
+      <ng-icon name="matArrowDropDownOutline" size="24"/>
+    </div>
+  `,
+  imports: [
+    CommonModule,
+    NgIcon
+],
+  providers: [
+    provideIcons({ matArrowDropDownOutline }),
+  ],
+  hostDirectives: [
+    { directive: NgpSelect }
+  ],
+  host: {
+    "[attr.data-filled]": "true"
+  }
 })
-export class Select { }
+export class Select {
+
+  @Input({ alias: 'class' }) clazz: string | undefined;
+
+  @HostBinding('class')
+  get klass() {
+    return cn(select(), this.clazz);
+  }
+
+}
+
+@Component({
+  selector: 'ui-select-value',
+  template: `
+    @if (value(); as value) {
+      {{ value }}
+    } @else {
+      &#8203;
+    }
+  `,
+  imports: [
+    CommonModule
+  ]
+})
+export class SelectValue {
+
+  public readonly state = injectSelectState();
+
+  @Input({ alias: 'class' }) clazz: string | undefined;
+
+  @HostBinding('class')
+  get klass() {
+    return cn(selectValue(), this.clazz);
+  }
+
+  get value() {
+    return this.state().value;
+  }
+}
+
+@Component({
+  selector: 'ui-select-content',
+  template: `
+    <ng-content/>
+  `,
+  imports: [
+    CommonModule
+  ],
+  hostDirectives: [
+    { directive: NgpSelectDropdown }
+  ]
+})
+export class SelectContent {
+  @Input({ alias: 'class' }) clazz: string | undefined;
+
+  @HostBinding('class')
+  get klass() {
+    return cn(selectContent(), this.clazz);
+  }
+}
+
+@Directive({
+  selector: '[ui-select-item]',
+})
+export class SelectItem {
+
+  public readonly ngpSelectionOption = inject(NgpSelectOption);
+
+  @Input({ alias: 'class' }) clazz: string | undefined;
+
+  @HostBinding('class')
+  get klass() {
+    return cn(selectItem(), this.clazz);
+  }
+}

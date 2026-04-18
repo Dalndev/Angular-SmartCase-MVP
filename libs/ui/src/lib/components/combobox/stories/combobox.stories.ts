@@ -19,7 +19,7 @@ export default meta;
 
 type Story = StoryObj<ComboBox>;
 
-export const combobox: Story = {
+export const comboBox: Story = {
   render: () => ({
     template: ``
   })
