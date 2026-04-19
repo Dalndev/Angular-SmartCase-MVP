@@ -1,0 +1,41 @@
+<form>
+  <ui-field>
+    <input
+      ui-input
+      id="case-number"
+    />
+    <label 
+      ui-field-label
+      htmlFor="case-number"
+    >
+      Case Number
+    </label>
+  </ui-field>
+  <ui-field>
+    <ui-select
+      id="case-status"
+    >
+      <ui-select-value/>
+      <ui-select-content *ngpSelectPortal>
+      </ui-select-content>
+    </ui-select>
+    <label
+      ui-field-label
+      htmlFor="case-status"
+    >
+      Case Status
+    </label>
+  </ui-field>
+  <ui-field>
+    <input
+      ui-input
+      id="case-alias"
+    />
+    <label
+      ui-field-label
+      htmlFor="case-alias"
+    >
+      Alias
+    </label>
+  </ui-field>
+</form>

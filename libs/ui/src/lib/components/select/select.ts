@@ -48,7 +48,7 @@ export const {
         class="
           [ui-select[data-focus]_&]:rotate-180 
           [ui-select[data-focus]_&]:[--ng-icon__color:var(--primary)]
-          transition-all
+          transition-all ease-in-out
         "
       />
     </div>

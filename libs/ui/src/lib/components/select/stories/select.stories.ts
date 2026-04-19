@@ -5,7 +5,7 @@ import { NgpSelectOption, NgpSelectPortal, provideSelectState } from "ng-primiti
 import { Field, FieldDescription, FieldError, FieldLabel } from "../../field/field";
 
 const meta: Meta<Select> = {
-  title: 'Drafts/Select',
+  title: 'Material Design/Select',
   component: Select,
   decorators: [
     moduleMetadata({
