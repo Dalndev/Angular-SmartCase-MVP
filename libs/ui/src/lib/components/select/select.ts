@@ -1,12 +1,10 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 
 import { CommonModule } from "@angular/common";
-import { Component, Directive, HostBinding, inject, Input } from "@angular/core";
+import { Component, computed, Directive, HostBinding, input, Input } from "@angular/core";
 import {
-  NgpSelect,
   NgpSelectDropdown,
-  NgpSelectOption,
-  injectSelectState
+  injectSelectState,
 } from "ng-primitives/select";
 import { provideIcons, NgIcon } from "@ng-icons/core"
 import { matArrowDropDownOutline } from "@ng-icons/material-icons/outline";
@@ -20,9 +18,9 @@ const styles = tv({
     selectValue:
       "w-full overflow-hidden whitespace-nowrap text-ellipsis",
     selectContent:
-      "absolute min-w-[112px] w-[212px] max-w-[280px] max-h-[275px] z-[1000] rounded-b-[4px] rounded-t-none py-[8px] bg-surface-container shadow-elevation-light-low"
+      "absolute min-w-[112px] max-w-[280px] max-h-[275px] z-[1000] rounded-b-[4px] rounded-t-none py-[8px] bg-surface-container shadow-elevation-light-low"
       +" flex flex-col items-start justify-center"
-      +" origin-(--ngp-select-transform-origin)",
+      +" w-(--ngp-select-width) origin-(--ngp-select-transform-origin)",
     selectItem:
       "relative min-h-[48px] px-[16px] py-0 w-full border-none overflow-hidden cursor-pointer text-on-surface text-label-large"
       +" flex justify-start items-center",
@@ -39,9 +37,20 @@ export const {
 @Component({
   selector: 'ui-select',
   template: `
-    <div class="box-border w-full inline-flex items-center cursor-pointer">
+    <div class="
+      box-border w-full inline-flex items-center cursor-pointer
+      
+    ">
       <ng-content/>
-      <ng-icon name="matArrowDropDownOutline" size="24"/>
+      <ng-icon 
+        name="matArrowDropDownOutline" 
+        size="24"
+        class="
+          [ui-select[data-focus]_&]:rotate-180 
+          [ui-select[data-focus]_&]:[--ng-icon__color:var(--primary)]
+          transition-all
+        "
+      />
     </div>
   `,
   imports: [
@@ -49,24 +58,27 @@ export const {
     NgIcon
 ],
   providers: [
-    provideIcons({ matArrowDropDownOutline }),
+    provideIcons({ matArrowDropDownOutline })
   ],
-  hostDirectives: [
-    { directive: NgpSelect }
-  ],
+  hostDirectives: [],
   host: {
-    "[attr.data-filled]": "true"
+    "role": "button",
+    "[attr.data-filled]": "isFilled()",
+    "[attr.data-focus]": "isFocus() ? '' : undefined",
+    "[class]": "klass()"
   }
 })
 export class Select {
 
-  @Input({ alias: 'class' }) clazz: string | undefined;
+  private readonly state = injectSelectState();
 
-  @HostBinding('class')
-  get klass() {
-    return cn(select(), this.clazz);
-  }
+  public clazz = input<string>('', { alias: 'class' });
 
+  protected klass = computed(() => cn(select(), this.clazz));
+
+  isFilled = computed(() => !!this.state().value())
+
+  isFocus = computed(() => this.state().open());
 }
 
 @Component({
@@ -84,7 +96,7 @@ export class Select {
 })
 export class SelectValue {
 
-  public readonly state = injectSelectState();
+  private readonly state = injectSelectState();
 
   @Input({ alias: 'class' }) clazz: string | undefined;
 
@@ -106,6 +118,7 @@ export class SelectValue {
   imports: [
     CommonModule
   ],
+  providers: [],
   hostDirectives: [
     { directive: NgpSelectDropdown }
   ]
@@ -123,9 +136,6 @@ export class SelectContent {
   selector: '[ui-select-item]',
 })
 export class SelectItem {
-
-  public readonly ngpSelectionOption = inject(NgpSelectOption);
-
   @Input({ alias: 'class' }) clazz: string | undefined;
 
   @HostBinding('class')

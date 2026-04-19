@@ -20,7 +20,7 @@ export const styles = tv({
     fieldLabel: 
       "absolute top-1/2 left-0 origin-top-left -translate-y-1/2 pointer-events-auto transition-all"
      +" text-start font-medium text-on-surface-variant text-ellipsis whitespace-nowrap overflow-hidden"
-     +" peer-focus:-translate-y-full peer-focus:scale-75 peer-focus:text-primary"
+     +" peer-data-focus:-translate-y-full peer-data-focus:scale-75 peer-data-focus:text-primary"
      +" peer-data-[filled=true]:-translate-y-full peer-data-[filled=true]:scale-75 peer-data-[filled=true]:text-primary",
     fieldDescription:
       "border-none bg-none p-0",

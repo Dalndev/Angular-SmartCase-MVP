@@ -1,7 +1,7 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { Select, SelectContent, SelectItem, SelectValue } from "../select";
 import { CommonModule } from "@angular/common";
-import { NgpSelectDropdown, NgpSelectOption, NgpSelectPortal } from "ng-primitives/select";
+import { NgpSelectOption, NgpSelectPortal, provideSelectState } from "ng-primitives/select";
 import { Field, FieldDescription, FieldError, FieldLabel } from "../../field/field";
 
 const meta: Meta<Select> = {
@@ -20,8 +20,10 @@ const meta: Meta<Select> = {
         SelectContent,
         SelectItem,
         NgpSelectPortal,
-        NgpSelectOption,
-        NgpSelectDropdown
+        NgpSelectOption
+      ],
+      providers:[
+        provideSelectState()
       ]
     })
   ]
