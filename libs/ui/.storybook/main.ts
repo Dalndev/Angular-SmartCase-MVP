@@ -1,7 +1,7 @@
 import type { StorybookConfig } from '@storybook/angular';
 import type { StorybookConfigVite } from '@storybook/builder-vite';
 import { mergeConfig } from 'vite';
-import { optimizeDeps, type UserConfig } from 'vite';
+import { type UserConfig } from 'vite';
 
 //? Reference (Vite Builder). https://storybook.js.org/docs/builders/vite
 

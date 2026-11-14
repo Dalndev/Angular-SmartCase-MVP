@@ -18,7 +18,8 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["@org/source"],
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "~ui": ["libs/ui/src/index.ts"],
       "~cases/*": ["apps/smartcase/src/app/packages/cases/*"]

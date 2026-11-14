@@ -45,5 +45,9 @@ Thumbs.db
 
 .angular
 
-
+# Storybooks
 storybook-static
+
+# Agents 
+.kiro
+.gemini
