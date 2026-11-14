@@ -1,12 +1,14 @@
-<div
-  class="max-h-full flex flex-col justify-center space-y-[8px] overflow-hidden"
->
+<!-- SDP. Maneja los overflows producidos en el contenido de la lista. [-webkit-scroll-(thumb/track/..)]-->
+<div class="px-1 max-h-full flex flex-col justify-start space-y-[8px] overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scroll]:h-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:transition-colors [&::-webkit-scrollbar-thumb]:duration-200 [&::-webkit-scrollbar-thumb:hover]:bg-gray-400 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-button]:hidden">
   @for (case of cases | async; track case.id) {
-  <app-case-card
-    [title]="case.title"
-    [status]="case.status"
-    [description]="case.description"
-    [caseNumber]="case.caseNumber"
-  />
+    <app-case-card
+      [id]="case.caseId!"
+      [title]="case.title"
+      [status]="case.status"
+      [description]="case.description"
+      [caseNumber]="case.caseNumber"
+      [selected]="case.selected"
+      (selection)="selection($event)"
+    />
   }
 </div>

@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants';
  * 
  * {@link https://m3.material.io/components/buttons/specs}
  */
-const classes = tv({
+const styles = tv({
   base: 'py-0 relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto font-medium transition-colors overflow-hidden disabled:bg-on-surface-variant-state-layer-light disabled:text-on-surface disabled:pointer-events-none',
   variants: {
     icon: {},
@@ -73,4 +73,4 @@ const classes = tv({
   ],
 });
 
-export default classes;
+export default styles;

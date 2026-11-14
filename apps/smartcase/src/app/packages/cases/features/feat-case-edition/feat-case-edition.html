@@ -1,0 +1,21 @@
+<form class="w-1/2 grid grid-cols-2 auto-rows-auto gap-x-4 gap-y-2">
+  <ui-field class="col-span-1/2">
+    <input ui-input id="case-number" />
+    <label ui-field-label htmlFor="case-number"> Case Number </label>
+  </ui-field>
+  <ui-field>
+    <ui-select id="case-status">
+      <ui-select-value />
+      <ui-select-content *ngpSelectPortal>
+        <span ui-select-item>Incomming</span>
+        <span ui-select-item>In Pogress</span>
+        <span ui-select-item>Resolved</span>
+      </ui-select-content>
+    </ui-select>
+    <label ui-field-label htmlFor="case-status"> Case Status </label>
+  </ui-field>
+  <ui-field class="col-span-full">
+    <input ui-input id="case-alias" />
+    <label ui-field-label htmlFor="case-alias"> Alias </label>
+  </ui-field>
+</form>

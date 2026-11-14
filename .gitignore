@@ -51,3 +51,6 @@ storybook-static
 # Agents 
 .kiro
 .gemini
+.nx/polygraph
+.claude/worktrees
+.claude/settings.local.json

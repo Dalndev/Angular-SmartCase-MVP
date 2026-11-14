@@ -1,1 +1,10 @@
-Router Param is {{id()}}
+@if (case() | async; as case) {
+    <app-details-header
+        [title]="case.title"
+        [caseNumber]="case.caseNumber"
+    />
+    <app-details-content
+        [description]="case.description"
+    />
+    <app-details-footer/>
+}

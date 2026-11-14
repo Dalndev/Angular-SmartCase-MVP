@@ -52,6 +52,10 @@
   --color-background: var(--background);
   --color-on-background: var(--on-background);
 
+  --color-scrim-low: var(--scrim-low);
+  --color-scrim-medium: var(--scrim-medium);
+  --color-scrim-high: var(--scrim-high);
+
   --color-surface: var(--surface);
   --color-on-surface: var(--on-surface);
 
@@ -290,6 +294,10 @@
 
   --background: rgb(254, 247, 255);
   --on-background: rgb(29, 27, 32);
+
+  --scrim-low: rgba(0,0,0,0.8);
+  --scrim-medium: rgba(0,0,0,0.10);
+  --scrim-high: rgba(0,0,0,0.16);
 
   --surface: rgb(254, 247, 255);
   --on-surface: rgb(29, 27, 32);

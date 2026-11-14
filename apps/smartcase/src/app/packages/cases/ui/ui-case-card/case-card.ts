@@ -19,8 +19,8 @@ export interface CaseProps {
     ],
     host: {
         role: "button",
-        "[attr.aria-selected]": "isSelected()",
-        "(click)": "handleClick()",
+        "[attr.aria-selected]": "selected()",
+        "(click)": "onSelectCard($event)",
         "class": "group/item"
     },
     hostDirectives: [{ directive: NgpButton }]
@@ -37,22 +37,11 @@ export class CaseCard {
 
     public status = input<string | null>();
 
-    public selected = output<string | undefined>();
+    public selected = model<boolean>(false);
 
-    public isSelected = model<boolean>(false);
+    public selection = output<{ selected?: boolean, id: string }>();
 
-    public handleClick() {
-
-        console.log("[Case] [UI] [Card] [Selected] > ", this.isSelected())
-
-        this.onSelect(); this.selected.emit(this.id() || undefined);
-    }
-
-    private onSelect() {
-        this.toggleSelect()
-    }
-
-    private toggleSelect(status?: boolean) {
-        this.isSelected.set(status || !this.isSelected());
+    public onSelectCard(_: Event) {
+        this.selection.emit({ id: this.id()! })
     }
 }
