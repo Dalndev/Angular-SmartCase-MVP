@@ -1,15 +1,16 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Avatar } from "../avatar";
+import { Avatar, AvatarGroup } from "../avatar";
 import { CommonModule } from "@angular/common";
 
 const meta: Meta<Avatar> = {
-  title: 'Drafts/Avatar',
+  title: 'Material Design/Avatar',
   component: Avatar,
   decorators: [
     moduleMetadata({
       imports: [
         CommonModule,
-        Avatar
+        Avatar,
+        AvatarGroup,
       ]
     })
   ]
@@ -20,7 +21,68 @@ export default meta;
 type Story = StoryObj<Avatar>;
 
 export const avatar: Story = {
+  name: "Avatar",
+  args: {},
   render: () => ({
-    template: ``
+    template: `
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-avatar 
+          image="https://unavatar.io/email/hello@microlink.io"
+        />
+        <ui-avatar 
+          fallback="FB"
+        />
+      </div>
+    `
+  })
+}
+
+export const shapes: Story = {
+  name: "Shapes",
+  args: {},
+  render: () => ({
+    template: `
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-avatar
+          shape="rounded"
+          fallback="RD"
+        />
+        <ui-avatar 
+          shape="squared"
+          fallback="SD"
+        />
+      </div>
+    `
+  })
+}
+
+
+export const sizes: Story = {
+  name: "Sizes",
+  args: {},
+  render: () => ({
+    template: `
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-avatar shape="rounded" size="sm" fallback="SM" />
+        <ui-avatar shape="rounded" size="md" fallback="MD" />
+        <ui-avatar shape="rounded" size="lg" fallback="LG" />
+        </div>
+    `
+  })
+}
+
+export const group: Story = {
+  name: "Group",
+  args: {},
+  render: () => ({
+    template: `
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <ui-avatar-group [counter]="true">
+          <ui-avatar fallback="SD"/>
+          <ui-avatar fallback="DP"/>
+          <ui-avatar fallback="PM"/>
+        </ui-avatar-group>
+      </div>
+    `
   })
 }
