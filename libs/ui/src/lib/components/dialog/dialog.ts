@@ -21,10 +21,9 @@ export class DialogOverlay {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialogOverlay(), this.clazz)
     }
-
 }
 
 @Component({
@@ -43,7 +42,7 @@ export class Dialog {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialog(), this.clazz)
     }
 
@@ -64,7 +63,7 @@ export class DialogHeader {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialogHeader(), this.clazz)
     }    
 }
@@ -85,7 +84,7 @@ export class DialogTitle {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialogTitle(), this.clazz)
     }
 }
@@ -106,7 +105,7 @@ export class DialogDescription {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialogDescription(), this.clazz)
     }
 }
@@ -126,7 +125,7 @@ export class DialogFooter {
     public clazz: string | undefined;
 
     @HostBinding("class")
-    get klass() {
+    get styles() {
         return cn(dialogFooter(), this.clazz)
     }    
 }

@@ -1,4 +1,6 @@
+/* eslint-disable @angular-eslint/directive-selector */
 /* eslint-disable @angular-eslint/no-input-rename */
+
 import { CommonModule } from "@angular/common";
 import { Component, computed, Directive, HostBinding, input, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
@@ -41,16 +43,16 @@ import { NgpSelect } from "ng-primitives/select";
   hostDirectives: [{ directive: NgpSelect }],
   host: {
     "role": "group",
-    '[class]': 'klass()'
+    '[class]': 'styles()'
   }
 })
 export class Field {
   
-  clazz     = input<string>('', { alias: 'class' });
+  clazz = input<string>('', { alias: 'class' });
   
-  variant   = input<Variants['variant'] | undefined>(undefined);
+  variant = input<Variants['variant'] | undefined>(undefined);
 
-  protected klass = computed(() =>
+  protected styles = computed(() =>
     cn(field({ variant: this.variant() }), this.clazz())
   );
 
@@ -70,7 +72,7 @@ export class FieldLabel {
   @Input() htmlFor!: string;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(fieldLabel({ variant: this.variant }))
   }
 
@@ -87,7 +89,7 @@ export class FieldDescription {
   @Input() variant: Variants["variant"] | undefined;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(fieldDescription({ variant: this.variant }), this.clazz);
   }
 }
@@ -103,7 +105,7 @@ export class FieldError {
   @Input() variant: Variants["variant"] | undefined;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(fieldError({ variant: this.variant }), this.clazz);
   }
 }

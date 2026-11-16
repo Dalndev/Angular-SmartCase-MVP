@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, HostBinding, Input } from "@angular/core";
 import { TagVariants } from "./dtypes/tag.dtypes";
-import classes from "./styles/tag.styles";
+import { styles } from "./styles/tag.styles";
 
 @Component({
   selector: 'ui-tag',
@@ -22,8 +22,8 @@ export class Tag {
   @Input() variant: TagVariants["variant"];
 
   @HostBinding('class')
-  get klass() {
-    return classes({ variant: this.variant });
+  get styles() {
+    return styles({ variant: this.variant });
   }
 
 }

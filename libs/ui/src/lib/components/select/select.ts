@@ -8,31 +8,8 @@ import {
 } from "ng-primitives/select";
 import { provideIcons, NgIcon } from "@ng-icons/core"
 import { matArrowDropDownOutline } from "@ng-icons/material-icons/outline";
-import { cn, tv } from "tailwind-variants";
-
-const styles = tv({
-  slots: {
-    select:
-      "outline-none border-none rounded-none bg-none inline-block p-0 h-auto w-full min-w-0"
-      +" peer",
-    selectValue:
-      "w-full overflow-hidden whitespace-nowrap text-ellipsis",
-    selectContent:
-      "absolute min-w-[112px] max-w-[280px] max-h-[275px] z-[1000] rounded-b-[4px] rounded-t-none py-[8px] bg-surface-container shadow-elevation-light-low"
-      +" flex flex-col items-start justify-center"
-      +" w-(--ngp-select-width) origin-(--ngp-select-transform-origin)",
-    selectItem:
-      "relative min-h-[48px] px-[16px] py-0 w-full border-none overflow-hidden cursor-pointer text-on-surface text-label-large"
-      +" flex justify-start items-center",
-  }
-});
-
-export const {
-  select,
-  selectContent,
-  selectItem,
-  selectValue
-} = styles()
+import { cn } from "tailwind-variants";
+import { select, selectContent, selectItem, selectValue } from "./styles/select.styles"
 
 @Component({
   selector: 'ui-select',
@@ -65,7 +42,7 @@ export const {
     "role": "button",
     "[attr.data-filled]": "isFilled()",
     "[attr.data-focus]": "isFocus() ? '' : undefined",
-    "[class]": "klass()"
+    "[class]": "styles()"
   }
 })
 export class Select {
@@ -74,7 +51,7 @@ export class Select {
 
   public clazz = input<string>('', { alias: 'class' });
 
-  protected klass = computed(() => cn(select(), this.clazz));
+  protected styles = computed(() => cn(select(), this.clazz));
 
   isFilled = computed(() => !!this.state().value())
 
@@ -101,7 +78,7 @@ export class SelectValue {
   @Input({ alias: 'class' }) clazz: string | undefined;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(selectValue(), this.clazz);
   }
 
@@ -127,7 +104,7 @@ export class SelectContent {
   @Input({ alias: 'class' }) clazz: string | undefined;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(selectContent(), this.clazz);
   }
 }
@@ -139,7 +116,7 @@ export class SelectItem {
   @Input({ alias: 'class' }) clazz: string | undefined;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(selectItem(), this.clazz);
   }
 }

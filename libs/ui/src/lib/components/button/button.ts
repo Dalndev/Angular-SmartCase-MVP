@@ -2,8 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { ButtonVariants } from './dtypes/button.dtypes';
-import classes from './styles/button.styles';
+import { styles } from './styles/button.styles';
 
+
+/**
+ * Buttons allow users to take actions, and make choices, with a single tap. They are typically used for actions in dialogs, forms, cards, and toolbars.
+ * 
+ * {@link https://m3.material.io/components/buttons/specs}
+ */
 @Component({
   selector: 'ui-button',
   imports: [CommonModule, NgpButton],
@@ -15,7 +21,7 @@ import classes from './styles/button.styles';
         [attr.data-size]=[_size]
         [attr.data-variant]=[_variant]
         [attr.data-shape]=[_shape]
-        [class]="klass()" 
+        [class]="styles()" 
         [disabled]="disabled" 
         (click)="_onClick($event)" 
         (focus)="_onFocus($event)" 
@@ -44,8 +50,8 @@ export class Button {
 
   @Output() btnBlur = new EventEmitter<Event>();
 
-  public klass = computed(() =>
-    classes({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
+  public styles = computed(() =>
+    styles({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
   );
 
   public _onClick(event: Event) {

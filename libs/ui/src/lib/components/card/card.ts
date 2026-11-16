@@ -18,7 +18,7 @@ export class Card {
   @Input({ alias: 'class' }) clazz!: string;
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(base({ variant: this.variant }), this.clazz);
   }
 }
@@ -32,7 +32,7 @@ export class CardHeader {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return header({ variant: this.variant });
   }
 }
@@ -41,9 +41,7 @@ export class CardHeader {
   selector: 'ui-card-action',
   imports: [CommonModule],
   template: `
-    <span
-      class="absolute top-0 left-0 w-full h-full pointer-events-none"
-    ></span>
+    <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
     <ng-content />
   `,
   hostDirectives: [{ directive: NgpButton }],
@@ -55,7 +53,7 @@ export class CardAction {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return action({ variant: this.variant });
   }
 }
@@ -69,7 +67,7 @@ export class CardHeadline {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return headline({ variant: this.variant });
   }
 }
@@ -83,7 +81,7 @@ export class CardTitle {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return title({ variant: this.variant });
   }
 }
@@ -97,7 +95,7 @@ export class CardDescription {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return description({ variant: this.variant });
   }
 }
@@ -111,7 +109,7 @@ export class CardContent {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return content({ variant: this.variant });
   }
 }
@@ -125,7 +123,7 @@ export class CardFooter {
   @Input() variant: Variants['variant'];
 
   @HostBinding('class')
-  get klass() {
+  get styles() {
     return footer({ variant: this.variant });
   }
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, HostBinding, Input, Output } from "@angular/core";
-import classes from "./styles/chips.styles";
+import { styles } from "./styles/chips.styles";
 import { ChipsVariants } from "./dtypes/chips.dtypes";
 import { NgpPress } from "ng-primitives/interactions";
 import { NgIcon, provideIcons } from "@ng-icons/core";
@@ -38,51 +38,13 @@ export class Chip {
   @Output() chipBlur = new EventEmitter<Event>();
   
   @HostBinding('class')
-  get klass() {
-    return classes({ variant: this.variant, })
+  get styles() {
+    return styles({ variant: this.variant, })
   }
 
   @HostBinding('attr.data-disabled')
   get _disabled() {
     return this.disabled || null;
-  }
-
-  public _onClick(event: Event) {
-    this.chipClick.emit(event);
-  }
-
-  public _onFocus(event: FocusEvent) {
-    this.chipFocus.emit(event);
-  }
-
-  public _onBlur(event: Event) {
-    this.chipBlur.emit(event);
-  }
-}
-
-@Component({
-  selector: 'ui-input-chip',
-  imports: [CommonModule],
-  template: `
-    <ng-content select="[slot=leading]" />
-    <ng-content />
-    <ng-content select="[slot=trailing]" />
-  `
-})
-export class InputChip { 
-
-  @Input() avatar!: string;
-
-  @Input() variant: ChipsVariants["variant"];
-
-  @Output() chipClick = new EventEmitter<Event>();
-
-  @Output() chipFocus = new EventEmitter<FocusEvent>();
-
-  @Output() chipBlur = new EventEmitter<Event>();
-  
-  get klass() {
-    return classes()
   }
 
   public _onClick(event: Event) {
@@ -107,7 +69,7 @@ export class InputChip {
     @if(selected) {
       <ng-icon slot="leading" name="matCheckOutline"/>
     }
-    @if(!selected) {
+    @if(!selected) {s
       <ng-content select="[slot=leading]" />
     }
     <ng-content />
@@ -138,8 +100,8 @@ export class FilterChip  {
   @Output() chipBlur = new EventEmitter<Event>();
   
   @HostBinding('class')
-  get klass() {
-    return classes({ variant: this.variant, selected: this.selected })
+  get styles() {
+    return styles({ variant: this.variant, selected: this.selected })
   }
 
   private toggleSelected() {
@@ -149,6 +111,43 @@ export class FilterChip  {
   public _onClick(event: Event) {
     this.toggleSelected();
     this.chipClick.emit(event);
-  }
+  }  
+}
+
+@Component({
+  selector: 'ui-input-chip',
+  imports: [CommonModule],
+  template: `
+    <ng-content select="[slot=leading]" />
+    <ng-content />
+    <ng-content select="[slot=trailing]" />
+  `
+})
+export class InputChip { 
+
+  @Input() avatar!: string;
+
+  @Input() variant: ChipsVariants["variant"];
+
+  @Output() chipClick = new EventEmitter<Event>();
+
+  @Output() chipFocus = new EventEmitter<FocusEvent>();
+
+  @Output() chipBlur = new EventEmitter<Event>();
   
+  get styles() {
+    return styles()
+  }
+
+  public _onClick(event: Event) {
+    this.chipClick.emit(event);
+  }
+
+  public _onFocus(event: FocusEvent) {
+    this.chipFocus.emit(event);
+  }
+
+  public _onBlur(event: Event) {
+    this.chipBlur.emit(event);
+  }
 }

@@ -43,5 +43,3 @@ export const {
   content,
   footer,
 } = styles();
-
-export default styles;

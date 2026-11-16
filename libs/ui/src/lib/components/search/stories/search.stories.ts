@@ -1,16 +1,20 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { Search } from "../search";
 import { CommonModule } from "@angular/common";
+import { NgIcon, provideIcons } from "@ng-icons/core";
+import { matCloseOutline } from "@ng-icons/material-icons/outline";
 
 const meta: Meta<Search> = {
-  title: 'Drafts/Search',
+  title: 'Material Design/Search',
   component: Search,
   decorators: [
     moduleMetadata({
       imports: [
         CommonModule,
-        Search
-      ]
+        Search,
+        NgIcon
+      ],
+      providers: [provideIcons({ matCloseOutline })]
     })
   ]
 };
@@ -20,7 +24,27 @@ export default meta;
 type Story = StoryObj<Search>;
 
 export const search: Story = {
+  name: 'Search',
   render: () => ({
-    template: ``
+    template: `
+      <div class="flex justify-center items-center gap-2">
+        <ui-search>
+          <ng-icon slot="leading" name="matCloseOutline"/>
+        </ui-search>
+      </div>
+    `
+  })
+}
+
+export const sizes: Story = {
+  name: 'Size',
+  render: () => ({
+    template: `
+      <div class="flex justify-center items-center gap-2">
+        <ui-search />
+        <ui-search />
+        <ui-search />
+      </div>
+    `
   })
 }
