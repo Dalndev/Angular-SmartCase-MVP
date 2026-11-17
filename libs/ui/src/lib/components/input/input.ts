@@ -1,6 +1,6 @@
+/* eslint-disable @angular-eslint/directive-selector */
 import { 
-  Directive, 
-  HostBinding, 
+  Directive,
   HostListener, 
   Input as InputProp, 
   signal 
@@ -10,24 +10,38 @@ import { cn } from "tailwind-variants";
 import { styles } from "./styles/input.styles";
 import type { Variants } from "./dtypes/input.dtypes";
 
+/**
+ * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
+ * @todo ui. Implementar la variación "filled" del componente field/input en el sistema.
+ * @todo ui. Implementar el diseño para el input de tipo "email".
+ * @todo ui. Implementar el diseño para el input de tipo "tel".
+ */
+
+/**
+ * @author Dalndev
+ * 
+ * @description
+ * 
+ * @see {@link}
+ */
 @Directive({
   selector: 'input[ui-input]',
   hostDirectives: [{ directive: NgpInput }],
   host: {
+    '[id]': 'id',
+    '[class]': 'styles',
     '[attr.data-filled]': 'filled()',
-    '[id]': 'id'
   }
 })
 export class Input {
 
-  @InputProp() variant: Variants["variant"] = "filled";
-
   @InputProp() id: string | undefined;
+
+  @InputProp() variant: Variants["variant"] = "filled";
 
   public filled = signal(false);
 
-  @HostBinding('class')
-  get klass() {
+  get styles() {
     return cn(styles({ variant: this.variant }))
   }
 

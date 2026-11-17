@@ -1,7 +1,7 @@
+/* eslint-disable @angular-eslint/directive-selector */
 /* eslint-disable @angular-eslint/no-input-rename */
-
 import { CommonModule } from "@angular/common";
-import { Component, computed, Directive, HostBinding, input, Input } from "@angular/core";
+import { Component, computed, Directive, input, Input } from "@angular/core";
 import {
   NgpSelectDropdown,
   injectSelectState,
@@ -11,6 +11,19 @@ import { matArrowDropDownOutline } from "@ng-icons/material-icons/outline";
 import { cn } from "tailwind-variants";
 import { select, selectContent, selectItem, selectValue } from "./styles/select.styles"
 
+/**
+ * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
+ * @todo ui. Implementar la variación "filled" del componente field/input en el sistema.
+ */
+
+/**
+ * @author Dalndev
+ * 
+ * @description Button that opens a fixed list of options and, once someone picks one, shows its label in place of the prompt.
+ * 
+ * @see {@link https://angularprimitives.com/primitives/select | Angular Primitives - Select}
+ * @see {@link https://www.shadcn.io/ui/select | Shadcn - Select}
+ */
 @Component({
   selector: 'ui-select',
   template: `
@@ -60,16 +73,19 @@ export class Select {
 
 @Component({
   selector: 'ui-select-value',
+  imports: [CommonModule],
   template: `
     @if (value(); as value) {
       {{ value }}
-    } @else {
+    }
+
+    @if (!value()) {
       &#8203;
     }
   `,
-  imports: [
-    CommonModule
-  ]
+  host: {
+    '[class]': 'styles'
+  }
 })
 export class SelectValue {
 
@@ -77,7 +93,6 @@ export class SelectValue {
 
   @Input({ alias: 'class' }) clazz: string | undefined;
 
-  @HostBinding('class')
   get styles() {
     return cn(selectValue(), this.clazz);
   }
@@ -89,21 +104,17 @@ export class SelectValue {
 
 @Component({
   selector: 'ui-select-content',
-  template: `
-    <ng-content/>
-  `,
-  imports: [
-    CommonModule
-  ],
+  template: `<ng-content/>`,
+  imports: [CommonModule],
   providers: [],
-  hostDirectives: [
-    { directive: NgpSelectDropdown }
-  ]
+  hostDirectives: [{ directive: NgpSelectDropdown }],
+  host: {
+    '[class]': 'styles'
+  }
 })
 export class SelectContent {
   @Input({ alias: 'class' }) clazz: string | undefined;
 
-  @HostBinding('class')
   get styles() {
     return cn(selectContent(), this.clazz);
   }
@@ -111,11 +122,13 @@ export class SelectContent {
 
 @Directive({
   selector: '[ui-select-item]',
+  host: {
+    '[class]': 'styles'
+  }
 })
 export class SelectItem {
   @Input({ alias: 'class' }) clazz: string | undefined;
 
-  @HostBinding('class')
   get styles() {
     return cn(selectItem(), this.clazz);
   }

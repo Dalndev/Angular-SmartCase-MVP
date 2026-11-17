@@ -38,11 +38,11 @@ export const withIcons: Story = {
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-filter-chip variant="outlined" [menu]="true">
+        <ui-filter-chip variant="outlined">
           <ng-icon slot="leading" name="matDirectionsCarOutline"/>
           Leading
         </ui-filter-chip>
-        <ui-filter-chip variant="elevated" [menu]="true">
+        <ui-filter-chip variant="elevated">
           <ng-icon slot="leading" name="matPeopleOutline"></ng-icon>
           Filter
         </ui-filter-chip>

@@ -4,6 +4,13 @@ import { NgpButton } from "ng-primitives/button";
 import { FABVariants } from "./dtypes/fab.dtypes";
 import classes from "./styles/fab.styles";
 
+/**
+ * @author Dalndev
+ * 
+ * @description Help people take primary actions
+ * 
+ * @see {@link https://m3.material.io/components/floating-action-button/overview | Material Design - FAB}
+ */
 @Component({
     selector: "ui-fab",
     standalone: true,

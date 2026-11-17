@@ -30,9 +30,7 @@ export const field: Story = {
   render: () => ({
     template: `
       <ui-field variant="filled">
-        <input 
-          ui-input
-        />
+        <input ui-input />
         <label ui-field-label>Full Name</label>
         <span ui-field-description>Max 10 characters</span>
       </ui-field>

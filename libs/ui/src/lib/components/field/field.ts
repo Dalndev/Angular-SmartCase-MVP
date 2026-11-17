@@ -2,15 +2,32 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 
 import { CommonModule } from "@angular/common";
-import { Component, computed, Directive, HostBinding, input, Input } from "@angular/core";
+import { Component, computed, Directive, input, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
 import { NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
 import { field, fieldLabel, fieldDescription, fieldError } from "./styles/field.styles";
 import type { Variants } from "./dtypes/field.dtypes";
 import { NgpSelect } from "ng-primitives/select";
 
+/**
+ * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
+ * @todo ui. Implementar la variación "filled" del componente field/input en el sistema.
+ */
+
+/**
+ * @author Dalndev
+ * 
+ * @description Let users enter text into a UI.
+ * 
+ * @see {@link https://m3.material.io/components/text-fields/overview | Material Design - Text Fields}
+ * @see {@link https://angularprimitives.com/primitives/input | Material Design - Input}
+ * @see {@link https://angularprimitives.com/primitives/select | Material Design - Select}
+ * @see {@link https://www.shadcn.io/ui/input | Shadcn - Input}
+ */
 @Component({
   selector: 'ui-field',
+  imports: [CommonModule],
+  hostDirectives: [{ directive: NgpSelect }],
   template: `
     <div class="box-border relative bg-surface-variant h-auto w-full px-[16px] flex-auto rounded-t-[4px] rounded-b-none">
       <div class="box-border inline-flex align-baseline w-full">
@@ -39,8 +56,6 @@ import { NgpSelect } from "ng-primitives/select";
       </div>
     </div>
   `,
-  imports: [CommonModule],
-  hostDirectives: [{ directive: NgpSelect }],
   host: {
     "role": "group",
     '[class]': 'styles()'
@@ -62,7 +77,8 @@ export class Field {
   selector: 'label[ui-field-label]',
   hostDirectives: [{ directive: NgpLabel }],
   host: {
-    '[htmlFor]': 'htmlFor'
+    '[htmlFor]': 'htmlFor',
+    '[class]': 'styles'
   }
 })
 export class FieldLabel {
@@ -71,7 +87,6 @@ export class FieldLabel {
 
   @Input() htmlFor!: string;
 
-  @HostBinding('class')
   get styles() {
     return cn(fieldLabel({ variant: this.variant }))
   }
@@ -81,6 +96,9 @@ export class FieldLabel {
 @Directive({
   selector: '[ui-field-description]',
   hostDirectives: [{ directive: NgpDescription }],
+  host: {
+    '[class]': 'styles'
+  }
 })
 export class FieldDescription {
 
@@ -88,7 +106,6 @@ export class FieldDescription {
 
   @Input() variant: Variants["variant"] | undefined;
 
-  @HostBinding('class')
   get styles() {
     return cn(fieldDescription({ variant: this.variant }), this.clazz);
   }
@@ -96,7 +113,10 @@ export class FieldDescription {
 
 @Directive({
   selector: '[ui-field-error]',
-  hostDirectives: [{ directive: NgpError }]
+  hostDirectives: [{ directive: NgpError }],
+  host: {
+    '[class]': 'styles'
+  }
 })
 export class FieldError {
 
@@ -104,7 +124,6 @@ export class FieldError {
 
   @Input() variant: Variants["variant"] | undefined;
 
-  @HostBinding('class')
   get styles() {
     return cn(fieldError({ variant: this.variant }), this.clazz);
   }
