@@ -27,7 +27,7 @@ export const avatar: Story = {
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
         <ui-avatar 
-          image="https://unavatar.io/email/hello@microlink.io"
+          url="https://unavatar.io/email/hello@microlink.io"
         />
         <ui-avatar 
           fallback="FB"
@@ -36,26 +36,6 @@ export const avatar: Story = {
     `
   })
 }
-
-export const shapes: Story = {
-  name: "Shapes",
-  args: {},
-  render: () => ({
-    template: `
-      <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-avatar
-          shape="rounded"
-          fallback="RD"
-        />
-        <ui-avatar 
-          shape="squared"
-          fallback="SD"
-        />
-      </div>
-    `
-  })
-}
-
 
 export const sizes: Story = {
   name: "Sizes",

@@ -1,37 +1,52 @@
-import { AfterContentInit, Component, HostBinding, Input, QueryList, ViewChildren } from "@angular/core";
+import { Component, HostBinding, Input } from "@angular/core";
 import { NgpAvatar, NgpAvatarFallback, NgpAvatarImage } from "ng-primitives/avatar";
 import { avatarStyles, avatarGroupStyles } from "./styles/avatar.styles";
 import { AvatarVariants } from "./dtypes/avatar.dtypes";
 import { CommonModule } from "@angular/common";
 
+const DEFAULT_FALLBACK = 'UU';
+
+/**
+ * @todo Implementar la directiva NgOptimizedImage, para la carga diferida (lazy) de archivos multimedia en el sistema.
+ * @todo Implementar la propiedad Badge en el elemento avatar para seguimiento del estado actual del usuario en el sistema.
+ * @todo Implementar el componente Count para presentar un feedback al usuario de la cantidad de usuarios agrupados en el elemento AvatarGroup.
+ */
+
+/**
+ * @author Dalndev
+ * 
+ * @see {@link https://m3.material.io/components/lists/specs | List (Avatar)}
+ * @see {@link https://angularprimitives.com/primitives/avatar | Angular Primitives - Avatar}
+ */
 @Component({
   selector: 'ui-avatar',
   imports: [NgpAvatarImage, NgpAvatarFallback],
   hostDirectives: [NgpAvatar],
   template: `
-    @if(image) {
+    @if(url) {
       <img 
         ngpAvatarImage
-        [src]="image"
+        [src]="url"
         [alt]=""
       />
     }
 
-    <span ngpAvatarFallback>{{fallback}}</span>
+    <span ngpAvatarFallback>{{ fallback }}</span>
   `,
+  host: {
+    'data-slot': 'avatar'
+  }
 })
 export class Avatar { 
   @Input() size: AvatarVariants['sizes'] = 'md'
 
-  @Input() shape: AvatarVariants['shapes'] = 'rounded';
+  @Input() url: string | null = null;
 
-  @Input() image: string | null = null;
-
-  @Input() fallback = '';
+  @Input() fallback = DEFAULT_FALLBACK;
 
   @HostBinding('class')
   get styles() {
-    return avatarStyles({ sizes: this.size, shapes: this.shape })
+    return avatarStyles({ sizes: this.size })
   }
 }
 
@@ -40,7 +55,10 @@ export class Avatar {
   imports: [CommonModule],
   template: `
     <ng-content/>
-  `
+  `,
+  host: {
+    'data-slot': 'avatar-group'
+  }
 })
 export class AvatarGroup {
   @HostBinding('class')
