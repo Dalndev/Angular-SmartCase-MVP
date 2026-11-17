@@ -3,7 +3,7 @@ import { Menu } from "../menu";
 import { CommonModule } from "@angular/common";
 
 const meta: Meta<Menu> = {
-  title: 'Drafts/Menu',
+  title: 'Material Design/Menu',
   component: Menu,
   decorators: [
     moduleMetadata({
