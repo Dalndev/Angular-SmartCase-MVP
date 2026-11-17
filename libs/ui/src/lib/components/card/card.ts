@@ -3,9 +3,16 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { cn } from 'tailwind-variants';
 import { Variants } from './dtypes/card.dtypes';
-import { action, base, content, description, footer, header, headline, title } from './styles/card.styles';
+import { cardAction, base, cardContent, cardDescription, cardFooter, cardHeader, cardHeadline, cardTitle } from './styles/card.styles';
 
-
+/**
+ * @author Dalndev
+ * 
+ * @description A card is a surface with its own background and outline that holds one subject: a title with a short description under it, an optional action in the top corner, the body, and a footer for the buttons. Reach for it when a block has to stand on its own, like a login form, a pricing plan or an upcoming event.
+ * 
+ * @see {@link https://m3.material.io/components/cards/overview | Material Design - Card}
+ * @see {@link https://www.shadcn.io/ui/card | Shadcn - Card}
+ */
 @Component({
   selector: 'ui-card',
   imports: [CommonModule],
@@ -33,7 +40,7 @@ export class CardHeader {
 
   @HostBinding('class')
   get styles() {
-    return header({ variant: this.variant });
+    return cardHeader({ variant: this.variant });
   }
 }
 
@@ -54,7 +61,7 @@ export class CardAction {
 
   @HostBinding('class')
   get styles() {
-    return action({ variant: this.variant });
+    return cardAction({ variant: this.variant });
   }
 }
 
@@ -68,7 +75,7 @@ export class CardHeadline {
 
   @HostBinding('class')
   get styles() {
-    return headline({ variant: this.variant });
+    return cardHeadline({ variant: this.variant });
   }
 }
 
@@ -82,7 +89,7 @@ export class CardTitle {
 
   @HostBinding('class')
   get styles() {
-    return title({ variant: this.variant });
+    return cardTitle({ variant: this.variant });
   }
 }
 
@@ -96,7 +103,7 @@ export class CardDescription {
 
   @HostBinding('class')
   get styles() {
-    return description({ variant: this.variant });
+    return cardDescription({ variant: this.variant });
   }
 }
 
@@ -110,7 +117,7 @@ export class CardContent {
 
   @HostBinding('class')
   get styles() {
-    return content({ variant: this.variant });
+    return cardContent({ variant: this.variant });
   }
 }
 
@@ -124,6 +131,6 @@ export class CardFooter {
 
   @HostBinding('class')
   get styles() {
-    return footer({ variant: this.variant });
+    return cardFooter({ variant: this.variant });
   }
 }
