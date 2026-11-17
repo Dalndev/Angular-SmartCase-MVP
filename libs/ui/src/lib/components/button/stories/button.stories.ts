@@ -60,8 +60,8 @@ export const shapes: Story = {
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-button shapes="rounded">Rounded button</ui-button>
-        <ui-button shapes="squared">Squared button</ui-button>
+        <ui-button shape="rounded">Rounded button</ui-button>
+        <ui-button shape="squared">Squared button</ui-button>
       </div>
     `
   })
@@ -72,11 +72,11 @@ export const withIcons: Story = {
   render: () => ({
     template: `
       <div class="flex flex-row gap-2 justify-center items-center">
-        <ui-button shapes="squared">
+        <ui-button shape="squared">
           <ng-icon slot="leading" name="matPersonOutline"/>
           Left Icon
         </ui-button>
-        <ui-button shapes="squared">
+        <ui-button shape="squared">
           Left Icon
           <ng-icon slot="trailing" name="matPersonOutline"/>
         </ui-button>

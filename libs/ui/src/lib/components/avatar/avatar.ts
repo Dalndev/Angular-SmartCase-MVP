@@ -7,16 +7,19 @@ import { CommonModule } from "@angular/common";
 const DEFAULT_FALLBACK = 'UU';
 
 /**
- * @todo Implementar la directiva NgOptimizedImage, para la carga diferida (lazy) de archivos multimedia en el sistema.
- * @todo Implementar la propiedad Badge en el elemento avatar para seguimiento del estado actual del usuario en el sistema.
- * @todo Implementar el componente Count para presentar un feedback al usuario de la cantidad de usuarios agrupados en el elemento AvatarGroup.
+ * @todo performance. Implementar la directiva NgOptimizedImage, para la carga diferida (lazy) de archivos multimedia en el sistema.
+ * @todo feat. Implementar la propiedad Badge en el elemento avatar para seguimiento del estado actual del usuario en el sistema.
+ * @todo feat. Implementar el componente Count para presentar un feedback al usuario de la cantidad de usuarios agrupados en el elemento AvatarGroup.
  */
 
 /**
  * @author Dalndev
  * 
+ * @description An image element with a fallback for representing the user.
+ * 
  * @see {@link https://m3.material.io/components/lists/specs | List (Avatar)}
  * @see {@link https://angularprimitives.com/primitives/avatar | Angular Primitives - Avatar}
+ * @see {@link https://ui.shadcn.com/docs/components/base/avatar | Shadcn - Avatar}
  */
 @Component({
   selector: 'ui-avatar',
@@ -50,6 +53,11 @@ export class Avatar {
   }
 }
 
+/**
+ * @author Dalndev
+ * 
+ * @description Use the AvatarGroup component to add a group of avatars.
+ */
 @Component({
   selector: 'ui-avatar-group',
   imports: [CommonModule],

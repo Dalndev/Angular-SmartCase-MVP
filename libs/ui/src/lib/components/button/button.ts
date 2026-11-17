@@ -4,11 +4,14 @@ import { NgpButton } from 'ng-primitives/button';
 import { ButtonVariants } from './dtypes/button.dtypes';
 import { styles } from './styles/button.styles';
 
-
 /**
- * Buttons allow users to take actions, and make choices, with a single tap. They are typically used for actions in dialogs, forms, cards, and toolbars.
+ * @author Dalndev
  * 
- * {@link https://m3.material.io/components/buttons/specs}
+ * @description Buttons allow users to take actions, and make choices, with a single tap.
+ * 
+ * @see {@link https://m3.material.io/components/buttons/specs | Material Design - Button}
+ * @see {@link https://angularprimitives.com/primitives/button | Angular Primitives - Button}
+ * @see {@link https://www.shadcn.io/ui/button | Shadcn - Button}
  */
 @Component({
   selector: 'ui-button',
@@ -18,14 +21,14 @@ import { styles } from './styles/button.styles';
         ngpButton 
         role="button"
         [attr.data-only-icon]=[isOnlyIcon]
-        [attr.data-size]=[_size]
-        [attr.data-variant]=[_variant]
-        [attr.data-shape]=[_shape]
+        [attr.data-size]=[size]
+        [attr.data-variant]=[variant]
+        [attr.data-shape]=[shape]
         [class]="styles()" 
         [disabled]="disabled" 
-        (click)="_onClick($event)" 
-        (focus)="_onFocus($event)" 
-        (blur)="_onBlur($event)"
+        (click)="onClick($event)" 
+        (focus)="onFocus($event)" 
+        (blur)="onBlur($event)"
       >
         <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
         <ng-content select="[slot=leading]"/>
@@ -36,11 +39,11 @@ import { styles } from './styles/button.styles';
 })
 export class Button {
 
-  @Input() size: ButtonVariants['sizes'];
+  @Input() size: ButtonVariants['size'];
 
-  @Input() variant: ButtonVariants['variants'];
+  @Input() variant: ButtonVariants['variant'];
 
-  @Input() shapes: ButtonVariants['shapes'];
+  @Input() shape: ButtonVariants['shape'];
 
   @Input() disabled = false;
 
@@ -51,31 +54,19 @@ export class Button {
   @Output() btnBlur = new EventEmitter<Event>();
 
   public styles = computed(() =>
-    styles({ sizes: this.size, variants: this.variant, shapes: this.shapes }),
+    styles({ sizes: this.size, variants: this.variant, shapes: this.shape }),
   );
 
-  public _onClick(event: Event) {
+  public onClick(event: Event) {
     this.btnClick.emit(event);
   }
 
-  public _onFocus(event: FocusEvent) {
+  public onFocus(event: FocusEvent) {
     this.btnFocus.emit(event);
   }
 
-  public _onBlur(event: Event) {
+  public onBlur(event: Event) {
     this.btnBlur.emit(event);
-  }
-
-  get _variant() {
-    return this.variant;
-  }
-
-  get _shape() {
-    return this.shapes;
-  }
-
-  get _size() {
-    return this.size;
   }
 
   get isOnlyIcon() {
