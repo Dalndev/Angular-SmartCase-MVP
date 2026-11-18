@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tailwind-animations';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
@@ -16,6 +17,8 @@
 
   --color-primary-container: var(--primary-container);
   --color-on-primary-container: var(--on-primary-container);
+
+  --color-inverse-primary: var(--inverse-primary);
 
   --color-secondary: var(--secondary);
   --color-on-secondary: var(--on-secondary);
@@ -62,6 +65,9 @@
 
   --color-surface-variant: var(--surface-variant);
   --color-on-surface-variant: var(--on-surface-variant);
+
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
 
   --color-outline: var(--outline);
   --color-outline-variant: var(--outline-variant);
@@ -246,7 +252,7 @@
   --font-roboto: 'Roboto', sans-serif;
   --radius: 0.625rem;
 
-  --primary: rgb(101, 85, 143);
+  --primary: rgb(102, 86, 143);
   --on-primary: rgb(255, 255, 255);
 
   --primary-state-layer-light-low: rgba(101, 85, 143, 0.08);
@@ -259,6 +265,8 @@
 
   --primary-container: rgb(234, 221, 255);
   --on-primary-container: rgb(79, 55, 139);
+
+  --inverse-primary: rgb(207, 189, 254);
 
   --secondary: rgb(98, 91, 113);
   --on-secondary: rgb(255, 255, 255);
@@ -305,6 +313,9 @@
 
   --surface-variant: rgb(226, 225, 236);
   --on-surface-variant: rgb(73, 69, 79);
+
+  --inverse-surface: rgb(50, 47, 53);
+  --inverse-on-surface: rgb(245, 239, 247);
 
   --on-surface-variant-state-layer-light-low: rgba(73, 69, 79, 0.08);
   --on-surface-variant-state-layer-light: rgba(73, 69, 79, 0.10);

@@ -1,5 +1,4 @@
 import { Component, HostBinding, Input } from "@angular/core";
-import { ControlValueAccessor } from "@angular/forms";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matSearchOutline } from "@ng-icons/material-icons/outline";
 import { NgpButton } from "ng-primitives/button";

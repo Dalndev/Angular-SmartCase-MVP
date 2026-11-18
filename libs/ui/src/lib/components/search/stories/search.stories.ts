@@ -35,16 +35,3 @@ export const search: Story = {
     `
   })
 }
-
-export const sizes: Story = {
-  name: 'Size',
-  render: () => ({
-    template: `
-      <div class="flex justify-center items-center gap-2">
-        <ui-search />
-        <ui-search />
-        <ui-search />
-      </div>
-    `
-  })
-}

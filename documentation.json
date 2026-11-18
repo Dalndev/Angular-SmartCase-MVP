@@ -28,7 +28,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
+                "defaultValue": "{\n  name: \"Avatar\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar \n          url=\"https://unavatar.io/email/hello@microlink.io\"\n        />\n        <ui-avatar \n          fallback=\"FB\"\n        />\n      </div>\n    `\n  })\n}"
             },
             {
                 "name": "breadcrumbs",
@@ -78,7 +78,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input \n          ui-input\n        />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+            },
+            {
+                "name": "group",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: \"Group\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar-group [counter]=\"true\">\n          <ui-avatar fallback=\"SD\"/>\n          <ui-avatar fallback=\"DP\"/>\n          <ui-avatar fallback=\"PM\"/>\n        </ui-avatar-group>\n      </div>\n    `\n  })\n}"
             },
             {
                 "name": "icons",
@@ -98,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-button [ngpMenuTrigger]=\"menu\" ngpMenuTriggerOffset=\"14\">Menu</ui-button>\n        <ng-template #menu>\n          <ui-menu>\n            <button ui-menu-item>\n              <ng-icon slot=\"leading\" name=\"matContentCopyOutline\"/>\n              Label\n            </button>\n            <button ui-menu-item>\n              <ng-icon slot=\"leading\" name=\"matEditOutline\"/>\n              Label\n            </button>\n          </ui-menu>\n        </ng-template>\n    `\n  })\n}"
             },
             {
                 "name": "meta",
@@ -108,7 +118,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Avatar>",
-                "defaultValue": "{\n  title: 'Drafts/Avatar',\n  component: Avatar,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Avatar\n      ]\n    })\n  ]\n}"
+                "defaultValue": "{\n  title: 'Material Design/Avatar',\n  component: Avatar,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Avatar,\n        AvatarGroup,\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Card>",
+                "defaultValue": "{\n  title: 'Material Design/Card',\n  component: Card,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Card,\n        CardHeader,\n        CardHeadline,\n        CardTitle,\n        CardAction,\n        CardDescription,\n        CardContent,\n        CardFooter,\n        Button,\n        NgIcon\n      ],\n      providers: [provideIcons({ matMoreVertOutline })],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ComboBox>",
+                "defaultValue": "{\n  title: 'Drafts/ComboBox',\n  component: ComboBox,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        ComboBox\n      ]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -134,11 +164,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Card>",
-                "defaultValue": "{\n  title: 'Material Design/Card',\n  component: Card,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Card,\n        CardHeader,\n        CardHeadline,\n        CardTitle,\n        CardAction,\n        CardDescription,\n        CardContent,\n        CardFooter,\n        Button,\n        NgIcon\n      ],\n      providers: [provideIcons({ matMoreVertOutline })],\n    }),\n  ],\n}"
+                "type": "Meta<Dialog>",
+                "defaultValue": "{\n  title: 'Material Design/Dialog',\n  component: Dialog,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Button,\n        DialogOverlay,\n        Dialog,\n        DialogHeader,\n        DialogTitle,\n        DialogDescription,\n        DialogFooter,\n        CommonModule,\n        NgpDialogTrigger\n      ]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -174,21 +204,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Dialog>",
-                "defaultValue": "{\n  title: 'Material Design/Dialog',\n  component: Dialog,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Button,\n        DialogOverlay,\n        Dialog,\n        DialogHeader,\n        DialogTitle,\n        DialogDescription,\n        DialogFooter,\n        CommonModule,\n        NgpDialogTrigger\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ComboBox>",
-                "defaultValue": "{\n  title: 'Drafts/ComboBox',\n  component: ComboBox,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        ComboBox\n      ]\n    })\n  ]\n}"
+                "type": "Meta<FAB>",
+                "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
             },
             {
                 "name": "meta",
@@ -204,11 +224,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<FAB>",
-                "defaultValue": "{\n    title: \"Material Design/Buttons/FAB\",\n    component: FAB,\n    decorators: [\n        moduleMetadata({\n            imports: [CommonModule, NgpButton, NgIcon],\n            declarations: [],\n            providers: [\n                provideIcons({ matStarsOutline })\n            ]\n        })\n    ]\n}"
+                "type": "Meta<Menu>",
+                "defaultValue": "{\n  title: 'Material Design/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu,\n        MenuItem,\n        Button,\n        NgpMenuTrigger,\n        NgIcon\n      ],\n      providers: [provideIcons({ matContentCopyOutline, matEditOutline })]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -224,21 +244,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Menu>",
-                "defaultValue": "{\n  title: 'Drafts/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/select/stories/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Select>",
                 "defaultValue": "{\n  title: 'Material Design/Select',\n  component: Select,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Field,\n        FieldLabel,\n        FieldDescription,\n        FieldError,\n        Select,\n        SelectValue,\n        SelectContent,\n        SelectItem,\n        NgpSelectPortal,\n        NgpSelectOption\n      ],\n      providers:[\n        provideSelectState()\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Search>",
+                "defaultValue": "{\n  title: 'Material Design/Search',\n  component: Search,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Search,\n        NgIcon\n      ],\n      providers: [provideIcons({ matCloseOutline })]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -254,16 +274,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Search>",
-                "defaultValue": "{\n  title: 'Drafts/Search',\n  component: Search,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Search\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/tooltip/stories/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -274,21 +284,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Tag>",
-                "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        NgIcon,\n        CommonModule\n      ],\n      providers: [\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/virtualizer/stories/virtualizer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Virtualizer>",
                 "defaultValue": "{\n  title: 'Drafts/Virtualizer',\n  component: Virtualizer,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Virtualizer\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Tag>",
+                "defaultValue": "{\n  title: 'Material Design/Tag',\n  component: Tag,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        NgIcon,\n        CommonModule\n      ],\n      providers: [\n        provideIcons({ matLabelImportantOutline, matCloseOutline })\n      ]\n    })\n  ]\n}"
             },
             {
                 "name": "popover",
@@ -318,7 +328,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
+                "defaultValue": "{\n  name: 'Search',\n  render: () => ({\n    template: `\n      <div class=\"flex justify-center items-center gap-2\">\n        <ui-search>\n          <ng-icon slot=\"leading\" name=\"matCloseOutline\"/>\n        </ui-search>\n      </div>\n    `\n  })\n}"
             },
             {
                 "name": "select",
@@ -328,7 +338,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">        \n        <ui-select>\n          <ui-select-value/>\n          <ui-select-content *ngpSelectPortal>\n            <div ui-select-item ngpSelectOptionValue=\"Item 1\" ngpSelectOption>Item 1</div>\n            <div ui-select-item ngpSelectOptionValue=\"Item 2\" ngpSelectOption>Item 2</div>\n            <div ui-select-item ngpSelectOptionValue=\"Item 3\" ngpSelectOption>Item 3</div>\n          </ui-select-content>\n        </ui-select>\n        <label ui-field-label>Select</label>\n      </ui-field>\n    `\n  })\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">        \n        <ui-select>\n          <ui-select-value/>\n          <ui-select-content *ngpSelectPortal>\n            <button ui-select-item ngpSelectOptionValue=\"Item 1\" ngpSelectOption>Item 1</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 2\" ngpSelectOption>Item 2</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 3\" ngpSelectOption>Item 3</button>\n          </ui-select-content>\n        </ui-select>\n        <label ui-field-label>Select</label>\n      </ui-field>\n    `\n  })\n}"
             },
             {
                 "name": "shapes",
@@ -338,7 +348,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\n        <ui-button shapes=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shape=\"rounded\">Rounded button</ui-button>\n        <ui-button shape=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
+            },
+            {
+                "name": "sizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar shape=\"rounded\" size=\"sm\" fallback=\"SM\" />\n        <ui-avatar shape=\"rounded\" size=\"md\" fallback=\"MD\" />\n        <ui-avatar shape=\"rounded\" size=\"lg\" fallback=\"LG\" />\n        </div>\n    `\n  })\n}"
             },
             {
                 "name": "sizes",
@@ -371,6 +391,16 @@
                 "defaultValue": "{\n    name: \"Sizes\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"md\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab size=\"lg\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
             },
             {
+                "name": "sizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Size',\n  render: () => ({\n    template: `\n      <div class=\"flex justify-center items-center gap-2\">\n        <ui-search />\n        <ui-search />\n        <ui-search />\n      </div>\n    `\n  })\n}"
+            },
+            {
                 "name": "toast",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -394,6 +424,16 @@
                 "name": "variants",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-[24px]\">\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Outlined</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Filled</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>   \n        <ui-card class=\"w-[300px]\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Elevated</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "variants",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/button/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -409,16 +449,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  name: 'Variants',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button variant=\"elevated\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"filled\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"tonal\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"outlined\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n        <ui-button variant=\"text\" size=\"icon-sm\">\n          <ng-icon slot=\"trailing\" name=\"matSettingsOutline\"/>\n        </ui-button>\n      </div>\n    `\n  })\n}"
-            },
-            {
-                "name": "variants",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-[24px]\">\n        <ui-card class=\"w-[300px]\" variant=\"outlined\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Outlined</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n        <ui-card class=\"w-[300px]\" variant=\"filled\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Filled</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>   \n        <ui-card class=\"w-[300px]\">\n          <ui-card-header>\n            <div class=\"inline-flex flex-col gap-[4px] text-[14px]\">\n              <p class=\"font-medium text-on-surface\">Header</p>\n              <p class=\"text-on-surface\">SubHead</p>\n            </div>\n            <ui-card-action>\n            <ng-icon name=\"matMoreVertOutline\"/>\n          </ui-card-action>\n          </ui-card-header>\n            <img\n              src=\"https://avatar.vercel.sh/shadcn1\"\n              alt=\"Event cover\"\n              class=\"relative z-20 aspect-video w-full object-cover brightness-200 grayscale\"\n            />\n          <ui-card-content>\n            <ui-card-headline>\n              <ui-card-title>Elevated</ui-card-title>\n              <ui-card-description>Description for elevated card</ui-card-description>\n            </ui-card-headline>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n          </ui-card-content>\n          <ui-card-footer>\n            <ui-button variant=\"outlined\">Secondary</ui-button>\n            <ui-button>Primary</ui-button>\n          </ui-card-footer>\n        </ui-card>\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "variants",
@@ -478,7 +508,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shape=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shape=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
             },
             {
                 "name": "withIcons",
@@ -498,7 +528,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  name: \"Icons\",\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-filter-chip variant=\"outlined\" [menu]=\"true\">\n          <ng-icon slot=\"leading\" name=\"matDirectionsCarOutline\"/>\n          Leading\n        </ui-filter-chip>\n        <ui-filter-chip variant=\"elevated\" [menu]=\"true\">\n          <ng-icon slot=\"leading\" name=\"matPeopleOutline\"></ng-icon>\n          Filter\n        </ui-filter-chip>\n      </div>\n    `\n  })\n}"
+                "defaultValue": "{\n  name: \"Icons\",\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-filter-chip variant=\"outlined\">\n          <ng-icon slot=\"leading\" name=\"matDirectionsCarOutline\"/>\n          Leading\n        </ui-filter-chip>\n        <ui-filter-chip variant=\"elevated\">\n          <ng-icon slot=\"leading\" name=\"matPeopleOutline\"></ng-icon>\n          Filter\n        </ui-filter-chip>\n      </div>\n    `\n  })\n}"
             }
         ],
         "functions": [],
@@ -509,6 +539,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Avatar>",
                 "file": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Card>",
+                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ComboBox>",
+                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -540,8 +592,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Card>",
-                "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                "rawtype": "StoryObj<Dialog>",
+                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -584,19 +636,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Dialog>",
-                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ComboBox>",
-                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                "rawtype": "StoryObj<FAB>",
+                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -617,8 +658,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<FAB>",
-                "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                "rawtype": "StoryObj<Menu>",
+                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -639,30 +680,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Menu>",
-                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<Select>",
                 "file": "libs/ui/src/lib/components/select/stories/select.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Toast>",
-                "file": "libs/ui/src/lib/components/toast/stories/toast.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -683,6 +702,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<Toast>",
+                "file": "libs/ui/src/lib/components/toast/stories/toast.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<Tooltip>",
                 "file": "libs/ui/src/lib/components/tooltip/stories/tooltip.stories.ts",
                 "deprecated": false,
@@ -694,8 +724,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Tag>",
-                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                "rawtype": "StoryObj<Virtualizer>",
+                "file": "libs/ui/src/lib/components/virtualizer/stories/virtualizer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -705,8 +735,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Virtualizer>",
-                "file": "libs/ui/src/lib/components/virtualizer/stories/virtualizer.stories.ts",
+                "rawtype": "StoryObj<Tag>",
+                "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -756,7 +786,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
+                    "defaultValue": "{\n  name: \"Avatar\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar \n          url=\"https://unavatar.io/email/hello@microlink.io\"\n        />\n        <ui-avatar \n          fallback=\"FB\"\n        />\n      </div>\n    `\n  })\n}"
+                },
+                {
+                    "name": "group",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: \"Group\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar-group [counter]=\"true\">\n          <ui-avatar fallback=\"SD\"/>\n          <ui-avatar fallback=\"DP\"/>\n          <ui-avatar fallback=\"PM\"/>\n        </ui-avatar-group>\n      </div>\n    `\n  })\n}"
                 },
                 {
                     "name": "meta",
@@ -766,7 +806,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Avatar>",
-                    "defaultValue": "{\n  title: 'Drafts/Avatar',\n  component: Avatar,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Avatar\n      ]\n    })\n  ]\n}"
+                    "defaultValue": "{\n  title: 'Material Design/Avatar',\n  component: Avatar,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Avatar,\n        AvatarGroup,\n      ]\n    })\n  ]\n}"
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: \"Sizes\",\n  args: {},\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-avatar shape=\"rounded\" size=\"sm\" fallback=\"SM\" />\n        <ui-avatar shape=\"rounded\" size=\"md\" fallback=\"MD\" />\n        <ui-avatar shape=\"rounded\" size=\"lg\" fallback=\"LG\" />\n        </div>\n    `\n  })\n}"
                 }
             ],
             "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts": [
@@ -856,7 +906,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input \n          ui-input\n        />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
                 },
                 {
                     "name": "meta",
@@ -910,7 +960,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-button [ngpMenuTrigger]=\"menu\" ngpMenuTriggerOffset=\"14\">Menu</ui-button>\n        <ng-template #menu>\n          <ui-menu>\n            <button ui-menu-item>\n              <ng-icon slot=\"leading\" name=\"matContentCopyOutline\"/>\n              Label\n            </button>\n            <button ui-menu-item>\n              <ng-icon slot=\"leading\" name=\"matEditOutline\"/>\n              Label\n            </button>\n          </ui-menu>\n        </ng-template>\n    `\n  })\n}"
                 },
                 {
                     "name": "meta",
@@ -920,7 +970,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Menu>",
-                    "defaultValue": "{\n  title: 'Drafts/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu\n      ]\n    })\n  ]\n}"
+                    "defaultValue": "{\n  title: 'Material Design/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu,\n        MenuItem,\n        Button,\n        NgpMenuTrigger,\n        NgIcon\n      ],\n      providers: [provideIcons({ matContentCopyOutline, matEditOutline })]\n    })\n  ]\n}"
                 }
             ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
@@ -942,7 +992,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"rounded\">Rounded button</ui-button>\n        <ui-button shapes=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\n  name: 'Shapes',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shape=\"rounded\">Rounded button</ui-button>\n        <ui-button shape=\"squared\">Squared button</ui-button>\n      </div>\n    `\n  })\n}"
                 },
                 {
                     "name": "sizes",
@@ -972,7 +1022,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shapes=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shapes=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  name: 'Icons',\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-button shape=\"squared\">\n          <ng-icon slot=\"leading\" name=\"matPersonOutline\"/>\n          Left Icon\n        </ui-button>\n        <ui-button shape=\"squared\">\n          Left Icon\n          <ng-icon slot=\"trailing\" name=\"matPersonOutline\"/>\n        </ui-button>\n      </div>\n    `,\n  }),\n}"
                 }
             ],
             "libs/ui/src/lib/components/button/stories/icon-button.stories.ts": [
@@ -1068,7 +1118,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  name: \"Icons\",\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-filter-chip variant=\"outlined\" [menu]=\"true\">\n          <ng-icon slot=\"leading\" name=\"matDirectionsCarOutline\"/>\n          Leading\n        </ui-filter-chip>\n        <ui-filter-chip variant=\"elevated\" [menu]=\"true\">\n          <ng-icon slot=\"leading\" name=\"matPeopleOutline\"></ng-icon>\n          Filter\n        </ui-filter-chip>\n      </div>\n    `\n  })\n}"
+                    "defaultValue": "{\n  name: \"Icons\",\n  render: () => ({\n    template: `\n      <div class=\"flex flex-row gap-2 justify-center items-center\">\n        <ui-filter-chip variant=\"outlined\">\n          <ng-icon slot=\"leading\" name=\"matDirectionsCarOutline\"/>\n          Leading\n        </ui-filter-chip>\n        <ui-filter-chip variant=\"elevated\">\n          <ng-icon slot=\"leading\" name=\"matPeopleOutline\"></ng-icon>\n          Filter\n        </ui-filter-chip>\n      </div>\n    `\n  })\n}"
                 }
             ],
             "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
@@ -1144,7 +1194,39 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">        \n        <ui-select>\n          <ui-select-value/>\n          <ui-select-content *ngpSelectPortal>\n            <div ui-select-item ngpSelectOptionValue=\"Item 1\" ngpSelectOption>Item 1</div>\n            <div ui-select-item ngpSelectOptionValue=\"Item 2\" ngpSelectOption>Item 2</div>\n            <div ui-select-item ngpSelectOptionValue=\"Item 3\" ngpSelectOption>Item 3</div>\n          </ui-select-content>\n        </ui-select>\n        <label ui-field-label>Select</label>\n      </ui-field>\n    `\n  })\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">        \n        <ui-select>\n          <ui-select-value/>\n          <ui-select-content *ngpSelectPortal>\n            <button ui-select-item ngpSelectOptionValue=\"Item 1\" ngpSelectOption>Item 1</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 2\" ngpSelectOption>Item 2</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 3\" ngpSelectOption>Item 3</button>\n          </ui-select-content>\n        </ui-select>\n        <label ui-field-label>Select</label>\n      </ui-field>\n    `\n  })\n}"
+                }
+            ],
+            "libs/ui/src/lib/components/search/stories/search.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Search>",
+                    "defaultValue": "{\n  title: 'Material Design/Search',\n  component: Search,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Search,\n        NgIcon\n      ],\n      providers: [provideIcons({ matCloseOutline })]\n    })\n  ]\n}"
+                },
+                {
+                    "name": "search",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Search',\n  render: () => ({\n    template: `\n      <div class=\"flex justify-center items-center gap-2\">\n        <ui-search>\n          <ng-icon slot=\"leading\" name=\"matCloseOutline\"/>\n        </ui-search>\n      </div>\n    `\n  })\n}"
+                },
+                {
+                    "name": "sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Size',\n  render: () => ({\n    template: `\n      <div class=\"flex justify-center items-center gap-2\">\n        <ui-search />\n        <ui-search />\n        <ui-search />\n      </div>\n    `\n  })\n}"
                 }
             ],
             "libs/ui/src/lib/components/toast/stories/toast.stories.ts": [
@@ -1163,28 +1245,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "libs/ui/src/lib/components/toast/stories/toast.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: ``\n  })\n}"
-                }
-            ],
-            "libs/ui/src/lib/components/search/stories/search.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<Search>",
-                    "defaultValue": "{\n  title: 'Drafts/Search',\n  component: Search,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Search\n      ]\n    })\n  ]\n}"
-                },
-                {
-                    "name": "search",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ui/src/lib/components/search/stories/search.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1264,6 +1324,32 @@
                     "kind": 184
                 }
             ],
+            "libs/ui/src/lib/components/card/stories/card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Card>",
+                    "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ComboBox>",
+                    "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "libs/ui/src/lib/components/button/stories/button.stories.ts": [
                 {
                     "name": "Story",
@@ -1290,13 +1376,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/card/stories/card.stories.ts": [
+            "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Card>",
-                    "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
+                    "rawtype": "StoryObj<Dialog>",
+                    "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1342,26 +1428,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts": [
+            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Dialog>",
-                    "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ComboBox>",
-                    "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                    "rawtype": "StoryObj<FAB>",
+                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1381,13 +1454,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
+            "libs/ui/src/lib/components/menu/stories/menu.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<FAB>",
-                    "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
+                    "rawtype": "StoryObj<Menu>",
+                    "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1407,19 +1480,6 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/menu/stories/menu.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Menu>",
-                    "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "libs/ui/src/lib/components/select/stories/select.stories.ts": [
                 {
                     "name": "Story",
@@ -1427,19 +1487,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Select>",
                     "file": "libs/ui/src/lib/components/select/stories/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "libs/ui/src/lib/components/toast/stories/toast.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Toast>",
-                    "file": "libs/ui/src/lib/components/toast/stories/toast.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1459,6 +1506,19 @@
                     "kind": 184
                 }
             ],
+            "libs/ui/src/lib/components/toast/stories/toast.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Toast>",
+                    "file": "libs/ui/src/lib/components/toast/stories/toast.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "libs/ui/src/lib/components/tooltip/stories/tooltip.stories.ts": [
                 {
                     "name": "Story",
@@ -1472,19 +1532,6 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/tag/stories/tag.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Tag>",
-                    "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "libs/ui/src/lib/components/virtualizer/stories/virtualizer.stories.ts": [
                 {
                     "name": "Story",
@@ -1492,6 +1539,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Virtualizer>",
                     "file": "libs/ui/src/lib/components/virtualizer/stories/virtualizer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/tag/stories/tag.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Tag>",
+                    "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1544,7 +1604,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "group",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "sizes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2015,6 +2095,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "search",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/search/stories/search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "sizes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

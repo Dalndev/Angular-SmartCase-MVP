@@ -1,8 +1,10 @@
+/* eslint-disable @angular-eslint/no-input-rename */
 import { CommonModule } from '@angular/common';
 import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { ButtonVariants } from './dtypes/button.dtypes';
 import { styles } from './styles/button.styles';
+import { cn } from 'tailwind-variants';
 
 /**
  * @author Dalndev
@@ -47,6 +49,8 @@ export class Button {
 
   @Input() disabled = false;
 
+  @Input() buttonStyles!: string | string[];
+
   @Output() btnClick = new EventEmitter<Event>();
 
   @Output() btnFocus = new EventEmitter<FocusEvent>();
@@ -54,7 +58,7 @@ export class Button {
   @Output() btnBlur = new EventEmitter<Event>();
 
   public styles = computed(() =>
-    styles({ sizes: this.size, variants: this.variant, shapes: this.shape }),
+    cn(styles({ sizes: this.size, variants: this.variant, shapes: this.shape }), this.buttonStyles)
   );
 
   public onClick(event: Event) {
