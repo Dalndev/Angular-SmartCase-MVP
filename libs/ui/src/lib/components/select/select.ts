@@ -27,10 +27,7 @@ import { select, selectContent, selectItem, selectValue } from "./styles/select.
 @Component({
   selector: 'ui-select',
   template: `
-    <div class="
-      box-border w-full inline-flex items-center cursor-pointer
-      
-    ">
+    <div class="box-border w-full inline-flex items-center cursor-pointer">
       <ng-content/>
       <ng-icon 
         name="matArrowDropDownOutline" 

@@ -40,9 +40,9 @@ export const select: Story = {
         <ui-select>
           <ui-select-value/>
           <ui-select-content *ngpSelectPortal>
-            <div ui-select-item ngpSelectOptionValue="Item 1" ngpSelectOption>Item 1</div>
-            <div ui-select-item ngpSelectOptionValue="Item 2" ngpSelectOption>Item 2</div>
-            <div ui-select-item ngpSelectOptionValue="Item 3" ngpSelectOption>Item 3</div>
+            <button ui-select-item ngpSelectOptionValue="Item 1" ngpSelectOption>Item 1</button>
+            <button ui-select-item ngpSelectOptionValue="Item 2" ngpSelectOption>Item 2</button>
+            <button ui-select-item ngpSelectOptionValue="Item 3" ngpSelectOption>Item 3</button>
           </ui-select-content>
         </ui-select>
         <label ui-field-label>Select</label>

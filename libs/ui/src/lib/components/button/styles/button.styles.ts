@@ -19,15 +19,15 @@ export const styles = tv({
     },
     sizes: {
       xs:
-        'h-[32px] px-[12px] py-[6px] text-[14px] [--ng-icon__size:20px] *:[[slot="leading"]]:mr-1 *:[[slot="trailing"]]:ml-1',
+        'h-[32px] px-[12px] py-[6px] text-[14px] [--ng-icon__size:20px] *:[[slot="leading"]]:mr-[4px] *:[[slot="trailing"]]:ml-[4px]',
       sm:
-        'h-[40px] px-[16px] py-[10px] text-[14px] [--ng-icon__size:20px] *:[[slot="leading"]]:mr-2 *:[[slot="trailing"]]:ml-2',
+        'h-[40px] px-[16px] py-[10px] text-[14px] [--ng-icon__size:20px] *:[[slot="leading"]]:mr-[8px] *:[[slot="trailing"]]:ml-[8px]',
       md:
-        'h-[56px] px-[24px] py-[16px] text-[16px] [--ng-icon__size:24px] *:[[slot="leading"]]:mr-2 *:[[slot="trailing"]]:ml-2',
+        'h-[56px] px-[24px] py-[16px] text-[16px] [--ng-icon__size:24px] *:[[slot="leading"]]:mr-[8px] *:[[slot="trailing"]]:ml-[8px]',
       lg:
-        'h-[96px] px-[48px] py-[32px] text-[24px] [--ng-icon__size:32px] *:[[slot="leading"]]:mr-3 *:[[slot="trailing"]]:ml-3',
+        'h-[96px] px-[48px] py-[32px] text-[24px] [--ng-icon__size:32px] *:[[slot="leading"]]:mr-[12px] *:[[slot="trailing"]]:ml-[12px]',
       xl:
-        'h-[136px] px-[64px] py-[48px] text-[32px] [--ng-icon__size:40px] *:[[slot="leading"]]:mr-4 *:[[slot="trailing"]]:ml-4',
+        'h-[136px] px-[64px] py-[48px] text-[32px] [--ng-icon__size:40px] *:[[slot="leading"]]:mr-[16px] *:[[slot="trailing"]]:ml-[16px]',
       'icon-xs':
         'size-[32px] [--ng-icon__size:20px]',
       'icon-sm':
