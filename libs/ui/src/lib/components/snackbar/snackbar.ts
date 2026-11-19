@@ -1,11 +1,17 @@
-import { Component, ContentChild, contentChild, effect, Input, TemplateRef } from "@angular/core";
+import { Component, ContentChild, inject, Input, TemplateRef } from "@angular/core";
 import { styles } from "./styles/snackbar.styles";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCloseOutline } from "@ng-icons/material-icons/outline";
 import { Button } from "../button";
 import { CommonModule } from "@angular/common";
+import { injectToastContext, NgpToast, NgpToastManager } from "ng-primitives/toast";
 
 const ACTION_TEMPLATE = "action"; 
+
+interface ISnackbar {
+  content: string | null;
+  closeable: boolean;
+}
 
 /**
  * @author Dalndev
@@ -20,7 +26,7 @@ const ACTION_TEMPLATE = "action";
   selector: 'ui-snackbar',
   imports: [NgIcon, Button, CommonModule],
   providers: [provideIcons({ matCloseOutline })],
-  hostDirectives: [],
+  hostDirectives: [NgpToast],
   template: `
     <div class="min-h-[48px] max-h-[68px] min-w-[344px] max-w-[672px] pe-[8px] rounded-[4px] bg-inverse-surface text-inverse-on-surface shadow-elevation-light-medium">
       <div data-slot="snackbar" class="flex items-center">
@@ -28,10 +34,10 @@ const ACTION_TEMPLATE = "action";
           data-slot="snackbar-label" 
           class="w-full max-h-[48px] py-[14px] ps-[16px] pe-[8px]"
         >
-          <ng-content />
+          {{ context.content }}
         </span>
-        <ng-container [ngTemplateOutlet]="actionTemplate" />
-        @if (closable) {
+        <!-- <ng-container [ngTemplateOutlet]="actionTemplate" /> -->
+        @if (context.closeable) {
           <ui-button 
             size="icon-sm" 
             variant="text"
@@ -49,11 +55,12 @@ const ACTION_TEMPLATE = "action";
   }
 })
 export class Snackbar { 
-  @Input() content: string | null = null;
+  protected readonly context = injectToastContext<ISnackbar>();
 
-  @Input() closable = true;
+  private readonly toast = inject(NgpToast);
+  private readonly toastManager = inject(NgpToastManager)
 
-  @ContentChild("action") actionTemplate !: TemplateRef<unknown>;
+  @ContentChild(ACTION_TEMPLATE) actionTemplate !: TemplateRef<unknown>;
 
   get styles() {
     return styles()
