@@ -22,6 +22,8 @@
     "rootDir": ".",
     "paths": {
       "~ui": ["libs/ui/src/index.ts"],
+      "~domain/*": ["apps/smartcase/src/app/domain/*"],
+      "~infra/*": ["apps/smartcase/src/app/infrastructure/*"],
       "~cases/*": ["apps/smartcase/src/app/packages/cases/*"]
     }
   }

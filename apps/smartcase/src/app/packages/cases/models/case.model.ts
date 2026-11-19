@@ -22,5 +22,4 @@ export class Case implements ICase {
     status      : CaseStatus | null = null;
     createdAt   : Date | undefined;
     updatedAt   : Date | undefined;
-
 }
