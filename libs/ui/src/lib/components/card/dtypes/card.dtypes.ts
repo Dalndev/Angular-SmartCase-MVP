@@ -1,4 +1,4 @@
 import { VariantProps } from "tailwind-variants";
-import classes from "../styles/card.styles";
+import { base } from "../styles/card.styles";
 
-export type Variants = VariantProps<typeof classes>;
+export type Variants = VariantProps<typeof base>;

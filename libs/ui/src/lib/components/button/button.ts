@@ -41,11 +41,11 @@ import { cn } from 'tailwind-variants';
 })
 export class Button {
 
-  @Input() size: ButtonVariants['size'];
+  @Input() size: ButtonVariants['sizes'];
 
-  @Input() variant: ButtonVariants['variant'];
+  @Input() variant: ButtonVariants['variants'];
 
-  @Input() shape: ButtonVariants['shape'];
+  @Input() shape: ButtonVariants['shapes'];
 
   @Input() disabled = false;
 

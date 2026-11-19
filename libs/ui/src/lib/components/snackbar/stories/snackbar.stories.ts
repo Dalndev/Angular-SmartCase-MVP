@@ -1,21 +1,31 @@
-import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
+import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { Snackbar } from '../snackbar'
 import { Button } from "../../button";
 import { CommonModule } from "@angular/common";
-import { APP_INITIALIZER, inject, Injector, Provider } from "@angular/core";
-import { NgpToastManager } from "ng-primitives/toast";
+import { inject, Injector, provideAppInitializer } from "@angular/core";
+import { NgpToastManager, provideToastConfig } from "ng-primitives/toast";
+
+let injector: Injector;
 
 const meta: Meta<Snackbar> = {
   title: 'Material Design/Snackbar',
   component: Snackbar,
   decorators: [
+    applicationConfig({
+      providers: [
+        provideAppInitializer(() => { injector = inject(Injector) }),
+        provideToastConfig({
+          placement: 'bottom-center',
+          maxToasts: 3
+        })
+      ]
+    }),
     moduleMetadata({
       imports: [
         Button,
         Snackbar,
         CommonModule
       ],
-      providers: [provideNgpToast()]
     })
   ]
 }
@@ -36,19 +46,12 @@ export const snackbar: Story = {
   })
 }
 
-function showSnackbar(injector: Injector) {
-  injector.get(NgpToastManager)
+function showSnackbar() {
+  injector
+    .get(NgpToastManager)
     .show(Snackbar, {
       context: {
         content: 'Hello from snackbar.'
       }
     });
-}
-
-function injectStoryContext() {
-  return
-}
-
-function provideNgpToast(): Provider[] {
-  return [{ provide: APP_INITIALIZER, useFactory: injectStoryContext, deps: [Injector] }]
 }

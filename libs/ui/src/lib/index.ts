@@ -11,7 +11,6 @@ export * from "./components/menu";
 export * from "./components/popover";
 export * from "./components/search";
 export * from "./components/select";
-export * from "./components/toast";
 export * from "./components/tooltip";
 export * from "./components/virtualizer";
 

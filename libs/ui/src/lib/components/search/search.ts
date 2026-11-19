@@ -1,11 +1,9 @@
 import { Component, HostBinding, Input } from "@angular/core";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matSearchOutline } from "@ng-icons/material-icons/outline";
-import { NgpButton } from "ng-primitives/button";
 import { NgpInput } from "ng-primitives/input";
-import { NgpSearch, NgpSearchClear } from "ng-primitives/search";
+import { NgpSearch } from "ng-primitives/search";
 import { provideValueAccessor } from "ng-primitives/utils";
-import { Button } from "../button";
 import { styles } from "./styles/search.styles";
 import { CommonModule } from "@angular/common";
 
@@ -17,11 +15,8 @@ import { CommonModule } from "@angular/common";
   selector: 'ui-search',
   imports: [
     CommonModule,
-    NgIcon, 
-    NgpSearchClear, 
-    NgpInput, 
-    NgpButton,
-    Button
+    NgIcon,
+    NgpInput,
   ],
   hostDirectives: [NgpSearch],
   providers: [provideValueAccessor(Search), provideIcons({ matSearchOutline })],

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostBinding, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
 import { NgpDialog, NgpDialogDescription, NgpDialogOverlay, NgpDialogTitle, provideDialogState } from "ng-primitives/dialog";
 import { dialog, dialogDescription, dialogFooter, dialogHeader, dialogOverlay, dialogTitle } from "./styles/dialog.styles";
