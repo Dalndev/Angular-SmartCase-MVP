@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { moduleMetadata } from "@storybook/angular";
-import { Button } from "../button"
+import { Button } from "@smartcase/ui"
 import { NgpButton } from "ng-primitives/button";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matPersonOutline, matSettingsOutline } from "@ng-icons/material-icons/outline";

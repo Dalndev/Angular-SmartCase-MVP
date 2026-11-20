@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MainLayout } from './layouts/main-layout';
+import { MainLayout } from '@smartcase/presentation/layouts';
 
 @Component({
   imports: [RouterModule, MainLayout],

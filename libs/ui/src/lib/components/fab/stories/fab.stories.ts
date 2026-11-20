@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { FAB } from "../fab";
+import { FAB } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpButton } from "ng-primitives/button";
 import { NgIcon, provideIcons } from "@ng-icons/core";

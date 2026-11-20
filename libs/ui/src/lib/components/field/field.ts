@@ -6,8 +6,8 @@ import { Component, computed, Directive, input, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
 import { NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
 import { field, fieldLabel, fieldDescription, fieldError } from "./styles/field.styles";
-import type { Variants } from "./dtypes/field.dtypes";
 import { NgpSelect } from "ng-primitives/select";
+import type { Variants } from "./dtypes/field.dtypes";
 
 /**
  * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.

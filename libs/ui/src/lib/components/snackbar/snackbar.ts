@@ -1,10 +1,10 @@
-import { Component, ContentChild, inject, Input, TemplateRef } from "@angular/core";
+import { Component, ContentChild, TemplateRef } from "@angular/core";
 import { styles } from "./styles/snackbar.styles";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCloseOutline } from "@ng-icons/material-icons/outline";
-import { Button } from "../button";
 import { CommonModule } from "@angular/common";
-import { injectToastContext, NgpToast, NgpToastManager } from "ng-primitives/toast";
+import { injectToastContext, NgpToast } from "ng-primitives/toast";
+import { Button } from "@smartcase/ui";
 
 const ACTION_TEMPLATE = "action"; 
 
@@ -57,8 +57,8 @@ interface ISnackbar {
 export class Snackbar { 
   protected readonly context = injectToastContext<ISnackbar>();
 
-  private readonly toast = inject(NgpToast);
-  private readonly toastManager = inject(NgpToastManager)
+  // private readonly toast = inject(NgpToast);
+  // private readonly toastManager = inject(NgpToastManager)
 
   @ContentChild(ACTION_TEMPLATE) actionTemplate !: TemplateRef<unknown>;
 

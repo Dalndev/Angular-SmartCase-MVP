@@ -1,7 +1,7 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Menu, MenuItem } from "../menu";
+import { Menu, MenuItem } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
-import { Button } from "../../button";
+import { Button } from "@smartcase/ui";
 import { NgpMenuTrigger } from "ng-primitives/menu";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matContentCopyOutline, matEditOutline } from "@ng-icons/material-icons/outline";

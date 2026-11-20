@@ -1,8 +1,8 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Select, SelectContent, SelectItem, SelectValue } from "../select";
+import { Select, SelectContent, SelectItem, SelectValue } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpSelectOption, NgpSelectPortal, provideSelectState } from "ng-primitives/select";
-import { Field, FieldDescription, FieldError, FieldLabel } from "../../field/field";
+import { Field, FieldDescription, FieldError, FieldLabel } from "@smartcase/ui";
 
 const meta: Meta<Select> = {
   title: 'Material Design/Select',

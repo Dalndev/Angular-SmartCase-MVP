@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Search } from "../search";
+import { Search } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCloseOutline } from "@ng-icons/material-icons/outline";

@@ -1,8 +1,8 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Field, FieldDescription, FieldError, FieldLabel } from "../field";
+import { Field, FieldDescription, FieldError, FieldLabel } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpFormControl } from "ng-primitives/form-field";
-import { Input } from "../../input/input";
+import { Input } from "@smartcase/ui";
 
 const meta: Meta<Field> = {
   title: 'Material Design/Field',

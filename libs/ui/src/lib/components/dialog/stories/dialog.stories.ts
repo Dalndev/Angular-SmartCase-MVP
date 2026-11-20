@@ -6,8 +6,8 @@ import {
   DialogTitle, 
   DialogDescription, 
   DialogFooter 
-} from "../dialog";
-import { Button } from "../../button";
+} from "@smartcase/ui";
+import { Button } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpDialogTrigger } from "ng-primitives/dialog";
 

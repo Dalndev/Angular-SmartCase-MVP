@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardHeadline, CardTitle } from "../card";
-import { Button } from "../../button/button";
+import { Button } from "@smartcase/ui";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matMoreVertOutline } from "@ng-icons/material-icons/outline";
 

@@ -21,13 +21,12 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "~ui": ["libs/ui/src/index.ts"],
-      "~domain/*": ["apps/smartcase/src/app/domain/*"],
-      "~infra/*": ["apps/smartcase/src/app/infrastructure/*"],
-      "~application/*": ["apps/smartcase/src/app/application/*"],
-      "~data/*": ["apps/smartcase/src/app/data/*"],
-      "~presentation": [""],
-      "~cases/*": ["apps/smartcase/src/app/packages/cases/*"]
+      "@smartcase/ui": ["libs/ui/src/index.ts"],
+      "@smartcase/domain/*": ["apps/smartcase/src/app/domain/*"],
+      "@smartcase/infra/*": ["apps/smartcase/src/app/infrastructure/*"],
+      "@smartcase/application/*": ["apps/smartcase/src/app/application/*"],
+      "@smartcase/data/*": ["apps/smartcase/src/app/data/*"],
+      "@smartcase/presentation/*": ["apps/smartcase/src/app/presentation/*"],
     }
   }
 }

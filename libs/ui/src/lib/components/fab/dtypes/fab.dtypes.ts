@@ -1,4 +1,4 @@
 import { VariantProps } from "tailwind-variants";
-import classes from "../styles/fab.styles";
+import { styles } from "../styles/fab.styles";
 
-export type FABVariants = VariantProps<typeof classes>;
+export type FABVariants = VariantProps<typeof styles>;
