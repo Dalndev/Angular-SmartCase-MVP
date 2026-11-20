@@ -7,7 +7,16 @@ import { provideValueAccessor } from "ng-primitives/utils";
 import { styles } from "./styles/search.styles";
 import { CommonModule } from "@angular/common";
 
+const SEARCH_PLACEHOLDER_FALLBACK = "Search"
+
 /**
+ * @todo
+ */
+
+/**
+ * @author Dalndev
+ * 
+ * @description Lorem...
  * 
  * @see {@link https://m3.material.io/components/search/specs | Material Design Search}
  */
@@ -37,7 +46,7 @@ import { CommonModule } from "@angular/common";
 })
 export class Search { 
 
-  @Input() placeholder = "Search";
+  @Input() placeholder = SEARCH_PLACEHOLDER_FALLBACK;
 
   @HostBinding('class')
   get styles() {

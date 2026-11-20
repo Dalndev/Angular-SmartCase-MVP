@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostBinding, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { TagVariants } from "./dtypes/tag.dtypes";
 import { styles } from "./styles/tag.styles";
 
@@ -14,14 +14,14 @@ import { styles } from "./styles/tag.styles";
     <ng-content select="[slot=trailing]"/>
   `,
   host: {
-    role: "status"
+    role: "status",
+    "[class]": "styles"
   }
 })
 export class Tag {
 
   @Input() variant: TagVariants["variant"];
 
-  @HostBinding('class')
   get styles() {
     return styles({ variant: this.variant });
   }

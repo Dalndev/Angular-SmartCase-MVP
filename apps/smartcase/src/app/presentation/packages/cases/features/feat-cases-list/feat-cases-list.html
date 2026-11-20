@@ -1,8 +1,28 @@
-<!-- SDP. Maneja los overflows producidos en el contenido de la lista. [-webkit-scroll-(thumb/track/..)]-->
+<ui-search 
+  placeholder="Search a case"
+/>
+<div class="flex justify-between items-center">
+  <div class="inline-flex gap-[8px]">
+    <ui-chip>Active</ui-chip>
+    <ui-chip>Recent</ui-chip>
+    <ui-chip>High Priority</ui-chip>
+  </div>
+  <ui-filter-chip [withMenus]="true">
+    Filters
+    <ng-icon slot="trailing" name="matFilterListOutline "/>
+    <ng-template #menus>
+      <ui-menu>
+        <button ui-menu-item>Active</button>
+        <button ui-menu-item>Recent</button>
+        <button ui-menu-item>High Priority</button>
+      </ui-menu>
+    </ng-template>
+  </ui-filter-chip>
+</div>
 <div class="px-1 max-h-full flex flex-col justify-start space-y-[8px] overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scroll]:h-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:transition-colors [&::-webkit-scrollbar-thumb]:duration-200 [&::-webkit-scrollbar-thumb:hover]:bg-gray-400 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-button]:hidden">
   @for (case of cases; track case.id) {
     <app-case-card
-      [id]="case.caseId!"
+      [id]="case.id!"
       [title]="case.title"
       [status]="case.status"
       [description]="case.description"

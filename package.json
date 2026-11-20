@@ -89,7 +89,8 @@
     "tailwind-animations": "^1.0.2",
     "tailwind-merge": "^3.7.0",
     "tailwind-variants": "^3.3.1",
-    "tailwindcss": "^4.3.5"
+    "tailwindcss": "^4.3.5",
+    "zod": "^4.6.7"
   },
   "packageManager": "pnpm@10.32.0"
 }

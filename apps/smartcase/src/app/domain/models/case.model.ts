@@ -1,3 +1,5 @@
+import { ID } from "@smartcase/shared/dtypes";
+
 export type CaseStatus = 'Active' | 'Pending' | 'Closed';
 
 /**
@@ -7,8 +9,7 @@ export type CaseStatus = 'Active' | 'Pending' | 'Closed';
  * se representa con objetos y comportamientos.
  */
 export type Case = {
-  id: number | null;
-  caseId: string | null;
+  id: ID;
   caseNumber: number | undefined;
   alias: string | undefined;
   title: string | undefined;

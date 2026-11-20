@@ -11,7 +11,7 @@ export class CaseService {
   }
 
   get(id: string): Case | undefined {
-    return CasesList.find(({ caseId }) => caseId === id)
+    return CasesList.find(({ id: caseId }) => caseId === id)
   }
 
   createCase(payload: Case): Case {

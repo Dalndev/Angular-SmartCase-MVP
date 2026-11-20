@@ -26,6 +26,7 @@
       "@smartcase/infra/*": ["apps/smartcase/src/app/infrastructure/*"],
       "@smartcase/application/*": ["apps/smartcase/src/app/application/*"],
       "@smartcase/data/*": ["apps/smartcase/src/app/data/*"],
+      "@smartcase/shared/*": ["apps/smartcase/src/app/shared/*"],
       "@smartcase/presentation/*": ["apps/smartcase/src/app/presentation/*"],
     }
   }

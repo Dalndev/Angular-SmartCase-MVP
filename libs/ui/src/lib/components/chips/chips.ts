@@ -1,10 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, contentChild, effect, EventEmitter, Input, Output, TemplateRef } from "@angular/core";
 import { styles } from "./styles/chips.styles";
 import { ChipsVariants } from "./dtypes/chips.dtypes";
 import { NgpFocus, NgpHover, NgpPress } from "ng-primitives/interactions";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matArrowDropDownOutline, matCheckOutline, matCloseOutline } from "@ng-icons/material-icons/outline";
+import { NgpMenuTrigger } from "ng-primitives/menu";
 
 /**
  * TODO's
@@ -73,20 +74,42 @@ export class Chip {
 
 @Component({
   selector: 'ui-filter-chip',
-  imports: [CommonModule, NgIcon],
-  providers: [provideIcons({ matArrowDropDownOutline , matCheckOutline, matCloseOutline })],
-  hostDirectives: [NgpFocus, NgpHover, NgpPress],
+  imports: [
+    CommonModule,
+    NgIcon,
+    NgpMenuTrigger
+  ],
+  providers: [
+    provideIcons({ matArrowDropDownOutline , matCheckOutline, matCloseOutline })
+  ],
+  hostDirectives: [
+    NgpFocus, 
+    NgpHover, 
+    NgpPress,
+  ],
   template: `
-    <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
-    
-    @if(selected) {
-      <ng-icon slot="leading" name="matCheckOutline"/>
+    @if(withMenus) {
+      <span 
+        type="button"
+        class="absolute top-0 left-0 w-full h-full"
+        [ngpMenuTrigger]="menusTemplate()" 
+      ></span>
     }
-    @if(!selected) {
-      <ng-content select="[slot=leading]" />
+
+    @if(!withMenus) {
+      <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
     }
 
     <ng-content />
+    
+    @if(selected && !withMenus) {
+      <ng-icon slot="leading" name="matCheckOutline"/>
+    }
+
+    @if(!selected && !withMenus) {
+      <ng-content select="[slot=leading]" />
+    }
+
   `,
   host: {
     role: 'button',
@@ -97,8 +120,10 @@ export class Chip {
     '(click)': 'onClick($event)',
   }
 })
-export class FilterChip  { 
+export class FilterChip { 
   @Input() variant: ChipsVariants["variant"];
+
+  @Input() withMenus = false;
 
   @Input() selected = false;
 
@@ -109,17 +134,25 @@ export class FilterChip  {
   @Output() chipFocus = new EventEmitter<FocusEvent>();
 
   @Output() chipBlur = new EventEmitter<Event>();
+
+  readonly menusTemplate = contentChild('menus', { read: TemplateRef })
   
+  constructor() {
+    effect(() => { console.log("[Menus] := ", this.menusTemplate()) })
+  }
+
   get styles() {
     return styles({ variant: this.variant, selected: this.selected })
   }
 
   private toggleSelected() {
+    if (this.withMenus) return
+
     this.selected = !this.selected;
   }
 
   public onClick(event: Event) {
     this.toggleSelected();
     this.chipClick.emit(event);
-  }  
+  }
 }

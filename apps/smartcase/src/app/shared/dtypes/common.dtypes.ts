@@ -1,1 +1,1 @@
-export type UniqueID = NonNullable<string>;
+export type ID = NonNullable<string>;
