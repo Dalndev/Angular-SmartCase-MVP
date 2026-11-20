@@ -5,5 +5,6 @@
     "ngpavatarimage",
     "smartcase"
   ],
-  "kiroAgent.configureMCP": "Enabled"
+  "kiroAgent.configureMCP": "Enabled",
+  "js/ts.experimental.useTsgo": false
 }

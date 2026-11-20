@@ -1,6 +1,6 @@
-import { ICase } from '~cases/models/case.model';
+import { Case } from '~domain/models/case/case.model';
 
-export const CasesList: ICase[] = [
+export const CasesList: Case[] = [
   {
     id: 1,
     caseId: '9ed92039-bfe0-44e8-b642-5094f1f773f7',

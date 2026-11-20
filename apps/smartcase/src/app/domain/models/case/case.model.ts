@@ -1,8 +1,10 @@
 export type CaseStatus = 'Active' | 'Pending' | 'Closed';
 
-
 /**
- * @description Abstracción del dominio central del negocio...
+ * @author Dalndev
+ * 
+ * @description Domain/Model. Abstracción central del dominio del negocio, en donde
+ * se representa con objetos y comportamientos.
  */
 export type Case = {
   id: number | null;

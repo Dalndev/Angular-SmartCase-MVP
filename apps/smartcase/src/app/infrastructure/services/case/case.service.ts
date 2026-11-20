@@ -1,17 +1,17 @@
-import { Injectable } from "@angular/core";
-import { Case } from "~domain/models/case/case.model";
+import { Injectable } from '@angular/core';
+import { Case } from '~domain/models/case/case.model';
+import { CasesList } from '~data/cases/cases.data'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CaseService { 
-
+export class CaseService {
   all(): Case[] {
-    throw new Error('Method not implemented.');
+    return CasesList;
   }
 
-  get(id: string): Case {
-    throw new Error('Method not implemented.');
+  get(id: string): Case | undefined {
+    return CasesList.find(({ caseId }) => caseId === id)
   }
 
   createCase(payload: Case): Case {

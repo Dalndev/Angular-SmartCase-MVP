@@ -24,6 +24,9 @@
       "~ui": ["libs/ui/src/index.ts"],
       "~domain/*": ["apps/smartcase/src/app/domain/*"],
       "~infra/*": ["apps/smartcase/src/app/infrastructure/*"],
+      "~application/*": ["apps/smartcase/src/app/application/*"],
+      "~data/*": ["apps/smartcase/src/app/data/*"],
+      "~presentation": [""],
       "~cases/*": ["apps/smartcase/src/app/packages/cases/*"]
     }
   }

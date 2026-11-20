@@ -6,14 +6,14 @@ import { CaseRepository } from '~domain/repositories/case/case.repository';
 @Injectable({
   providedIn: 'root',
 })
-export class CaseRepositoryImpl implements CaseRepository {
+export class ICaseRepository implements CaseRepository {
   private readonly caseService = inject(CaseService);
 
   all(): Case[] {
     return this.caseService.all()
   }
 
-  get(id: string): Case {
+  get(id: string): Case | undefined {
     return this.caseService.get(id);
   }
 
@@ -32,5 +32,5 @@ export class CaseRepositoryImpl implements CaseRepository {
 
 
 export default function provideCaseRepository(): Provider[] {
-  return [{ provide: CaseRepository, useClass: CaseRepositoryImpl }]
+  return [{ provide: CaseRepository, useClass: ICaseRepository }]
 }
