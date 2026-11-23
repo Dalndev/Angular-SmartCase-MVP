@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { navigation, navigationContent, navigationFooter, navigationHeader, navigationItem, navigationItemLabel, navigationList } from "./styles/navigation.styles";
+import { navigationRail, navigationContent, navigationFooter, navigationHeader, navigationItem, navigationItemLabel, navigationList, navigationPortal, navigation } from "./styles/navigation.styles";
 import {
   NgpNavigationMenu,
   NgpNavigationMenuItem,
@@ -23,6 +23,20 @@ import {
 @Component({
   selector: 'ui-navigation',
   imports: [CommonModule],
+  template: `<ng-content />`,
+  host: {
+    '[class]': 'styles'
+  }
+})
+export class Navigation { 
+  get styles() {
+    return navigation()
+  }
+}
+
+@Component({
+  selector: 'ui-navigation-rail',
+  imports: [CommonModule],
   hostDirectives: [NgpNavigationMenu],
   template: `
     <ng-content />
@@ -30,13 +44,13 @@ import {
   host: {
     '[class]': 'styles',
     'data-state': 'closed',
-    'data-slot': 'navigation',
+    'data-slot': 'navigation-rail',
     'orientation': 'vertical'
   }
 })
-export class Navigation { 
+export class NavigationRail { 
   get styles() {
-    return navigation()
+    return navigationRail()
   }
 }
 
@@ -142,9 +156,16 @@ export class NavigationLink { }
 @Component({
   selector: 'ui-navigation-portal',
   imports: [CommonModule],
-  template: ``
+  template: `<ng-content />`,
+  host: {
+    '[class]': 'styles'
+  }
 })
-export class NavigationPortal{ }
+export class NavigationPortal{ 
+  get styles() {
+    return navigationPortal()
+  }
+}
 
 @Component({
   selector: 'label[ui-navigation-item-label]',

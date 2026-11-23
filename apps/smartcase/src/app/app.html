@@ -1,3 +1,43 @@
 <app-main-layout class="block relative bg-surface-container min-w-svw min-h-svh">
-    <router-outlet/>
+  <div class="absolute w-full h-full max-h-screen">
+  <ui-navigation>
+      <ui-navigation-rail>
+        <ui-navigation-header>
+          <ui-fab>
+            <ng-icon name="matCreateOutline" />
+          </ui-fab>
+        </ui-navigation-header>
+        <ui-navigation-content> 
+          <ui-navigation-list>
+            <ui-navigation-item>
+              <ui-button variant="text" size="icon-sm">
+                <ng-icon name="matWorkOutline"/>
+              </ui-button>
+              <label ui-navigation-item-label>Cases</label>
+            </ui-navigation-item>
+            <ui-navigation-item>
+              <ui-button variant="text" size="icon-sm">
+                <ng-icon name="matPersonOutline"/>
+              </ui-button>
+              <label ui-navigation-item-label>Contacts</label>
+            </ui-navigation-item>
+          </ui-navigation-list>
+        </ui-navigation-content>
+        <ui-navigation-footer> 
+          <ui-navigation-item>
+            <ui-button variant="text" size="icon-sm">
+              <ng-icon name="matSettingsOutline"/>
+            </ui-button>
+            <label ui-navigation-item-label>Settings</label>
+          </ui-navigation-item>
+        </ui-navigation-footer>
+      </ui-navigation-rail>
+      <ui-navigation-portal>
+        <div class="flex-initial relative h-full flex flex-col px-[20px] pb-[50px]">
+          <app-header />
+          <router-outlet />
+        </div>
+      </ui-navigation-portal>
+    </ui-navigation>
+  </div>
 </app-main-layout>

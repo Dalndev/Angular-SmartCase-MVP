@@ -6,7 +6,7 @@ import { CaseList } from "@smartcase/presentation/packages/cases/features";
 import { CaseContext } from "@smartcase/presentation/packages/cases/context";
 
 const classes = tv({
-  base: 'absolute top-0 left-0 w-full h-full max-w-screen max-h-screen flex flex-row px-[20px] pt-[30px] pb-[50px] gap-[8px]',
+  base: 'w-full h-full flex flex-row gap-[8px]',
 });
 
 @Component({

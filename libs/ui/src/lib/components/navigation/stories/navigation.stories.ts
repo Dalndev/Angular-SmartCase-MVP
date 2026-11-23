@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Navigation, NavigationContent, NavigationFooter, NavigationHeader, NavigationItem, NavigationItemLabel, NavigationList } from "../navigation";
+import { NavigationRail, NavigationContent, NavigationFooter, NavigationHeader, NavigationItem, NavigationItemLabel, NavigationList } from "../navigation";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCreateOutline, matMenuOpenOutline, matSettingsOutline, matStarOutline } from "@ng-icons/material-icons/outline";
 import { Button } from "../../button";
@@ -13,7 +13,7 @@ const meta: Meta<Navigation> = {
     moduleMetadata({
       imports: [
         CommonModule,
-        Navigation,
+        NavigationRail,
         NavigationList,
         NavigationItem,
         NavigationItemLabel,
@@ -38,7 +38,7 @@ export const navigation: Story = {
   render: () => ({
     template: `
       <div class="h-[800px] w-full">
-        <ui-navigation>
+        <ui-navigation-rail>
           <ui-navigation-header>
             <ui-button variant="text" size="icon-sm">
               <ng-icon name="matMenuOpenOutline"/>
@@ -77,7 +77,7 @@ export const navigation: Story = {
               <label ui-navigation-item-label>Settings</label>
             </ui-navigation-item>
           </ui-navigation-footer>
-        </ui-navigation>
+        </ui-navigation-rail>
       </div>
     `
   })
