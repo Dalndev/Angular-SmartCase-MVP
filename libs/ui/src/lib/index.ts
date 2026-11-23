@@ -24,3 +24,4 @@ export * from "./components/search";
 export * from "./components/select";
 export * from "./components/snackbar";
 export * from "./components/navigation";
+export * from "./components/textarea";

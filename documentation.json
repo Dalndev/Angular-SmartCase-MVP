@@ -78,7 +78,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field>\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
             },
             {
                 "name": "group",
@@ -108,6 +108,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Injector"
+            },
+            {
+                "name": "input",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Input',\n  render: () => ({\n    template: `\n      <ui-field>\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
             },
             {
                 "name": "menu",
@@ -153,16 +163,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<BreadCrumbs>",
-                "defaultValue": "{\n  title: 'Drafts/Breadcrumbs',\n  component: BreadCrumbs,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        BreadCrumbs\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -173,21 +173,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ComboBox>",
-                "defaultValue": "{\n  title: 'Drafts/ComboBox',\n  component: ComboBox,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        ComboBox\n      ]\n    })\n  ]\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Dialog>",
-                "defaultValue": "{\n  title: 'Material Design/Dialog',\n  component: Dialog,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Button,\n        DialogOverlay,\n        Dialog,\n        DialogHeader,\n        DialogTitle,\n        DialogDescription,\n        DialogFooter,\n        CommonModule,\n        NgpDialogTrigger\n      ]\n    })\n  ]\n}"
+                "type": "Meta<BreadCrumbs>",
+                "defaultValue": "{\n  title: 'Drafts/Breadcrumbs',\n  component: BreadCrumbs,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        BreadCrumbs\n      ]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -213,6 +203,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ComboBox>",
+                "defaultValue": "{\n  title: 'Drafts/ComboBox',\n  component: ComboBox,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        ComboBox\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Dialog>",
+                "defaultValue": "{\n  title: 'Material Design/Dialog',\n  component: Dialog,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Button,\n        DialogOverlay,\n        Dialog,\n        DialogHeader,\n        DialogTitle,\n        DialogDescription,\n        DialogFooter,\n        CommonModule,\n        NgpDialogTrigger\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -233,11 +243,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
+                "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Menu>",
-                "defaultValue": "{\n  title: 'Material Design/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu,\n        MenuItem,\n        Button,\n        NgpMenuTrigger,\n        NgIcon\n      ],\n      providers: [provideIcons({ matContentCopyOutline, matEditOutline })]\n    })\n  ]\n}"
+                "type": "Meta<Input>",
+                "defaultValue": "{\n  title: 'Material Design/Input',\n  component: Input,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Input,\n        Field,\n        FieldLabel,\n        FieldDescription,\n        FieldError\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Navigation>",
+                "defaultValue": "{\n  title: 'Material Design/Navigation',\n  component: Navigation,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        NavigationRail,\n        NavigationList,\n        NavigationItem,\n        NavigationItemLabel,\n        NavigationHeader,\n        NavigationContent,\n        NavigationFooter,\n        NgIcon,\n        Button,\n        FAB\n      ],\n      providers: [provideIcons({ matStarOutline, matCreateOutline, matMenuOpenOutline, matSettingsOutline })]\n    })\n  ]\n}"
             },
             {
                 "name": "meta",
@@ -293,6 +313,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Menu>",
+                "defaultValue": "{\n  title: 'Material Design/Menu',\n  component: Menu,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Menu,\n        MenuItem,\n        Button,\n        NgpMenuTrigger,\n        NgIcon\n      ],\n      providers: [provideIcons({ matContentCopyOutline, matEditOutline })]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TextArea>",
+                "defaultValue": "{\n  title: \"Material Design/Textarea\",\n  component: TextArea,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        TextArea,\n        Field,\n        FieldLabel,\n        FieldDescription,\n        FieldError\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "libs/ui/src/lib/components/tooltip/stories/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -308,6 +348,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<Virtualizer>",
                 "defaultValue": "{\n  title: 'Drafts/Virtualizer',\n  component: Virtualizer,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        Virtualizer\n      ]\n    })\n  ]\n}"
+            },
+            {
+                "name": "navigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Navigation',\n  render: () => ({\n    template: `\n      <div class=\"h-[800px] w-full\">\n        <ui-navigation-rail>\n          <ui-navigation-header>\n            <ui-button variant=\"text\" size=\"icon-sm\">\n              <ng-icon name=\"matMenuOpenOutline\"/>\n            </ui-button>\n            <ui-fab>\n              <ng-icon name=\"matCreateOutline\"/>\n            </ui-fab>\n          </ui-navigation-header>\n          <ui-navigation-content>\n            <ui-navigation-list>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n            </ui-navigation-list>\n          </ui-navigation-content>\n          <ui-navigation-footer>\n            <ui-navigation-item>\n              <ui-button variant=\"text\" size=\"icon-sm\">\n                <ng-icon name=\"matSettingsOutline\"/>\n              </ui-button>\n              <label ui-navigation-item-label>Settings</label>\n            </ui-navigation-item>\n          </ui-navigation-footer>\n        </ui-navigation-rail>\n      </div>\n    `\n  })\n}"
             },
             {
                 "name": "popover",
@@ -408,6 +458,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  name: 'Snackbar',\n  render: () => ({\n    props: {\n      showSnackbar\n    },\n    template: `\n      <ui-button (btnClick)=\"showSnackbar()\">Show Toast</ui-button>\n    `\n  })\n}"
+            },
+            {
+                "name": "textarea",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "story",
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field>\n        <textarea ui-input/>\n        <label ui-field-label>Description</label>\n        <span ui-field-description>Fill with description</span>\n      </ui-field>\n    `\n  })\n}"
             },
             {
                 "name": "tooltip",
@@ -544,6 +604,17 @@
         ],
         "typealiases": [
             {
+                "name": "story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TextArea>",
+                "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -580,17 +651,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BreadCrumbs>",
-                "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<Card>",
                 "file": "libs/ui/src/lib/components/card/stories/card.stories.ts",
                 "deprecated": false,
@@ -602,19 +662,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ComboBox>",
-                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Dialog>",
-                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                "rawtype": "StoryObj<BreadCrumbs>",
+                "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -646,6 +695,28 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ComboBox>",
+                "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Dialog>",
+                "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<FAB>",
                 "file": "libs/ui/src/lib/components/fab/stories/fab.stories.ts",
                 "deprecated": false,
@@ -668,8 +739,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Menu>",
-                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
+                "rawtype": "StoryObj<Input>",
+                "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Navigation>",
+                "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -725,6 +807,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Tag>",
                 "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Menu>",
+                "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -916,7 +1009,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field>\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
                 },
                 {
                     "name": "meta",
@@ -990,6 +1083,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  name: 'Snackbar',\n  render: () => ({\n    props: {\n      showSnackbar\n    },\n    template: `\n      <ui-button (btnClick)=\"showSnackbar()\">Show Toast</ui-button>\n    `\n  })\n}"
+                }
+            ],
+            "libs/ui/src/lib/components/input/stories/input.stories.ts": [
+                {
+                    "name": "input",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Input',\n  render: () => ({\n    template: `\n      <ui-field>\n        <input ui-input />\n        <label ui-field-label>Full Name</label>\n        <span ui-field-description>Max 10 characters</span>\n      </ui-field>\n    `\n  })\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Input>",
+                    "defaultValue": "{\n  title: 'Material Design/Input',\n  component: Input,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        Input,\n        Field,\n        FieldLabel,\n        FieldDescription,\n        FieldError\n      ]\n    })\n  ]\n}"
                 }
             ],
             "libs/ui/src/lib/components/menu/stories/menu.stories.ts": [
@@ -1194,6 +1309,28 @@
                     "defaultValue": "{\n    name: \"Variants\",\n    render: () => ({\n        template: `\n            <ui-fab>\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"secondary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n            <ui-fab variant=\"tertiary\">\n                <ng-icon name=\"matStarsOutline\"/>\n            </ui-fab>\n        `\n    })\n}"
                 }
             ],
+            "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Navigation>",
+                    "defaultValue": "{\n  title: 'Material Design/Navigation',\n  component: Navigation,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        CommonModule,\n        NavigationRail,\n        NavigationList,\n        NavigationItem,\n        NavigationItemLabel,\n        NavigationHeader,\n        NavigationContent,\n        NavigationFooter,\n        NgIcon,\n        Button,\n        FAB\n      ],\n      providers: [provideIcons({ matStarOutline, matCreateOutline, matMenuOpenOutline, matSettingsOutline })]\n    })\n  ]\n}"
+                },
+                {
+                    "name": "navigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Navigation',\n  render: () => ({\n    template: `\n      <div class=\"h-[800px] w-full\">\n        <ui-navigation-rail>\n          <ui-navigation-header>\n            <ui-button variant=\"text\" size=\"icon-sm\">\n              <ng-icon name=\"matMenuOpenOutline\"/>\n            </ui-button>\n            <ui-fab>\n              <ng-icon name=\"matCreateOutline\"/>\n            </ui-fab>\n          </ui-navigation-header>\n          <ui-navigation-content>\n            <ui-navigation-list>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n              <ui-navigation-item>\n                <ui-button variant=\"text\" size=\"icon-sm\">\n                  <ng-icon name=\"matStarOutline\"/>\n                </ui-button>\n                <label ui-navigation-item-label>Label</label>\n              </ui-navigation-item>\n            </ui-navigation-list>\n          </ui-navigation-content>\n          <ui-navigation-footer>\n            <ui-navigation-item>\n              <ui-button variant=\"text\" size=\"icon-sm\">\n                <ng-icon name=\"matSettingsOutline\"/>\n              </ui-button>\n              <label ui-navigation-item-label>Settings</label>\n            </ui-navigation-item>\n          </ui-navigation-footer>\n        </ui-navigation-rail>\n      </div>\n    `\n  })\n}"
+                }
+            ],
             "libs/ui/src/lib/components/popover/stories/popover.stories.ts": [
                 {
                     "name": "meta",
@@ -1258,6 +1395,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field variant=\"filled\">        \n        <ui-select>\n          <ui-select-value/>\n          <ui-select-content *ngpSelectPortal>\n            <button ui-select-item ngpSelectOptionValue=\"Item 1\" ngpSelectOption>Item 1</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 2\" ngpSelectOption>Item 2</button>\n            <button ui-select-item ngpSelectOptionValue=\"Item 3\" ngpSelectOption>Item 3</button>\n          </ui-select-content>\n        </ui-select>\n        <label ui-field-label>Select</label>\n      </ui-field>\n    `\n  })\n}"
+                }
+            ],
+            "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TextArea>",
+                    "defaultValue": "{\n  title: \"Material Design/Textarea\",\n  component: TextArea,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        TextArea,\n        Field,\n        FieldLabel,\n        FieldDescription,\n        FieldError\n      ]\n    })\n  ]\n}"
+                },
+                {
+                    "name": "textarea",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "story",
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <ui-field>\n        <textarea ui-input/>\n        <label ui-field-label>Description</label>\n        <span ui-field-description>Fill with description</span>\n      </ui-field>\n    `\n  })\n}"
                 }
             ],
             "libs/ui/src/lib/components/tooltip/stories/tooltip.stories.ts": [
@@ -1333,6 +1492,19 @@
         },
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts": [
+                {
+                    "name": "story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TextArea>",
+                    "file": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "libs/ui/src/lib/components/avatar/stories/avatar.stories.ts": [
                 {
                     "name": "Story",
@@ -1372,19 +1544,6 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BreadCrumbs>",
-                    "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "libs/ui/src/lib/components/card/stories/card.stories.ts": [
                 {
                     "name": "Story",
@@ -1398,26 +1557,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts": [
+            "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ComboBox>",
-                    "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Dialog>",
-                    "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                    "rawtype": "StoryObj<BreadCrumbs>",
+                    "file": "libs/ui/src/lib/components/breadcrumbs/stories/breadcrumbs.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1450,6 +1596,32 @@
                     "kind": 184
                 }
             ],
+            "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ComboBox>",
+                    "file": "libs/ui/src/lib/components/combobox/stories/combobox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Dialog>",
+                    "file": "libs/ui/src/lib/components/dialog/stories/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "libs/ui/src/lib/components/fab/stories/fab.stories.ts": [
                 {
                     "name": "Story",
@@ -1476,13 +1648,26 @@
                     "kind": 184
                 }
             ],
-            "libs/ui/src/lib/components/menu/stories/menu.stories.ts": [
+            "libs/ui/src/lib/components/input/stories/input.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Menu>",
-                    "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
+                    "rawtype": "StoryObj<Input>",
+                    "file": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Navigation>",
+                    "file": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1548,6 +1733,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Tag>",
                     "file": "libs/ui/src/lib/components/tag/stories/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ui/src/lib/components/menu/stories/menu.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Menu>",
+                    "file": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2042,6 +2240,36 @@
                 "status": "low"
             },
             {
+                "filePath": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "input",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/input/stories/input.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2063,6 +2291,36 @@
             },
             {
                 "filePath": "libs/ui/src/lib/components/menu/stories/menu.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "navigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/navigation/stories/navigation.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -2247,6 +2505,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "textarea",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/components/textarea/stories/textarea.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "story",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

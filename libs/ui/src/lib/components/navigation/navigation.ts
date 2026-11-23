@@ -1,6 +1,16 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { navigationRail, navigationContent, navigationFooter, navigationHeader, navigationItem, navigationItemLabel, navigationList, navigationPortal, navigation } from "./styles/navigation.styles";
+import { 
+  navigationRail, 
+  navigationContent, 
+  navigationFooter, 
+  navigationHeader, 
+  navigationItem, 
+  navigationItemLabel, 
+  navigationList, 
+  navigationPortal, 
+  navigation 
+} from "./styles/navigation.styles";
 import {
   NgpNavigationMenu,
   NgpNavigationMenuItem,

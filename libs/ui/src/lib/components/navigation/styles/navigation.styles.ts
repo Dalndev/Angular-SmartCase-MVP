@@ -5,13 +5,13 @@ const styles = tv({
     navigation: 
       'w-full h-full flex justify-start',
     navigationRail: 
-      'min-w-[96px] h-full flex flex-col pt-[44px] bg-surface-container space-y-[40px]',
+      'min-w-[96px] h-full flex flex-col gap-y-[40px] bg-surface-container',
     navigationHeader: 
-      'flex flex-col justify-start items-center gap-[4px]',
+      'pt-[44px] flex flex-col justify-start items-center gap-[4px]',
     navigationContent: 
       'flex-initial h-full',
     navigationFooter: 
-      'flex flex-col items-center pb-[44px]',
+      'pb-[44px] flex flex-col items-center',
     navigationList: 
       'flex flex-col items-center gap-[4px]',
     navigationItem: 
@@ -19,7 +19,7 @@ const styles = tv({
     navigationItemLabel: 
       'block text-center',
     navigationPortal: 
-      ''
+      'flex-1'
   }
 })
 

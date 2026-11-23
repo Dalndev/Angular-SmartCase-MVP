@@ -5,7 +5,7 @@ import { CommonModule } from "@angular/common";
 import { Component, computed, Directive, input, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
 import { NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
-import { field, fieldLabel, fieldDescription, fieldError } from "./styles/field.styles";
+import { field, fieldLabel, fieldDescription, fieldError, fieldWrapper, fieldFlex } from "./styles/field.styles";
 import { NgpSelect } from "ng-primitives/select";
 
 /**
@@ -28,16 +28,19 @@ import { NgpSelect } from "ng-primitives/select";
   imports: [CommonModule],
   hostDirectives: [{ directive: NgpSelect }],
   template: `
-    <div class="box-border relative bg-surface-variant h-auto w-full px-[16px] flex-auto rounded-t-[4px] rounded-b-none">
-      <div class="box-border inline-flex align-baseline w-full">
-        <div class="box-border relative pb-[8px] pt-[24px] flex-auto min-w-0 w-[180px] min-h-[56px]">
+    <div 
+      data-slot="field-wrapper" 
+      class="box-border relative bg-surface-variant h-auto w-full px-[16px] flex-auto rounded-t-[4px] rounded-b-none"
+    >
+      <div data-slot="field-flex" class="box-border inline-flex align-baseline w-full">
+        <div data-slot="field-infix" class="box-border relative pb-[8px] pt-[24px] flex-auto min-w-0 w-[180px] min-h-[56px]">
           <ng-content select="[slot=leading]"/>
           <ng-content/>
           <ng-content select="[ui-field-label]"/>
           <ng-content select="[slot=trailing]"/>
         </div>
       </div>
-      <div class="
+      <div data-slot="field-overlay" class="
         before:absolute before:left-0 before:bottom-0 before:w-full before:border-b before:border-on-surface-variant before:z-1
         after:absolute after:left-0 after:bottom-0 after:w-full after:border-b-2 after:border-primary after:z-2 after:opacity-0 after:scale-x-0 
         [ui-field:has(input[data-filled='true'])_&]:after:opacity-100 [ui-field:has(input[data-filled='true'])_&]:after:scale-x-100
@@ -47,8 +50,14 @@ import { NgpSelect } from "ng-primitives/select";
         transition-all
       "></div>
     </div>
-    <div class="hidden box-border relative w-full text-body-small before:inline-block before:h-[16px]">
-      <div class="absolute top-0 left-0 right-0 px-[16px] flex opacity-[1] translate-y-0 *:before:inline-block *:before:h-[16px]">
+    <div 
+      data-slot="field-subs-wrapper" 
+      class="hidden box-border relative w-full text-body-small before:inline-block before:h-[16px]"
+    >
+      <div 
+        data-slot="field-hint-wrapper" 
+        class="absolute top-0 left-0 right-0 px-[16px] flex opacity-[1] translate-y-0 *:before:inline-block *:before:h-[16px]"
+      >
         <ng-content select="[ui-field-error]"/>
         <ng-content select="[ui-field-description]"/>
         <div class="grow shrink-0 basis-[1em]"></div>
@@ -57,17 +66,26 @@ import { NgpSelect } from "ng-primitives/select";
   `,
   host: {
     "role": "group",
-    '[class]': 'styles()'
+    '[class]': 'formField()'
   }
 })
 export class Field {
   
   clazz = input<string>('', { alias: 'class' });
 
-  protected styles = computed(() =>
+  protected formField = computed(() =>
     cn(field(), this.clazz())
   );
 
+  get fieldWrapper() {
+    return fieldWrapper()
+  }
+
+  get fieldFlex() {
+    return fieldFlex(
+      
+    )
+  }
 }
 
 @Directive({
@@ -75,7 +93,8 @@ export class Field {
   hostDirectives: [{ directive: NgpLabel }],
   host: {
     '[htmlFor]': 'htmlFor',
-    '[class]': 'styles'
+    '[class]': 'styles',
+    'data-slot': 'floating-label'
   }
 })
 export class FieldLabel {
@@ -92,7 +111,8 @@ export class FieldLabel {
   selector: '[ui-field-description]',
   hostDirectives: [{ directive: NgpDescription }],
   host: {
-    '[class]': 'styles'
+    '[class]': 'styles',
+    'data-slot': ''
   }
 })
 export class FieldDescription {

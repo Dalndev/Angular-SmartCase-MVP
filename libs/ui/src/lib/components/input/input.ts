@@ -20,12 +20,12 @@ import type { Variants } from "./dtypes/input.dtypes";
 /**
  * @author Dalndev
  * 
- * @description
+ * @description Let users enter text into a UI.
  * 
  * @see {@link}
  */
 @Directive({
-  selector: 'input[ui-input]',
+  selector: 'input[ui-input], textarea[ui-input]',
   hostDirectives: [{ directive: NgpInput }],
   host: {
     '[id]': 'id',
@@ -46,7 +46,7 @@ export class Input {
   }
 
   @HostListener('keyup', ['$event'])
-  public onKeyUp(event: KeyboardEvent) {
+  public onKeyUp(event: Event) {
     this.filled.set(this.validateInput((event.target as HTMLInputElement)));
   }
 

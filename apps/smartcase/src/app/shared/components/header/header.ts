@@ -3,15 +3,13 @@ import { Avatar } from "@smartcase/ui";
 import { tv } from "tailwind-variants";
 
 const classes = tv({
-  base: 'w-full h-[40px] flex justify-end'
+  base: 'flex justify-end pt-[10px] pb-[10px]'
 })
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.html',
-  imports: [
-    Avatar,
-  ],
+  imports: [Avatar],
   host: {
     '[class]': 'klass'
   }
