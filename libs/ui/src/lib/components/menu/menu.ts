@@ -1,9 +1,9 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { NgpMenu, NgpMenuItem } from "ng-primitives/menu";
-import { menu, menuBadge, menuItem, menuSeparator } from "./styles/menu.styles";
 import { CommonModule } from "@angular/common";
+import { NgpMenu, NgpMenuItem } from "ng-primitives/menu";
 import { NgpFocus, NgpHover, NgpPress } from "ng-primitives/interactions";
+import { menu, menuItem } from "./styles/menu.styles";
 
 /**
  * @todo feat. Implementar el estado "selected" en la lista. Permite dar feedback al usuario sobre la opción seleccionada.
@@ -79,25 +79,5 @@ export class MenuItem {
 
   public onBlur(event: Event) {
     this.itemBlur.emit(event)
-  }
-}
-
-@Component({ 
-  selector: 'ui-menu-separator',
-  template: ``
-})
-export class MenuSeparator { 
-  get styles() {
-    return menuSeparator()
-  }
-}
-
-@Component({
-  selector: 'ui-menu-badge',
-  template: ``
-})
-export class MenuBadge { 
-  get styles() {
-    return menuBadge()
   }
 }

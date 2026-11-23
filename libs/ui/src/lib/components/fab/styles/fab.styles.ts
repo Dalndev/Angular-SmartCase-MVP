@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto overflow-hidden ease-in-out transition-all',
+  base: 'cursor-pointer relative inline-flex items-center justify-center whitespace-nowrap text-base font-roboto overflow-hidden ease-in-out transition-all',
   variants: {
     variants: {
       primary:

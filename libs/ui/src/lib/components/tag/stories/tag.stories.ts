@@ -1,8 +1,8 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Tag } from '@smartcase/ui';
-import { NgIcon, provideIcons } from "@ng-icons/core";
 import { CommonModule } from "@angular/common";
+import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCloseOutline, matLabelImportantOutline } from "@ng-icons/material-icons/outline";
+import { Tag } from "../tag";
 
 const meta: Meta<Tag> = {
   title: 'Material Design/Tag',

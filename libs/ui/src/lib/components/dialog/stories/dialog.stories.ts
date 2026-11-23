@@ -1,4 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
+import { CommonModule } from "@angular/common";
+import { NgpDialogTrigger } from "ng-primitives/dialog";
 import { 
   Dialog, 
   DialogOverlay, 
@@ -6,10 +8,8 @@ import {
   DialogTitle, 
   DialogDescription, 
   DialogFooter 
-} from "@smartcase/ui";
-import { Button } from "@smartcase/ui";
-import { CommonModule } from "@angular/common";
-import { NgpDialogTrigger } from "ng-primitives/dialog";
+} from "../dialog";
+import { Button } from "../../button";
 
 const meta: Meta<Dialog> = {
   title: 'Material Design/Dialog',

@@ -1,9 +1,9 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Button } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpButton } from "ng-primitives/button";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matPersonOutline, matSettingsOutline } from "@ng-icons/material-icons/outline";
+import { Button } from "../button";
 
 const meta: Meta<Button> = {
   title: 'Material Design/Buttons/Icon Button',

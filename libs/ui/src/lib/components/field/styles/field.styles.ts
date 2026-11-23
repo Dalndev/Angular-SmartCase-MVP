@@ -1,19 +1,7 @@
 import { tv } from "tailwind-variants";
 
-/**
- * TODO.
- * 
- * - [] Implementación de variación de estilos filled & outlined.
- */
 export const styles = tv({
-  variants: {
-    variant: {
-      filled:
-        "",
-      outlined:
-        ""
-    }
-  },
+  variants: { },
   slots: {
     field: 
       "relative flex flex-col group/field *:w-full text-body-large",

@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Avatar, AvatarGroup } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
+import { Avatar, AvatarGroup } from "../avatar";
 
 const meta: Meta<Avatar> = {
   title: 'Material Design/Avatar',

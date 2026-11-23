@@ -1,9 +1,9 @@
 import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Snackbar } from '@smartcase/ui'
-import { Button } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { inject, Injector, provideAppInitializer } from "@angular/core";
 import { NgpToastManager, provideToastConfig } from "ng-primitives/toast";
+import { Snackbar } from "../snackbar";
+import { Button } from "../../button";
 
 let injector: Injector;
 

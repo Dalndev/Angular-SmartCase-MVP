@@ -1,8 +1,8 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Field, FieldDescription, FieldError, FieldLabel } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpFormControl } from "ng-primitives/form-field";
-import { Input } from "@smartcase/ui";
+import { Field, FieldDescription, FieldError, FieldLabel } from "../field";
+import { Input } from "../../input";
 
 const meta: Meta<Field> = {
   title: 'Material Design/Field',
@@ -29,7 +29,7 @@ type Story = StoryObj<Field>;
 export const field: Story = {
   render: () => ({
     template: `
-      <ui-field variant="filled">
+      <ui-field>
         <input ui-input />
         <label ui-field-label>Full Name</label>
         <span ui-field-description>Max 10 characters</span>

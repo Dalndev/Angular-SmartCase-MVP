@@ -1,10 +1,10 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { Menu, MenuItem } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
-import { Button } from "@smartcase/ui";
 import { NgpMenuTrigger } from "ng-primitives/menu";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matContentCopyOutline, matEditOutline } from "@ng-icons/material-icons/outline";
+import { Menu, MenuItem } from "../menu";
+import { Button } from "../../button";
 
 const meta: Meta<Menu> = {
   title: 'Material Design/Menu',

@@ -4,7 +4,7 @@ import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matCloseOutline } from "@ng-icons/material-icons/outline";
 import { CommonModule } from "@angular/common";
 import { injectToastContext, NgpToast } from "ng-primitives/toast";
-import { Button } from "@smartcase/ui";
+import { Button } from "../button";
 
 const ACTION_TEMPLATE = "action"; 
 

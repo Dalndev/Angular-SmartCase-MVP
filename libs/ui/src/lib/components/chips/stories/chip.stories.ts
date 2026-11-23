@@ -1,8 +1,8 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
-import { Chip } from '@smartcase/ui';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { matCheckOutline, matCloseOutline } from '@ng-icons/material-icons/outline';
 import { CommonModule } from '@angular/common';
+import { Chip } from '../chips';
 
 const meta: Meta<Chip> = {
   title: 'Material Design/Chips/Chip',

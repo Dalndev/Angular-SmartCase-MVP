@@ -7,7 +7,6 @@ import { cn } from "tailwind-variants";
 import { NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
 import { field, fieldLabel, fieldDescription, fieldError } from "./styles/field.styles";
 import { NgpSelect } from "ng-primitives/select";
-import type { Variants } from "./dtypes/field.dtypes";
 
 /**
  * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
@@ -64,11 +63,9 @@ import type { Variants } from "./dtypes/field.dtypes";
 export class Field {
   
   clazz = input<string>('', { alias: 'class' });
-  
-  variant = input<Variants['variant'] | undefined>(undefined);
 
   protected styles = computed(() =>
-    cn(field({ variant: this.variant() }), this.clazz())
+    cn(field(), this.clazz())
   );
 
 }
@@ -83,12 +80,10 @@ export class Field {
 })
 export class FieldLabel {
 
-  @Input() variant: Variants["variant"] | undefined;
-
   @Input() htmlFor!: string;
 
   get styles() {
-    return cn(fieldLabel({ variant: this.variant }))
+    return cn(fieldLabel())
   }
 
 }
@@ -104,10 +99,8 @@ export class FieldDescription {
 
   @Input({ alias: 'class' }) clazz: string | undefined;
 
-  @Input() variant: Variants["variant"] | undefined;
-
   get styles() {
-    return cn(fieldDescription({ variant: this.variant }), this.clazz);
+    return cn(fieldDescription(), this.clazz);
   }
 }
 
@@ -122,9 +115,7 @@ export class FieldError {
 
   @Input({ alias: 'class' }) clazz: string | undefined;
 
-  @Input() variant: Variants["variant"] | undefined;
-
   get styles() {
-    return cn(fieldError({ variant: this.variant }), this.clazz);
+    return cn(fieldError(), this.clazz);
   }
 }

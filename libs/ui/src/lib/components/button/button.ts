@@ -1,10 +1,10 @@
 /* eslint-disable @angular-eslint/no-input-rename */
 import { CommonModule } from '@angular/common';
 import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
+import { cn } from 'tailwind-variants';
 import { NgpButton } from 'ng-primitives/button';
 import { ButtonVariants } from './dtypes/button.dtypes';
 import { styles } from './styles/button.styles';
-import { cn } from 'tailwind-variants';
 
 /**
  * @author Dalndev
@@ -22,6 +22,7 @@ import { cn } from 'tailwind-variants';
     <button 
         ngpButton 
         role="button"
+        data-slot="button"
         [attr.data-only-icon]=[isOnlyIcon]
         [attr.data-size]=[size]
         [attr.data-variant]=[variant]
@@ -32,12 +33,18 @@ import { cn } from 'tailwind-variants';
         (focus)="onFocus($event)" 
         (blur)="onBlur($event)"
       >
-        <span class="absolute top-0 left-0 w-full h-full pointer-events-none"></span>
+        <span 
+          data-slot="button-state"
+          class="absolute top-0 left-0 w-full h-full pointer-events-none"
+        ></span>
         <ng-content select="[slot=leading]"/>
         <ng-content />
         <ng-content select="[slot=trailing]"/>
     </button>
   `,
+  host: {
+    'class': 'block'
+  }
 })
 export class Button {
 

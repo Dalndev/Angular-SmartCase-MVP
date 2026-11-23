@@ -1,9 +1,9 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
-import { FAB } from "@smartcase/ui";
 import { CommonModule } from "@angular/common";
 import { NgpButton } from "ng-primitives/button";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { matStarsOutline } from "@ng-icons/material-icons/outline";
+import { FAB } from "../fab";
 
 const meta: Meta<FAB> = {
     title: "Material Design/Buttons/FAB",

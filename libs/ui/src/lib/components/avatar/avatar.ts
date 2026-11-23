@@ -1,8 +1,8 @@
+import { CommonModule } from "@angular/common";
 import { Component, HostBinding, Input } from "@angular/core";
 import { NgpAvatar, NgpAvatarFallback, NgpAvatarImage } from "ng-primitives/avatar";
 import { avatarStyles, avatarGroupStyles } from "./styles/avatar.styles";
 import { AvatarVariants } from "./dtypes/avatar.dtypes";
-import { CommonModule } from "@angular/common";
 
 const DEFAULT_FALLBACK = 'UU';
 
