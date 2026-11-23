@@ -193,8 +193,8 @@ importers:
         specifier: ~21.0.1
         version: 21.0.1(@angular/compiler-cli@21.0.9(@angular/compiler@21.0.9)(typescript@5.9.2))(tailwindcss@4.3.5)(tslib@2.9.1)(typescript@5.9.2)
       ng-primitives:
-        specifier: ^0.100.1
-        version: 0.100.1(@angular/cdk@21.2.14(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/forms@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.8.0)(rxjs@7.8.2)(typescript@5.9.2)
+        specifier: ^0.132.0
+        version: 0.132.0(@angular/cdk@21.2.14(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/forms@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.8.0)(rxjs@7.8.2)(typescript@5.9.2)
       nx:
         specifier: 24.0.6
         version: 24.0.6(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.9.2))(@swc/core@1.16.22(@swc/helpers@0.5.24))
@@ -3868,11 +3868,6 @@ packages:
   '@peculiar/x509@1.14.3':
     resolution: {integrity: sha512-C2Xj8FZ0uHWeCXXqX5B4/gVFQmtSkiuOolzAgutjTfseNOHT3pUjljDZsTSxXFGgio54bCzVFqmEOUrIVk8RDA==}
     engines: {node: '>=20.0.0'}
-
-  '@phenomnomnominal/tsquery@6.1.3':
-    resolution: {integrity: sha512-CEqpJ872StsxRmwv9ePCZ4BCisrJSlREUC5XxIRYxhvODt4aQoJFFmjTgaP6meyKiiXxxN/VWPZ58j4yHXRkmw==}
-    peerDependencies:
-      typescript: ^3 || ^4 || ^5
 
   '@phenomnomnominal/tsquery@6.2.0':
     resolution: {integrity: sha512-Vo9nkhfZxDB/sBiqIY3pjDC4mOSyure+AFlEW5hcy/tRE82MqCXjRN4InnVNMldinRt0dLYqg4HAU2XPq5e1LA==}
@@ -7937,17 +7932,20 @@ packages:
       tailwindcss:
         optional: true
 
-  ng-primitives@0.100.1:
-    resolution: {integrity: sha512-cES5yPmxrmYnSuWQYAsMBZEq95GXnO6vVrKsJY6uv/4Finr4fJEWSWm3SO7PwyMPMXi+jCIAzUPhf83xn9zbSA==}
+  ng-primitives@0.132.0:
+    resolution: {integrity: sha512-ruPg4hqToBuu4bTgXOcuEsoAA2+ZrYPZIpgljPgD8geZaTrJVseBY6tPiWRPsCM1EoAgU7fJ4Dj+3KQXkvLv9w==}
     peerDependencies:
-      '@angular/cdk': '>=20.0.0'
-      '@angular/common': '>=20.0.0'
-      '@angular/core': '>=20.0.0'
-      '@angular/forms': '>=20.0.0'
+      '@angular/cdk': ^21.0.0 || ^22.0.0
+      '@angular/common': ^21.0.0 || ^22.0.0
+      '@angular/core': ^21.0.0 || ^22.0.0
+      '@angular/forms': ^21.0.0 || ^22.0.0
       '@floating-ui/dom': '>=1.6.0'
+      date-fns: '*'
       luxon: '*'
       rxjs: '>=6.6.0'
     peerDependenciesMeta:
+      date-fns:
+        optional: true
       luxon:
         optional: true
 
@@ -15014,12 +15012,6 @@ snapshots:
       tslib: 2.9.1
       tsyringe: 4.10.0
 
-  '@phenomnomnominal/tsquery@6.1.3(typescript@5.9.2)':
-    dependencies:
-      '@types/esquery': 1.5.4
-      esquery: 1.7.0
-      typescript: 5.9.2
-
   '@phenomnomnominal/tsquery@6.2.0(typescript@5.9.2)':
     dependencies:
       '@types/esquery': 1.5.4
@@ -19467,14 +19459,14 @@ snapshots:
       - '@typescript/typescript6'
       - supports-color
 
-  ng-primitives@0.100.1(@angular/cdk@21.2.14(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/forms@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.8.0)(rxjs@7.8.2)(typescript@5.9.2):
+  ng-primitives@0.132.0(@angular/cdk@21.2.14(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/forms@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.8.0)(rxjs@7.8.2)(typescript@5.9.2):
     dependencies:
       '@angular/cdk': 21.2.14(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2)
       '@angular/common': 21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)
       '@angular/forms': 21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(@angular/platform-browser@21.0.9(@angular/common@21.0.9(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.9(@angular/compiler@21.0.9)(rxjs@7.8.2)))(rxjs@7.8.2)
       '@floating-ui/dom': 1.8.0
-      '@phenomnomnominal/tsquery': 6.1.3(typescript@5.9.2)
+      '@phenomnomnominal/tsquery': 6.2.0(typescript@5.9.2)
       rxjs: 7.8.2
       tslib: 2.9.1
     transitivePeerDependencies:

@@ -53,7 +53,7 @@
     "jest-util": "^30.5.1",
     "jsonc-eslint-parser": "^2.4.2",
     "ng-packagr": "~21.0.1",
-    "ng-primitives": "^0.100.1",
+    "ng-primitives": "^0.132.0",
     "nx": "24.0.6",
     "postcss-url": "~10.1.4",
     "prettier": "~3.6.2",
