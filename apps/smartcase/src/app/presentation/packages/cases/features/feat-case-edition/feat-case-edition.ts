@@ -1,10 +1,10 @@
 import { Component, HostBinding } from "@angular/core";
 import { NgpSelectPortal } from "ng-primitives/select";
 import { tv } from "tailwind-variants";
-import { Field, FieldLabel, Input, Select, SelectValue, SelectContent, SelectItem } from "@smartcase/ui";
+import { Field, FieldLabel, Input, Select, SelectValue, SelectContent, SelectItem, TextArea } from "@smartcase/ui";
 
 const classes = tv({
-  base: 'flex-1 py-[40px] px-[24px] flex flex-col items-start',
+  base: 'w-[50%] h-[50%] flex-initial flex flex-col items-start',
 });
 
 @Component({
@@ -18,6 +18,7 @@ const classes = tv({
     SelectValue,
     SelectContent,
     SelectItem,
+    TextArea,
     NgpSelectPortal,
 ]
 })

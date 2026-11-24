@@ -14,9 +14,9 @@ import {
   fieldOverlay, 
   fieldInfix, 
   fieldSubsWrapper, 
-  fieldHintWrapper 
+  fieldHintWrapper, 
+  base
 } from "./styles/field.styles";
-import { NgpSelect } from "ng-primitives/select";
 import { Variants } from "./dtypes/field.dtypes";
 
 /**
@@ -37,7 +37,6 @@ import { Variants } from "./dtypes/field.dtypes";
 @Component({
   selector: 'ui-field',
   imports: [CommonModule],
-  hostDirectives: [{ directive: NgpSelect }],
   template: `
     <div data-slot="field-wrapper" [class]="fieldWrapper">
       <div data-slot="field-flex" [class]="fieldFlex">
@@ -60,7 +59,7 @@ import { Variants } from "./dtypes/field.dtypes";
   `,
   host: {
     "role": "group",
-    '[class]': 'formField()',
+    '[class]': 'styles()',
     '[attr.data-input]': 'input',
   }
 })
@@ -69,8 +68,8 @@ export class Field {
   
   public clazz = input<string>('', { alias: 'class' });
 
-  protected formField = computed(() =>
-    cn(field({ input: this.input }), this.clazz())
+  protected styles = computed(() =>
+    cn(this.clazz(), field(), base({ input: this.input }))
   );
 
   get fieldWrapper() {

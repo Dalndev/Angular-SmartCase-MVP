@@ -10,7 +10,7 @@ export const styles = tv({
       text: '',
       email: '',
       phone: '',
-      textarea: '',
+      textarea: '[&_textarea]:resize-none',
       file: '',
     }
   },
@@ -39,6 +39,7 @@ export const styles = tv({
 });
 
 export const {
+  base,
   field,
   floatingLabel,
   fieldDescription,
