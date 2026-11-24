@@ -8,7 +8,6 @@ import {
 import { NgpInput } from "ng-primitives/input";
 import { cn } from "tailwind-variants";
 import { styles } from "./styles/input.styles";
-import type { Variants } from "./dtypes/input.dtypes";
 
 /**
  * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
@@ -25,24 +24,23 @@ import type { Variants } from "./dtypes/input.dtypes";
  * @see {@link}
  */
 @Directive({
-  selector: 'input[ui-input], textarea[ui-input]',
+  selector: 'input[ui-input]',
   hostDirectives: [{ directive: NgpInput }],
   host: {
     '[id]': 'id',
     '[class]': 'styles',
     '[attr.data-filled]': 'filled()',
+    'data-slot': 'input'
   }
 })
 export class Input {
 
   @InputProp() id: string | undefined;
 
-  @InputProp() variant: Variants["variant"] = "filled";
-
   public filled = signal(false);
 
   get styles() {
-    return cn(styles({ variant: this.variant }))
+    return cn(styles())
   }
 
   @HostListener('keyup', ['$event'])
@@ -51,7 +49,6 @@ export class Input {
   }
 
   public validateInput(input: HTMLInputElement) {
-
     let value: string | null = null;
 
     if (!input) return false;

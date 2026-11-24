@@ -1,12 +1,23 @@
 /* eslint-disable @angular-eslint/directive-selector */
 /* eslint-disable @angular-eslint/no-input-rename */
-
 import { CommonModule } from "@angular/common";
 import { Component, computed, Directive, input, Input } from "@angular/core";
 import { cn } from "tailwind-variants";
 import { NgpLabel, NgpDescription, NgpError } from "ng-primitives/form-field";
-import { field, fieldLabel, fieldDescription, fieldError, fieldWrapper, fieldFlex } from "./styles/field.styles";
+import { 
+  field, 
+  floatingLabel, 
+  fieldDescription, 
+  fieldError, 
+  fieldWrapper, 
+  fieldFlex, 
+  fieldOverlay, 
+  fieldInfix, 
+  fieldSubsWrapper, 
+  fieldHintWrapper 
+} from "./styles/field.styles";
 import { NgpSelect } from "ng-primitives/select";
+import { Variants } from "./dtypes/field.dtypes";
 
 /**
  * @todo ui. Implementar la variación "outline" del componente field/input en el sistema.
@@ -28,36 +39,19 @@ import { NgpSelect } from "ng-primitives/select";
   imports: [CommonModule],
   hostDirectives: [{ directive: NgpSelect }],
   template: `
-    <div 
-      data-slot="field-wrapper" 
-      class="box-border relative bg-surface-variant h-auto w-full px-[16px] flex-auto rounded-t-[4px] rounded-b-none"
-    >
-      <div data-slot="field-flex" class="box-border inline-flex align-baseline w-full">
-        <div data-slot="field-infix" class="box-border relative pb-[8px] pt-[24px] flex-auto min-w-0 w-[180px] min-h-[56px]">
+    <div data-slot="field-wrapper" [class]="fieldWrapper">
+      <div data-slot="field-flex" [class]="fieldFlex">
+        <div data-slot="field-infix" [class]="fieldInfix">
           <ng-content select="[slot=leading]"/>
           <ng-content/>
           <ng-content select="[ui-field-label]"/>
           <ng-content select="[slot=trailing]"/>
         </div>
       </div>
-      <div data-slot="field-overlay" class="
-        before:absolute before:left-0 before:bottom-0 before:w-full before:border-b before:border-on-surface-variant before:z-1
-        after:absolute after:left-0 after:bottom-0 after:w-full after:border-b-2 after:border-primary after:z-2 after:opacity-0 after:scale-x-0 
-        [ui-field:has(input[data-filled='true'])_&]:after:opacity-100 [ui-field:has(input[data-filled='true'])_&]:after:scale-x-100
-        [ui-field:has(input:focus)_&]:after:opacity-100 [ui-field:has(input:focus)_&]:after:scale-x-100
-        [ui-field[aria-expanded='true']_&]:after:opacity-100 [ui-field[aria-expanded='true']_&]:after:scale-x-100
-        [ui-field:has(ui-select[data-filled='true'])_&]:after:opacity-100 [ui-field:has(ui-select[data-filled='true'])_&]:after:scale-x-100
-        transition-all
-      "></div>
+      <div data-slot="field-overlay" [class]="fieldOverlay"></div>
     </div>
-    <div 
-      data-slot="field-subs-wrapper" 
-      class="hidden box-border relative w-full text-body-small before:inline-block before:h-[16px]"
-    >
-      <div 
-        data-slot="field-hint-wrapper" 
-        class="absolute top-0 left-0 right-0 px-[16px] flex opacity-[1] translate-y-0 *:before:inline-block *:before:h-[16px]"
-      >
+    <div data-slot="field-subs-wrapper" [class]="fieldSubsWrapper">
+      <div data-slot="field-hint-wrapper" [class]="fieldHintWrapper">
         <ng-content select="[ui-field-error]"/>
         <ng-content select="[ui-field-description]"/>
         <div class="grow shrink-0 basis-[1em]"></div>
@@ -66,15 +60,17 @@ import { NgpSelect } from "ng-primitives/select";
   `,
   host: {
     "role": "group",
-    '[class]': 'formField()'
+    '[class]': 'formField()',
+    '[attr.data-input]': 'input',
   }
 })
 export class Field {
+  @Input() input: Variants['input'] = 'text';
   
-  clazz = input<string>('', { alias: 'class' });
+  public clazz = input<string>('', { alias: 'class' });
 
   protected formField = computed(() =>
-    cn(field(), this.clazz())
+    cn(field({ input: this.input }), this.clazz())
   );
 
   get fieldWrapper() {
@@ -82,10 +78,25 @@ export class Field {
   }
 
   get fieldFlex() {
-    return fieldFlex(
-      
-    )
+    return fieldFlex()
   }
+
+  get fieldInfix() {
+    return fieldInfix()
+  }
+
+  get fieldOverlay() {
+    return fieldOverlay()
+  }
+
+  get fieldSubsWrapper() {
+    return fieldSubsWrapper()
+  }
+
+  get fieldHintWrapper() {
+    return fieldHintWrapper()
+  }
+
 }
 
 @Directive({
@@ -102,7 +113,7 @@ export class FieldLabel {
   @Input() htmlFor!: string;
 
   get styles() {
-    return cn(fieldLabel())
+    return cn(floatingLabel())
   }
 
 }
@@ -112,7 +123,7 @@ export class FieldLabel {
   hostDirectives: [{ directive: NgpDescription }],
   host: {
     '[class]': 'styles',
-    'data-slot': ''
+    'data-slot': 'field-hint'
   }
 })
 export class FieldDescription {
@@ -128,7 +139,8 @@ export class FieldDescription {
   selector: '[ui-field-error]',
   hostDirectives: [{ directive: NgpError }],
   host: {
-    '[class]': 'styles'
+    '[class]': 'styles',
+    'data-slot': 'field-error'
   }
 })
 export class FieldError {

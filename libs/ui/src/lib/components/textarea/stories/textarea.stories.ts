@@ -1,7 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { TextArea } from "../textarea"
 import { Field, FieldDescription, FieldError, FieldLabel } from "../../field";
-import { Input } from "../../input";
 
 const meta: Meta<TextArea> = {
   title: "Material Design/Textarea",
@@ -9,7 +8,7 @@ const meta: Meta<TextArea> = {
   decorators: [
     moduleMetadata({
       imports: [
-        Input,
+        TextArea,
         Field,
         FieldLabel,
         FieldDescription,
@@ -28,7 +27,7 @@ export const textarea: story = {
   render: () => ({
     template: `
       <ui-field>
-        <textarea ui-input ></textarea>
+        <textarea ui-textarea></textarea>
         <label ui-field-label>Description</label>
         <span ui-field-description>Fill with description</span>
       </ui-field>
